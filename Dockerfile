@@ -8,18 +8,16 @@ RUN apt-get update && apt-get install -y \
     unzip \
     && rm -rf /var/lib/apt/lists/*
 
-# Instalar Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-RUN composer install --no-dev --optimize-autoloader --no-interaction
-
-# Instalar PHP y extensiones necesarias
+# Instalar extensiones PHP necesarias
 RUN apt-get update && apt-get install -y \
     php-cli \
     php-mbstring \
     php-xml \
     php-curl \
     php-zip
+
+# Instalar Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Establecer el directorio de trabajo
 WORKDIR /var/www/html
@@ -28,10 +26,13 @@ WORKDIR /var/www/html
 COPY . /var/www/html
 
 # Instalar dependencias de Composer
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 # Instalar dependencias de Yarn
 RUN yarn install && yarn prod
 
-# Optimización y configuración de Laravel
-RUN php artisan optimize && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan migrate --force
+# Exponer el puerto que usará PHP-FPM
+EXPOSE 9000
+
+# Comando por defecto para ejecutar PHP-FPM
+CMD ["php-fpm"]
