@@ -1,7 +1,6 @@
-# Usar la imagen base de PHP 8.2
 FROM php:8.2-fpm
 
-# Instalar dependencias necesarias (curl, git, etc.)
+# Instalar dependencias necesarias, incluyendo oniguruma (libonig-dev)
 RUN apt-get update && apt-get install -y \
     curl \
     git \
@@ -13,6 +12,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     libtool \
     autoconf \
+    libonig-dev \  # Agregar la librería oniguruma necesaria
     && rm -rf /var/lib/apt/lists/*
 
 # Instalar y configurar la extensión GD con soporte para FreeType y JPEG
