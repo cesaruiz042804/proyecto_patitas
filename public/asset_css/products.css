@@ -1,0 +1,145 @@
+* {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   vertical-align: baseline;
+   font-family: 'Trebuchet MS', sans-serif;
+   color: #505050;
+}
+
+.container {
+   width: 100%;
+   align-items: center;
+}
+
+.header-products {
+   display: flex;
+   width: 100%;
+   justify-content: center;
+}
+
+.header-items {
+   display: flex;
+   justify-content: space-between;
+   width: 95%;
+   margin-top: 15px;
+}
+
+.btn-cart {
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+   font-size: 25px;
+}
+
+.title-items {
+   font-size: 30px;
+}
+
+.row {
+   display: flex;
+   width: 100%;
+   flex-wrap: wrap;
+   align-items: center;
+}
+
+.col {
+   margin: 15px auto;
+   border: 3px solid rgb(218, 211, 211);
+   width: 45%;
+   padding: 8px 15px;
+   /* Margen arriba - abajo - a los lados */
+}
+
+.card-body{
+   display: flex;
+   flex-direction: column;
+}
+
+.card-body-item{
+   padding: 10px 0;
+}
+
+.card-body-form {
+   justify-content: center;
+   align-items: center;
+}
+
+.box-quantity {
+   background-color: #403192;
+   color: #FFFFFF;
+   font-size: 15px;
+   font-weight: bold;
+   padding: 8px 40px;
+   transition: transform 80ms ease-in;
+   font-weight: bold;
+   cursor: pointer;
+   transition: box-shadow 0.3s ease;
+   border-radius: 4%;
+   margin: 4px 6px 4px 0;
+}
+
+.box-quantity:hover {
+   background-color: #35ad35;
+   box-shadow: 0 4px 8px rgba(59, 5, 221, 0.5);
+   /* Sombra al hacer hover */
+}
+
+.text-span {
+   width: 100%;
+   height: 30px;
+   display: flex;  /* Usamos flexbox */
+   justify-content: flex-end; /* Alinea el contenido a la derecha */
+   align-items: center; /* Centra verticalmente el contenido */
+}
+
+.text-span span {
+   display: flex; /* Añadimos flexbox al span */
+   justify-content: center; /* Opcional: para centrar horizontalmente el texto dentro del span */
+   align-items: center; /* Centra verticalmente el texto */
+   text-align: right; 
+   white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+   background-color: #35ad35;
+   height: 100%;
+   padding: 0 5px;
+   color: #FFFFFF;
+   font-weight: bold;
+   border-radius: 3px;
+   box-shadow: 0 4px 5px #35ad35;
+}
+
+.foot {
+   background-color: #434372;
+   text-align: center;
+   padding: 20px;
+   box-shadow: 0 4px 15px rgba(216, 228, 216, 0.945);
+   /* Sombra al hacer hover */
+}
+
+.foot p {
+   color: #f7f4f4;
+   padding: 0 100px;
+   margin-bottom: 35px;
+}
+
+.foot a {
+   margin-right: 35px;
+   text-decoration: none;
+   color: #f7f5ff;
+}
+
+@media (max-width: 768px) {
+   .header-items {
+      width: 75%;
+   }
+
+   .menu__btn{
+      margin-top: 12px; /* Para bajar el menu al nivel del tituo dela pagina */
+   }
+
+   .col {
+      width: 100%;
+      margin: 8px 15px;
+   }
+}

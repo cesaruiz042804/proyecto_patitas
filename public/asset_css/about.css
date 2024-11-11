@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+body {
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    height: auto;
+}
+
+.content-about-principal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+    justify-content: center;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.text-principal {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: auto;
+}
+
+.video {
+    width: 45%;
+    height: 60vh;
+    margin: auto;
+}
+
+.fade-in-video {
+    opacity: 0;
+    animation: fadeIn 2s forwards; /* Duración de 2 segundos, ajustable */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.content-about-principal h1 {
+    color: #403192;
+}
+
+.content-about-principal video {
+    width: 100%;
+    height: 100%;
+}
+
+.content-about-principal h1 {
+    font-size: 35px;
+}
+
+.content-about-principal p {
+    font-size: 20px;
+}
+
+.content-about {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    padding: 40px auto;
+    /*background: linear-gradient(to bottom, #403192, #434372b0, #ffffff);*/
+    align-items: center;
+}
+
+.content-about p {
+    font-weight: bold;
+    color: #363636;
+}
+
+.content-about p,
+h3 {
+    color: #363636;
+}
+
+.content-mision,
+.content-vision {
+    display: flex;
+    width: 40%;
+    min-height: 50vh;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin: 5px auto;
+    background-color: rgba(255, 255, 255, 0.479);
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.content-text {
+    width: 50%;
+    margin: auto 10px;
+}
+
+.content-mision h3,
+.content-vision h3 {
+    font-size: 23px;
+    color: #363636;
+}
+
+.content-mision p,
+.content-vision p {
+    color: #363636;
+}
+
+.content-services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    height: auto;
+    margin: auto;
+}
+
+.content-title-services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 10vh;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-title-services h3 {
+    font-size: 30px;
+}
+
+.content-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    height: auto;
+}
+
+.content-list h3 {
+    width: 100%;
+    color: #363636;
+}
+
+.item {
+    color: #403192;
+    /* Color base para SVGs */
+    width: 30%;
+    aspect-ratio: 2.3;
+    /* Relación 1:1 para mantener altura proporcional al ancho */
+    justify-content: center;
+    align-items: center;
+}
+
+.item svg {
+    fill: currentColor;
+    /* Hereda el color del padre */
+    width: 60px;
+    height: 60px;
+    transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.item:hover {
+    color: #7a7ac0;
+    /* Color en hover */
+}
+
+.item:hover svg {
+    transform: scale(1.1);
+    /* Opcional: agranda el ícono */
+}
+
+.item h4 {
+    font-size: 30px;
+    padding: 0px 15px;
+    color: #363636;
+}
+
+.item p {
+    font-size: 20px;
+    padding: 0px 15px;
+    color: #363636;
+}
+
+.about-us-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+    align-content: center;
+    /*background-image: url('/recursos_sobre_nosotros/img_contact_us.jpg');*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(7, 7, 12, 0.5); /* Un color de fondo oscuro para dar contraste */
+    background-blend-mode: darken; 
+}
+
+.form-about {
+    border-radius: 50%;
+    width: 50%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-group {
+    padding: 10px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-color: rgba(255, 255, 255, 0.288);
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.form-group button {
+    border-radius: 20px;
+    background-color: #403192;
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 3px 45px;
+    transition: transform 80ms ease-in;
+    font-weight: bold;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    height: 10%;
+    width: 80%;
+}
+
+.form-group button:hover {
+    background-color: #684a97;
+    box-shadow: 0 4px 15px rgba(59, 5, 221, 0.5);
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    background-color: #eee;
+    border: none;
+    padding: 4px 0 4px 20px;
+    width: 80%;
+    border-radius: 20px;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    font-weight: bolder;
+    margin: 10px 5px;
+    height: 8%;
+}
+
+.form-group input:focus,  .form-group select:focus, .form-group textarea:focus {
+    box-shadow: 0 0 15px 7px rgba(27, 5, 44, 0.6);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: none;
+}
+
+.form-group h4, .form-group p {
+    color: #ddd;
+}
+
+@media (max-width: 768px) {
+    .menu__btn>span,
+    .menu__btn>span::before,
+    .menu__btn>span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: #000000;
+        transition-duration: 0.9s;
+    }
+
+    .item {
+        width: 45%;
+    }
+
+    .content-about-principal {
+        width: 100%;
+        height: 90vh;
+    }
+
+    .text-principal {
+        width: 80%;
+    }
+    
+    .video {
+        width: 90%;
+        height: 35vh;
+    }
+    
+
+    .content-about {
+        min-height: 100vh;
+        height: auto;
+    }
+
+    .content-services {
+        min-height: 140vh;
+        height: auto;
+    }
+
+    .item {
+        width: 70%;
+        margin: 30px auto;
+    }
+
+    .content-mision,
+    .content-vision {
+        display: flex;
+        width: 90%;
+        height: 50vh;
+        justify-content: center;
+        align-items: center;
+        margin: 20px auto;
+    }
+
+    .content-text {
+        width: 85%;
+        margin: auto 10px;
+    }
+
+    .content-text p {
+        padding: 20px;
+    }
+
+    .about-us-form {
+        height: 100vh;
+        width: 100%;
+    }
+    
+    .form-about {
+        border-radius: 50%;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .form-group {
+        padding: 10px;
+        width: 80%;
+        gap: 20px;
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+        padding: 7px 10px;
+        width: 90%;
+        height: 6%;
+    }
+
+    .form-group button {
+        width: 80%;
+    }
+}

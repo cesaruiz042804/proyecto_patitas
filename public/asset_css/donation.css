@@ -1,0 +1,123 @@
+* {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   vertical-align: baseline;
+   font-family: 'Trebuchet MS', sans-serif;
+}
+
+body {
+   text-align: center;
+}
+
+.container {
+   width: 100%;
+   align-items: center;
+   display: flex;
+   height: 100vh;
+   background-image: url('/recursos_donation/img_volunters.jpeg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-color: rgba(7, 7, 12, 0.804); /* Un color de fondo oscuro para dar contraste */
+   background-blend-mode: darken;
+}
+
+.container-target {
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   display: flex;
+}
+
+.container-img {
+   display: flex;
+   width: 40%;
+   justify-content: center;
+   align-items: center;
+   justify-items: center;
+   flex-direction: column;
+   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+   0 10px 10px rgba(0, 0, 0, 0.22);
+   background-color: rgba(255, 255, 255, 0.097);
+   padding: 20px 0;
+   border-radius: 5px;
+}
+
+.container-img img {
+   width: 50%;
+}
+
+.container-form {
+   display: flex;
+   width: 50%;
+   justify-content: center;
+   justify-items: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.container-form form {
+   display: flex;
+   flex-direction: column;
+   width: 90%;
+   justify-content: center;
+   justify-items: center;
+   align-items: center;
+   gap: 20px;
+}
+
+.container-form form input {
+   text-align: center;
+}
+
+.pay-button {
+   background-color: #403192;
+   color: #FFFFFF;
+   font-size: 15px;
+   font-weight: bold;
+   padding: 8px 40px;
+   transition: transform 80ms ease-in;
+   font-weight: bold;
+   cursor: pointer;
+   transition: box-shadow 0.3s ease;
+   border-radius: 4%;
+   margin: 4px 6px 4px 0;
+}
+
+.pay-button:focus {
+   outline: none;
+}
+
+.pay-button:hover {
+   background-color: #35ad35;
+   box-shadow: 0 4px 8px rgba(59, 5, 221, 0.5);
+   /* Sombra al hacer hover */
+}
+
+
+.container-form .quantity {
+   border-radius: 20px;
+   margin: 10px 5px;
+   width: 35%;
+   padding: 3px 0px 3px 10px;
+   font-weight: bolder;
+   transition: box-shadow 0.4s ease-in-out; /* Transición para suavizar el efecto */
+   box-shadow: 0 0 0 rgba(255, 255, 255, 0); /* Inicialmente sin sombra */
+   border: 4px solid rgba(80, 80, 80, 0.557);
+}
+
+.container-text{
+   padding: 25px;
+   color: #ffffffd9;
+}
+
+@media (max-width: 768px) {
+
+   .container-img {
+      width: 90%;
+
+   }
+
+}

@@ -1,0 +1,132 @@
+* {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   vertical-align: baseline;
+   font-family: 'Trebuchet MS', sans-serif;
+}
+
+body {
+   text-align: center;
+}
+
+.container {
+   width: 100%;
+   display: flex;
+   min-height: 100vh;
+   height: auto;
+   background: linear-gradient(135deg, #f0f0f0, #fafafa); /* Fondo suave */
+}
+
+.container-products {
+   width: 85%;
+   margin: 20px auto;
+}
+
+.text-title {
+   font-size: 25px;
+}
+
+td, h1{
+   color: #505050;
+}
+
+.table {
+   width: 100%;
+   border-collapse: collapse; /* Asegúrate de que las celdas se colapsen */
+   margin: 30px 0;
+   background-color: rgba(49, 49, 49, 0.062);
+   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.table tbody tr {
+   border: none;
+   background-color: rgba(49, 49, 49, 0.062);
+}
+
+.table tbody tr td {
+   border-bottom: 3px solid #3333335b; /* Borde inferior para cada celda */
+   padding: 15px 20px;
+}
+
+ .table tbody tr {
+   text-align: center;
+}
+
+.btn-danger{
+   background-color: #3835db65;
+   padding: 5px 4px;
+   border: none;
+   cursor: pointer;
+   border-radius: 5%;   
+   text-align: justify;
+}
+
+.btn-danger:hover {
+   background-color: #69696965;
+}
+
+.btn-primary{
+   padding: 5px;
+   text-decoration: none;
+}
+
+.empty-cart-message {
+   text-align: center;
+   margin-top: 60px;
+   width: 100%;
+}
+
+.empty-cart-message p {
+   font-size: 25px;
+   font-weight: bold;
+   margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+   .menu__btn>span,
+   .menu__btn>span::before,
+   .menu__btn>span::after {
+      background-color: #2b2828;
+      /* Cambia el color a negro */
+   }
+
+   .container {
+      margin-top: 60px;
+   }
+
+   .col {
+      width: 100%;
+      margin: 10px 15px;
+   }
+   
+   .container-products {
+      margin: 6px auto;
+      width: 100%;
+   }
+   
+   td, h1{
+      color: #505050;
+   }
+   
+   .table {
+      width: 100%;
+      margin: 30px auto;
+   }
+   
+   .table tbody tr {
+      border: none;
+      background-color: rgba(49, 49, 49, 0.062);
+   }
+   
+   .table tbody tr td {
+      border-bottom: 3px solid #3333335b; /* Borde inferior para cada celda */
+      padding: 5px 11px;
+   }
+   
+    .table tbody td {
+      text-align: center;
+   }
+}
