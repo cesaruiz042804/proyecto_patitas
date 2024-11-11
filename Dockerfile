@@ -1,5 +1,5 @@
 # Usar la imagen base de PHP
-FROM php:8.1-fpm
+FROM php:8.0-fpm
 
 # Instalar dependencias necesarias (curl, git, etc.)
 RUN apt-get update && apt-get install -y \
@@ -9,10 +9,18 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg62-turbo-dev \
     libfreetype6-dev \
+    libzip-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Instalar y configurar extensiones de PHP necesarias
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+# Instalar las herramientas de compilación necesarias para GD
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libtool \
+    autoconf \
+    && rm -rf /var/lib/apt/lists/*
+
+# Configurar e instalar las extensiones de PHP necesarias
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/freetype2 --with-jpeg-dir=/usr/include \
     && docker-php-ext-install gd mbstring xml curl zip
 
 # Instalar Composer
