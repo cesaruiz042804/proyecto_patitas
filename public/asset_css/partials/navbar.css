@@ -1,0 +1,387 @@
+.logo img {
+   height: 80px;
+   width: 75px;
+   padding: 0 0 0 0;
+   margin: 0 0 0 0;
+}
+
+.logo img:hover {
+   filter: sepia(40%);
+   cursor: pointer;
+}
+
+.logo {
+   display: flex;
+   justify-content: center;
+   /* Centra horizontalmente */
+   align-items: center;
+   /* Centra verticalmente */
+   margin: 0%;
+   padding: 0%;
+   height: 100%;
+}
+
+.logo:hover {
+   border-bottom: 4px solid #f7f4f4;
+}
+
+.menu__box {
+   display: flex;
+   background-color: #403192;
+   align-items: center;
+   list-style: none;
+   height: 90px;
+   align-items: stretch; /* Ajusta los elementos hijos al alto del contenedor */
+  
+}
+
+.menu__item {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-decoration: none;
+   color: #f7f4f4;
+   padding: 0 30px;
+   font-weight: bold;
+   height: 100%;
+   transition: all 0.3s ease; /* Transición suave en todos los cambios */
+}
+
+.menu__item:hover {
+   background-color: #7a7ac0;
+   border-bottom: 4px solid #f7f4f4;
+   color: #fff;
+   text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.435); /* Sombra sutil en el texto */
+}
+
+
+#menu__toggle {
+   display: none;
+}
+
+.hamburger-menu,
+.menu__box {
+   z-index: 1;
+   /* Set a higher z-index */
+}
+
+.menu__btn {
+   z-index: 999;
+   /* Esto asegurará que el botón del menú esté siempre por encima de cualquier otro contenido */
+}
+
+@media (max-width: 768px) {
+
+   /* */
+   #menu__toggle {
+      opacity: 0;
+   }
+
+   #menu__toggle:checked+.menu__btn>span {
+      transform: rotate(45deg);
+   }
+
+   #menu__toggle:checked+.menu__btn>span::before {
+      top: 0;
+      transform: rotate(0deg);
+   }
+
+   #menu__toggle:checked+.menu__btn>span::after {
+      top: 0;
+      transform: rotate(90deg);
+   }
+
+   #menu__toggle:checked~.menu__box {
+      transform: translateX(0);
+   }
+
+   .menu__btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+   }
+
+   .menu__btn>span,
+   .menu__btn>span::before,
+   .menu__btn>span::after {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      transition-duration: 0.9s;
+   }
+
+   .home .menu__btn>span,
+   .home .menu__btn>span::before,
+   .home .menu__btn>span::after {
+      background-color: #ffffff;
+      /* Cambia el color a blanco */
+   }
+
+   /* Página sobre nosotros */
+   .about .menu__btn>span,
+   .about .menu__btn>span::before,
+   .about .menu__btn>span::after {
+      background-color: #2b2828;
+      /* Cambia el color a negro */
+   }
+
+   .products .menu__btn>span,
+   .products .menu__btn>span::before,
+   .products .menu__btn>span::after {
+      background-color: #2b2828;
+      /* Cambia el color a negro */
+   }
+
+   .donation .menu__btn>span,
+   .donation .menu__btn>span::before,
+   .donation .menu__btn>span::after {
+      background-color: #fffdfd;
+      /* Cambia el color a negro */
+   }
+
+   .menu__btn>span::before {
+      content: '';
+      top: -8px;
+   }
+
+   .menu__btn>span::after {
+      content: '';
+      top: 8px;
+   }
+
+   .menu__box {
+      display: block;
+      position: fixed;
+      top: 0;
+      transform: translateX(-100%);
+      width: 300px;
+      height: 100%;
+      margin: 0;
+      padding: 80px 0;
+      list-style: none;
+      /*background-color: #403192;*/
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+      transition-duration: .9s;
+   }
+
+   .menu__item {
+      display: block;
+      padding: 12px 24px;
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      transition-duration: .25s;
+      border: none;
+      text-align: center;
+   }
+
+   .menu__item:hover {
+      background-color: #7a7ac0;
+      border: none;
+   }
+
+   .logo {
+      border: none;
+      height: 10%;
+   }
+
+   .logo:hover {
+      border: none;
+   }
+}
+
+
+/*
+
+.logo img {
+   height: 80px;
+   width: 77px;
+   padding: 0 0 0 0;
+   margin: 0 0 0 0;
+}
+
+.logo img:hover {
+   filter: sepia(40%);
+   cursor: pointer;
+}
+
+.logo {
+   display: flex;
+   align-items: center; 
+   justify-content: center;
+   height: 100%;
+   padding: 0;
+   margin: 0;
+   border-bottom: 4px solid #403192;
+   transition: border-bottom 0.3s ease-in-out;
+}
+
+.logo:hover {
+   border-bottom: 4px solid #f7f4f4;
+   transition: border-bottom 0.3s ease-in-out;
+}
+
+.menu__box {
+   display: flex;
+   background-color: #403192;
+   align-items: center;
+   list-style: none;
+   height: 90px;
+   align-items: stretch; 
+  
+}
+
+.menu__item {
+   display: flex;
+   align-items: center; 
+   justify-content: center;
+   text-decoration: none;
+   color: #f7f4f4;
+   padding: 0 30px;
+   font-weight: bold;
+   height: 100%;
+}
+
+.menu__item:hover {
+   background-color: #7a7ac0;
+   border-bottom: 4px solid #f7f4f4;
+}
+
+#menu__toggle {
+   display: none;
+}
+
+.hamburger-menu,
+.menu__box {
+   z-index: 1;
+}
+
+.menu__btn {
+   z-index: 999;
+}
+
+@media (max-width: 768px) {
+
+   #menu__toggle {
+      opacity: 0;
+   }
+
+   #menu__toggle:checked+.menu__btn>span {
+      transform: rotate(45deg);
+   }
+
+   #menu__toggle:checked+.menu__btn>span::before {
+      top: 0;
+      transform: rotate(0deg);
+   }
+
+   #menu__toggle:checked+.menu__btn>span::after {
+      top: 0;
+      transform: rotate(90deg);
+   }
+
+   #menu__toggle:checked~.menu__box {
+      transform: translateX(0);
+   }
+
+   .menu__btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+   }
+
+   .menu__btn>span,
+   .menu__btn>span::before,
+   .menu__btn>span::after {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      transition-duration: 0.9s;
+   }
+
+   .homepage .menu__btn>span,
+   .homepage .menu__btn>span::before,
+   .homepage .menu__btn>span::after {
+      background-color: #ffffff;
+   }
+
+   /* Página sobre nosotros 
+   .about .menu__btn>span,
+   .about .menu__btn>span::before,
+   .about .menu__btn>span::after {
+      background-color: #2b2828;
+      /* Cambia el color a negro 
+   }
+
+   .products .menu__btn>span,
+   .products .menu__btn>span::before,
+   .products .menu__btn>span::after {
+      background-color: #2b2828;
+   }
+
+   .paypal .menu__btn>span,
+   .paypal .menu__btn>span::before,
+   .paypal .menu__btn>span::after {
+      background-color: #2b2828;
+   }
+
+   .menu__btn>span::before {
+      content: '';
+      top: -8px;
+   }
+
+   .menu__btn>span::after {
+      content: '';
+      top: 8px;
+   }
+
+   .menu__box {
+      display: block;
+      position: fixed;
+      top: 0;
+      transform: translateX(-100%);
+      width: 300px;
+      height: 100%;
+      margin: 0;
+      padding: 80px 0;
+      list-style: none;
+      /*background-color: #403192;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+      transition-duration: .9s;
+   }
+
+   .menu__item {
+      display: block;
+      padding: 12px 24px;
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      transition-duration: .25s;
+      border: none;
+   }
+
+   .menu__item:hover {
+      background-color: #7a7ac0;
+      border: none;
+   }
+
+   .logo {
+      border: none;
+   }
+
+   .logo:hover {
+      border: none;
+   }
+}
+
+*/

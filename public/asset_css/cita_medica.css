@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+ 
+ body {
+    text-align: center;
+ }
+
+.form h2,
+.form h3, label {
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+.container {
+    min-height: 100vh; /* Asegura que ocupe toda la altura del viewport */
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    background-image: url('/recursos_sobre_nosotros/img-form.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(7, 7, 12, 0.678); /* Un color de fondo oscuro para dar contraste */
+    background-blend-mode: darken;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para efecto flotante */
+    background-color: rgba(17, 16, 16, 0.288); /* Color de fondo para mayor visibilidad */
+}
+
+.form h2 {
+    color: #f7f4f4;
+    font-size: 25px;
+}
+
+.form h3, label{
+    color: #eee7e7;
+    font-size: 18px;
+}
+
+.form input, select {
+    border-radius: 20px;
+    margin: 15px 5px;
+    width: 28%;
+    padding: 3px 0px 3px 10px;
+    /* arriba derecha abajo izquierda*/
+    font-weight: bolder;
+    transition: box-shadow 0.4s ease-in-out; /* Transición para suavizar el efecto */
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0); /* Inicialmente sin sombra */
+}
+
+.textarea-dato {
+    display: flex;
+    flex-direction: column;
+    width: 95%;;
+    margin: auto;
+}
+
+.textarea-dato textarea {
+    border-radius: 10px;
+    height: 100px;
+    padding: 5px;
+    resize: none;
+    transition: box-shadow 0.4s ease-in-out; /* Transición para suavizar el efecto */
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0); /* Inicialmente sin sombra */
+}
+
+.content-consulta{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.content-consulta #date{
+    padding: 0 10px;
+}
+
+.form #image{
+    background-color: #e9e9e9;
+    border-radius: 5px;
+}
+
+.content-textarea {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.content-btn {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.content-btn button {
+    border-radius: 20px;
+    width: 300px;
+    height: 35px;
+    background-color: #35ad35;
+    color: #eee7e7;
+    font-weight: bold;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease; /* Transición suave para la sombra */
+}
+
+.content-btn button:hover {
+    background-color: #60a160;
+    box-shadow: 0 4px 15px rgba(0, 255, 0, 0.5); /* Sombra al hacer hover */
+}
+
+input:focus, textarea:focus, select:focus {
+    box-shadow: 0 0 15px 7px rgba(255, 255, 255, 0.6); 
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    #menu__toggle {
+        opacity: 0;
+    }
+
+    #menu__toggle:checked+.menu__btn>span {
+        transform: rotate(45deg);
+    }
+
+    #menu__toggle:checked+.menu__btn>span::before {
+        top: 0;
+        transform: rotate(0deg);
+    }
+
+    #menu__toggle:checked+.menu__btn>span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    #menu__toggle:checked~.menu__box {
+        transform: translateX(0);
+    }
+
+    .menu__btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+    }
+
+    .menu__btn>span,
+    .menu__btn>span::before,
+    .menu__btn>span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: #eee7e7;
+        transition-duration: 0.9s;
+    }
+
+    .menu__btn>span::before {
+        content: '';
+        top: -8px;
+    }
+
+    .menu__btn>span::after {
+        content: '';
+        top: 8px;
+    }
+
+    .menu__box {
+        display: block;
+        position: fixed;
+        top: 0;
+        transform: translateX(-100%);
+        width: 300px;
+        height: 100%;
+        margin: 0;
+        padding: 80px 0;
+        list-style: none;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+        transition-duration: .9s;
+    }
+
+    .menu__item {
+        display: block;
+        padding: 12px 24px;
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        transition-duration: .25s;
+        border: none;
+    }
+
+    .menu__item:hover {
+        background-color: #7a7ac0;
+        border: none;
+    }
+    
+    .logo:hover {
+        border-bottom: 4px solid #403192;   
+    }
+    
+    .content-animal, .content-textarea{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-animal input, .content-animal select, .textarea-dato textarea{
+        width: 90%;
+        padding: 10px;
+    }
+
+    .textarea-dato{
+        align-items: center;
+        width: 100%;
+    }
+
+    .form{
+        width: 85%;
+        margin: 30px 0px;
+        padding: 15px 15px;
+    }
+}

@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+body {
+    text-align: center;
+}
+
+.content-header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/recursos_home/img_background_home.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(7, 7, 12, 0.646); /* Un color de fondo oscuro para dar contraste */
+    background-blend-mode: darken; 
+}
+
+.content-header p {
+    color: #f7f4f4;
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.title-h1 {
+    margin-bottom: 40px;
+    font-size: 60px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #f7f5ff;
+}
+
+.title-h2 {
+    margin-bottom: 40px;
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 40px;
+    border: 2px solid #403192;
+    color: #fff;
+    text-decoration: #403192;
+    background: #403192;
+}
+
+.btn-home {
+    display: flex;
+}
+
+.btn-home a {
+    margin: 0 10px;
+}
+
+.btn:hover {
+    background: none;
+    border: none;
+}
+
+.content-products {
+    padding: 30px;
+    background: #403192;
+}
+
+.paragraph-p1 {
+    color: #f7f4f4;
+}
+
+.box-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.box-container .box {
+    height: 11rem;
+    width: 17rem;
+    background: #ffffff;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0. 3rem 5rem rbga(0, 0, 0, 0.5);
+    margin: 2rem;
+}
+
+.box-container .box i {
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    background: #403192;
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.box-container .box h3 {
+    font-size: 20px;
+    color: #403192;
+}
+
+.box-container .box p {
+    padding: 0 15px;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) { /* */
+    
+}
