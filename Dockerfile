@@ -6,15 +6,13 @@ RUN apt-get update && apt-get install -y \
     curl \
     git \
     unzip \
-    && rm -rf /var/lib/apt/lists/*
-
-# Instalar extensiones de PHP usando docker-php-ext-install
-RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg62-turbo-dev \
     libfreetype6-dev \
-    && rm -rf /var/lib/apt/lists/* \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && rm -rf /var/lib/apt/lists/*
+
+# Instalar y configurar extensiones de PHP necesarias
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd mbstring xml curl zip
 
 # Instalar Composer
