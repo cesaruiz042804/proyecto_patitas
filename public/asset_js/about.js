@@ -19,3 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
    lazyBackgrounds.forEach(bg => observer.observe(bg));
 });
+
+
+function showFlyer(img) {
+    const modal = document.getElementById('flyerModal');
+    const flyer = document.getElementById('flyerImage');
+    flyer.src = img; // Actualiza la ruta al flyer
+    modal.style.display = "block";
+}
+
+function closeFlyer() {
+    document.getElementById('flyerModal').style.display = "none";
+}

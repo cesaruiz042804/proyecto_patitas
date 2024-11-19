@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Proceso de pago</title>
     <link rel="stylesheet" href="{{ asset('asset_css/payment_paypal.css') }}">
+    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
 </head>
 
 <body>

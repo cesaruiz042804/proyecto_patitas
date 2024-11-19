@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donación</title>
     <link rel="stylesheet" href="{{ asset('asset_css/donation.css') }}">
+    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
+    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
 </head>
 
 <body>
 
     @include('partials.navbar')
-
+    
     <main>
         <div class="container">
             <div class="container-target">
                 <div class="container-img">
-                    <!-- 
-                        <img src="{{ asset('recursos_donation/img_flayers.jpg') }}" alt="image">
-                    -->
                     <div class="container-form">
                         <div class="container-text">
                             <h1>Formulario de Donación</h1>
