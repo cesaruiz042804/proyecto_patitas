@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros - Tu Clínica Veterinaria</title>
+<<<<<<< HEAD
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
     <link rel="stylesheet" href="{{ asset('asset_css/about.css') }}">
 </head>
 
@@ -59,7 +62,10 @@
                 <div class="content-title-services">
                     <h3>¿Qué Ofrecemos?</h3>
                 </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
                 <div class="content-list">
                     <div class="item">
                         <div class="item-img">
@@ -153,6 +159,7 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
 
                 <div class="container-flayers">
                     <div class="flyer-preview">
@@ -168,6 +175,8 @@
                         <img class="modal-content" id="flyerImage">
                     </div>
                 </div>
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
             </div>
 
             @include('extras.teams')

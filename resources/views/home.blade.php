@@ -8,7 +8,10 @@
     <link rel="preload" href="{{ asset('/recursos_home/img_background_login.jpg') }}" as="image">
     <link rel="stylesheet" href="{{ asset('asset_css/home.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<<<<<<< HEAD
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
     <!-- Librería para el uso de íconos
     php -S localhost:8000 -t public
     php -S 192.168.0.11:8000 -t public movil -->
@@ -16,6 +19,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 
     @if (session('partialMessage') == 'ok')
         @include('partials.messageGood')
@@ -27,6 +31,9 @@
         session()->forget('partialMessage'); // Elimina la variable 'partialMessage' de la sesión
     @endphp
 
+=======
+    
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
     @include('partials.navbar')
 
     <main>

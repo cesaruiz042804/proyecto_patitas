@@ -2,10 +2,17 @@
 
 @php
     use Illuminate\Support\Facades\Route; //importar la clase Route
+<<<<<<< HEAD
 @endphp
 
 <header>
     <div class="hamburger-menu {{ Route::currentRouteName() }}">
+=======
+@endphp 
+
+<header>
+    <div class="hamburger-menu {{ Route::currentRouteName() }}" >
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
         <input id="menu__toggle" type="checkbox" />
         <label class="menu__btn" for="menu__toggle">
             <span></span>
@@ -23,6 +30,7 @@
             <li><a class="menu__item" href="{{ route('products') }}">Tienda</a></li>
             @if (session()->has('user'))
                 <!-- Sección de perfil cuando el usuario está autenticado -->
+<<<<<<< HEAD
                 <!--
                 <img class="img-login"
                             src="{ asset('img_public/img_user.png') }}" alt="">
@@ -30,6 +38,9 @@
                 <li>
                     <a class="menu__item" href="{{ route('logout') }}">Cerrar sesión</a>
                 </li>
+=======
+                <li><a class="menu__item" href="{{ route('logout') }}">Cerrar sesión</a></li>
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
             @else
                 <!-- Botón de iniciar sesión cuando el usuario no está autenticado -->
                 <li><a class="menu__item" href="{{ route('login') }}">Iniciar sesión</a></li>

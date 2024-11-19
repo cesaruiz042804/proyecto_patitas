@@ -1,6 +1,7 @@
 .foot {
    background-color: #434372;
    text-align: center;
+<<<<<<< HEAD
    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.945);
    display: flex;
    width: 100%;
@@ -115,3 +116,28 @@
    width: 80%;
    margin: 20px auto;
 }
+=======
+   padding: 20px;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.945);
+   /* Sombra al hacer hover */
+}
+
+.foot p {
+   color: #f7f4f4;
+   padding: 0 100px;
+   margin-bottom: 35px;
+}
+
+.foot a {
+   display: inline-flex;
+   align-items: center; /* Centra el icono y el texto verticalmente */
+   margin-right: 35px;
+   text-decoration: none;
+   color: #f7f5ff;
+}
+
+.foot svg {
+   margin-right: 8px; /* Espacio entre el icono y el texto */
+   overflow: visible;
+}
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6

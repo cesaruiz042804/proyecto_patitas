@@ -8,8 +8,12 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+<<<<<<< HEAD
 use Symfony\Component\Mime\Email;
 use Illuminate\Support\Facades\Storage;
+=======
+
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
 
 class ConfirmationEmail extends Mailable
 {
@@ -17,12 +21,16 @@ class ConfirmationEmail extends Mailable
 
     public $token;
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
     public function __construct($token)
     {
         $this->token = $token;
     }
 
+<<<<<<< HEAD
     public function build()
     {
         return $this->view('mails.confirmationMail')
@@ -37,6 +45,8 @@ class ConfirmationEmail extends Mailable
     
     /*
 
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
     public function content(): Content
     {
         
@@ -55,19 +65,26 @@ class ConfirmationEmail extends Mailable
         );
     }
 
+<<<<<<< HEAD
     */
 
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
     /**
      * Get the attachments for the message.
      *
      * @return array<int, \Illuminate\Mail\Mailables\Attachment>
      */
+<<<<<<< HEAD
 
     /*
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
     public function attachments(): array
     {
         return [];
     }
+<<<<<<< HEAD
         */
 
     //public function build()
@@ -111,4 +128,6 @@ class ConfirmationEmail extends Mailable
     }
     */
     
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
 }

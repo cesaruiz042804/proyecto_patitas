@@ -4,6 +4,7 @@ function pageLoading(classForm){
 
    form.style.display = 'none';
    loading.style.display = 'block';
+<<<<<<< HEAD
 
    if (document.querySelector('.hamburger-menu')) {
       console.log('La clase .hamburger-menu existe en el DOM');
@@ -21,4 +22,6 @@ function pageLoading(classForm){
     console.log('La clase no existe en el DOM');
 }
   
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
 }

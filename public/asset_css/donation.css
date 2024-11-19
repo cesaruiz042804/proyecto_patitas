@@ -82,6 +82,10 @@ body {
    font-weight: bold;
    cursor: pointer;
    transition: box-shadow 0.3s ease;
+<<<<<<< HEAD
+=======
+   border-radius: 4%;
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
    margin: 4px 6px 4px 0;
 }
 
@@ -99,7 +103,11 @@ body {
 .container-form .quantity {
    border-radius: 20px;
    margin: 10px 5px;
+<<<<<<< HEAD
    width: 55%;
+=======
+   width: 35%;
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
    padding: 3px 0px 3px 10px;
    font-weight: bolder;
    transition: box-shadow 0.4s ease-in-out; /* Transición para suavizar el efecto */
@@ -116,6 +124,7 @@ body {
 
    .container-img {
       width: 90%;
+<<<<<<< HEAD
    }
 
    .container-form .quantity {
@@ -125,3 +134,9 @@ body {
    }
 }
 
+=======
+
+   }
+
+}
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6

@@ -8,8 +8,11 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Mail;
 use \App\Mail\EmailCitaMedica;
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
 
 class FormCitasController extends Controller
 {
@@ -65,6 +68,7 @@ class FormCitasController extends Controller
 
                 // Convertir fecha a Y-m-d
                 $dateConvert = Carbon::createFromFormat('Y-m-d', $validatedData['date'])->format('Y-m-d');
+<<<<<<< HEAD
 
                 Log::debug(session('user'));
 
@@ -101,6 +105,34 @@ class FormCitasController extends Controller
 
 
             return redirect()->route('home')->with('message', 'La cita médica de tu mascota ha sido creada con éxito. ¡Gracias por confiar en nosotros para el cuidado de tu peludo amigo!')->with('partialMessage', 'ok');;
+=======
+                
+                Log::debug(session('user'));
+                // Crear la instancia del modelo para la cita
+                $cita = table_cita::create([
+                    'user_id' => $validatedData['user'],
+                    'fecha_cita' => $dateConvert,
+                    'hora_cita' => $validatedData['datetimepicker'],
+                    'motivo_consulta' => $validatedData['consultation'],
+                    'imagen' => $nameImage, // Guarda el nombre de la imagen
+                ]);
+
+                // Crear la instancia del modelo para la mascota
+                $mascota = table_dato_mascota::create([
+                    'user_id' => $validatedData['user'],
+                    'nombre_mascota' => $validatedData['petName'],
+                    'especie' => $validatedData['species'],
+                    'raza' => $validatedData['breed'],
+                    'peso' => $validatedData['weight'],
+                    'color' => $validatedData['color'],
+                    'edad' => $validatedData['old'],
+                ]);
+
+            }
+
+            //Mail::to($user->email)->send(new ConfirmationEmail($token));
+            return redirect()->route('home');
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
         } catch (ValidationException $exception) {
             return redirect()->back()->withErrors($exception->errors())->withInput();
         }

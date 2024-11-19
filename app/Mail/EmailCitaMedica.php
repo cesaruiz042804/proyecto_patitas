@@ -8,12 +8,16 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+<<<<<<< HEAD
 use Symfony\Component\Mime\Email;
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
 
 class EmailCitaMedica extends Mailable
 {
     use Queueable, SerializesModels;
 
+<<<<<<< HEAD
     public $pet;
     public $date;
     public $hour;
@@ -40,6 +44,19 @@ class EmailCitaMedica extends Mailable
 
 
     /*
+=======
+    /**
+     * Create a new message instance.
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    /**
+     * Get the message envelope.
+     */
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
     public function envelope(): Envelope
     {
         return new Envelope(
@@ -47,6 +64,12 @@ class EmailCitaMedica extends Mailable
         );
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Get the message content definition.
+     */
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
     public function content(): Content
     {
         return new Content(
@@ -54,12 +77,23 @@ class EmailCitaMedica extends Mailable
         );
     }
 
+<<<<<<< HEAD
 
+=======
+    /**
+     * Get the attachments for the message.
+     *
+     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
+     */
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
     public function attachments(): array
     {
         return [];
     }
+<<<<<<< HEAD
     */
 
 
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
 }

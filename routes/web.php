@@ -17,13 +17,17 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
+<<<<<<< HEAD
 // Paginacion para el nav
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
 Route::get('/sobre-nosotros', [PaginacionController::class, 'call_sobre_nosotros'])->name('nosotros');
 Route::get('/sobre-nosotros', [PaginacionController::class, 'call_about'])->name('about');
 Route::get('/cita-medica', [PaginacionController::class, 'call_cita_medica'])->name('cita_medica')->middleware(SessionMiddleware::class);
 Route::post('/registrar-cita-medica', [FormCitasController::class, 'call_register_citas'])->name('register.citas');
 Route::get('/donacion', [PaginacionController::class, 'call_donation'])->name('donation');
 
+<<<<<<< HEAD
 // Rutas para login y creacion de cuenta
 Route::get('/login', [PaginacionController::class, 'call_login'])->name('login');
 Route::post('/login-session', [LoginController::class, 'call_login_session'])->name('login.session');
@@ -33,6 +37,16 @@ Route::get('/logout', [PaginacionController::class, 'call_logout'])->name('logou
 Route::post('/logout-session', [LoginController::class, 'call_logout_session'])->name('logout.session');
 
 // Rutas para a la parte de los productos y el carrito
+=======
+Route::get('/login', [PaginacionController::class, 'call_login'])->name('login');
+Route::post('/login-session', [LoginController::class, 'call_login_session'])->name('login.session');
+Route::post('/register', [LoginController::class, 'register'])->name('register');
+Route::get('confirm-email/{token}', [LoginController::class, 'confirmEmail'])->name('confirm-email');
+Route::get('email', [PaginacionController::class, 'call_blank'])->name('blank');
+Route::get('/logout', [PaginacionController::class, 'call_logout'])->name('logout');
+Route::post('/logout-session', [LoginController::class, 'call_logout_session'])->name('logout.session');
+
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
 Route::get('/products', [CartController::class, 'viewProducts'])->name('products')->middleware(SessionMiddleware::class);
 Route::post('/cart/add/{productId}', [CartController::class, 'addToCart'])->name('cart.add');
 Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
@@ -64,5 +78,8 @@ Route::post('/payment/webhook', [PaypalController::class, 'webhook']);
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6

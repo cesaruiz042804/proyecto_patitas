@@ -10,12 +10,16 @@
     <link rel="stylesheet" href="{{ asset('asset_css/login.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://unpkg.com/imask"></script>
+<<<<<<< HEAD
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
 
 </head>
 
 <body>
     <main>
+<<<<<<< HEAD
 
         @if (session('partialMessage') == 'ok')
             @include('partials.messageGood')
@@ -29,6 +33,11 @@
         
         <button class="btn-exit"><i class="fas fa-arrow-left"></i></button>
 
+=======
+        <button class="btn-exit"><i class="fas fa-arrow-left"></i></button>
+
+        @include('partials.messageErrors')
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
 
         <div class="container" id="container">
             <div class="container-content">
