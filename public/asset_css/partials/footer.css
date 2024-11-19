@@ -159,12 +159,13 @@
 .item-foot {
    display: flex;
    justify-content: center;  /* Centra los elementos horizontalmente */
+   align-items: center;      /* Centra los elementos verticalmente */
+   flex-wrap: wrap;          /* Permite que los elementos se ajusten en varias líneas */
+   gap: 10px;                /* Espacio uniforme entre los elementos */
    width: 100%;
-   align-items: center;
-   justify-items: center;
    padding: 8px 0;
-   flex-wrap: wrap;
 }
+
 
 .item-foot p {
    width: 33%;
@@ -178,7 +179,7 @@
 .item-foot a {
    font-size: 30px;
    color: #f7f5ff;
-   width: 6%;
+   width: 8%;
 }
 
 .item-title {
