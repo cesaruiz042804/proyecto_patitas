@@ -109,26 +109,6 @@
    box-shadow: 0 4px 5px #35ad35;
 }
 
-.foot {
-   background-color: #434372;
-   text-align: center;
-   padding: 20px;
-   box-shadow: 0 4px 15px rgba(216, 228, 216, 0.945);
-   /* Sombra al hacer hover */
-}
-
-.foot p {
-   color: #f7f4f4;
-   padding: 0 100px;
-   margin-bottom: 35px;
-}
-
-.foot a {
-   margin-right: 35px;
-   text-decoration: none;
-   color: #f7f5ff;
-}
-
 @media (max-width: 768px) {
    .header-items {
       width: 75%;

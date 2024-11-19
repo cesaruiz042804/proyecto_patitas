@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
-    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
 </head>
 
 <body>
@@ -34,62 +33,62 @@
                     </button>
                 </div>
             </div>
-            <div class="row">
-                @foreach ($products as $product)
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
+        </div>
+        <div class="row">
+            @foreach ($products as $product)
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
 
-                                @php
-                                    $cart = session()->get('cart', []);
-                                    $inCart = isset($cart[$product->id]);
-                                    $quantity = $inCart ? $cart[$product->id]['quantity'] : 0; // Obtén la cantidad si está en el carrito
-                                @endphp
+                            @php
+                                $cart = session()->get('cart', []);
+                                $inCart = isset($cart[$product->id]);
+                                $quantity = $inCart ? $cart[$product->id]['quantity'] : 0; // Obtén la cantidad si está en el carrito
+                            @endphp
 
-                                @if ($inCart)
+                            @if ($inCart)
                                 <div class="text-span">
                                     <span class="product-status" data-product-id="{{ $product->id }}">En el Carrito
                                         ({{ $quantity }})
                                     </span>
                                 </div>
-                                @else
+                            @else
                                 <div class="text-span">
                                     <span class="product-status" data-product-id="{{ $product->id }}">¡No te lo
                                         pierdas!</span>
                                 </div>
-                                @endif
-                                <div class="card-body-item">
-                                    <img src="{{ $product->image }}?v={{ $product->updated_at->timestamp }}"
-                                        class="card-img" alt="{{ $product->name }}" loading="lazy"
-                                        style="width: 200px; height: 200px;">
-                                    <h5 class="card-title">{{ $product->name }}</h5>
-                                    <p class="card-text">{{ $product->description }}</p>
-                                    <p class="card-text">Precio: ${{ number_format($product->price, 2) }}</p>
-                                </div>
-                                <div class="card-body-form">
-                                    <form action="{{ route('cart.add', $product->id) }}" method="POST"
-                                        class="add-to-cart-form" data-product-id="{{ $product->id }}">
-                                        @csrf
+                            @endif
+                            <div class="card-body-item">
+                                <img src="{{ $product->image }}?v={{ $product->updated_at->timestamp }}"
+                                    class="card-img" alt="{{ $product->name }}" loading="lazy"
+                                    style="width: 200px; height: 200px;">
+                                <h5 class="card-title">{{ $product->name }}</h5>
+                                <p class="card-text">{{ $product->description }}</p>
+                                <p class="card-text">Precio: ${{ number_format($product->price, 2) }}</p>
+                            </div>
+                            <div class="card-body-form">
+                                <form action="{{ route('cart.add', $product->id) }}" method="POST"
+                                    class="add-to-cart-form" data-product-id="{{ $product->id }}">
+                                    @csrf
 
 
-                                        <input type="hidden" name="quantity" class="inputQuantity"
-                                            value="{{ $quantity }}" min="1" step="1">
+                                    <input type="hidden" name="quantity" class="inputQuantity"
+                                        value="{{ $quantity }}" min="1" step="1">
 
-                                        @if ($inCart)
-                                            <button class="box-quantity">Actualizar cantidad</button>
-                                        @else
-                                            <!--
+                                    @if ($inCart)
+                                        <button class="box-quantity">Actualizar cantidad</button>
+                                    @else
+                                        <!--
                                                 <button type="submit" class="btn-primary btn-send">Agregar al carrito</button>
                                             -->
-                                            <button class="box-quantity">Agregar al carrito</button>
-                                        @endif
-                                    </form>
-                                </div>
+                                        <button class="box-quantity">Agregar al carrito</button>
+                                    @endif
+                                </form>
                             </div>
                         </div>
                     </div>
-                @endforeach
-            </div>
+                </div>
+            @endforeach
         </div>
     </main>
 
