@@ -39,7 +39,6 @@
                 <p class="person-name">{{ $person['name'] }}</p>
             </div>
         @endforeach
-
     </div>
 </section>
 
@@ -83,11 +82,5 @@
             <img src="{{ asset('recursos_sobre_nosotros/img_anyel.jpg') }}" alt="" /><span
                 class="name">Anyel</span>
         </div>
-<<<<<<< HEAD
 
--->
-=======
-    </div>
-</section>
->>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
+    -->
