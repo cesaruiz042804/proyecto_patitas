@@ -15,7 +15,7 @@ class ProductSeeder extends Seeder
             'description' => 'Un sofisticado plato doble diseñado especialmente para consentir a tu gato. Su diseño elegante y funcional permite que tu mascota disfrute de su comida y agua al mismo tiempo, manteniendo la elegancia en tu hogar.',
             'cedula' => '123456789',
             'price' => 25.00,
-            'image' => 'img_public/cat_bowl_double.jpg',
+            'image' => 'resources_products/cat_bowl_double.jpg',
         ]);
 
         Product::create([
@@ -23,7 +23,7 @@ class ProductSeeder extends Seeder
             'description' => 'Estos collares para gatos combinan estilo y comodidad. Hechos con materiales de alta calidad, cada collar es un accesorio perfecto que asegura el bienestar y la seguridad de tu felino, sin sacrificar la elegancia.',
             'cedula' => '123456780',
             'price' => 10.00,
-            'image' => 'img_public/cat_collars.jpg',
+            'image' => 'resources_products/cat_collars.jpg',
         ]);
 
         Product::create([
@@ -31,7 +31,7 @@ class ProductSeeder extends Seeder
             'description' => 'Un arnés exquisito que permite a tu gato explorar el mundo exterior con estilo. Diseñado para brindar comodidad y seguridad, este arnés es perfecto para paseos tranquilos y aventuras elegantes.',
             'cedula' => '123456781',
             'price' => 20.00,
-            'image' => 'img_public/cat_harness.jpg',
+            'image' => 'resources_products/cat_harness.jpg',
         ]);
 
         Product::create([
@@ -39,7 +39,7 @@ class ProductSeeder extends Seeder
             'description' => 'Un desparasitante eficaz y seguro que cuida de la salud de tu mascota. Formulado con ingredientes de calidad, garantiza el bienestar de tu amigo peludo, ayudando a mantenerlo sano y feliz.',
             'cedula' => '123456782',
             'price' => 15.00,
-            'image' => 'img_public/dewormer.jpg',
+            'image' => 'resources_products/dewormer.jpg',
         ]);
 
         Product::create([
@@ -47,7 +47,7 @@ class ProductSeeder extends Seeder
             'description' => 'Una divertida pelota diseñada para mantener a tu perro activo y entretenido. Su material resistente asegura horas de juego, fomentando la actividad física y el bienestar de tu fiel compañero.',
             'cedula' => '123456783',
             'price' => 5.00,
-            'image' => 'img_public/dog_ball.webp',
+            'image' => 'resources_products/dog_ball.webp',
         ]);
 
         Product::create([
@@ -55,7 +55,7 @@ class ProductSeeder extends Seeder
             'description' => 'La cama perfecta para que tu perro descanse con estilo. Su diseño lujoso y confortable proporciona un espacio acogedor, asegurando que tu amigo peludo disfrute de dulces sueños y descanso reparador.',
             'cedula' => '123456784',
             'price' => 50.00,
-            'image' => 'img_public/dog_bed.jpg',
+            'image' => 'resources_products/dog_bed.jpg',
         ]);
 
         Product::create([
@@ -63,7 +63,7 @@ class ProductSeeder extends Seeder
             'description' => 'Un plato doble elegante y funcional que satisface las necesidades de alimentación y hidratación de tu perro. Diseñado para facilitar la vida diaria y embellecer tu hogar al mismo tiempo.',
             'cedula' => '123456785',
             'price' => 25.00,
-            'image' => 'img_public/dog_bowl_double.jpg',
+            'image' => 'resources_products/dog_bowl_double.jpg',
         ]);
 
         Product::create([
@@ -71,7 +71,7 @@ class ProductSeeder extends Seeder
             'description' => 'Un plato exquisito que combina funcionalidad y diseño. Perfecto para las comidas de tu perro, este plato es resistente y fácil de limpiar, asegurando que cada comida sea un placer.',
             'cedula' => '123456786',
             'price' => 15.00,
-            'image' => 'img_public/dog_bowl.webp',
+            'image' => 'resources_products/dog_bowl.webp',
         ]);
 
         Product::create([
@@ -79,7 +79,7 @@ class ProductSeeder extends Seeder
             'description' => 'Collares elegantes que ofrecen seguridad y estilo a tu perro. Hechos con materiales duraderos, son perfectos para paseos y aventuras, garantizando que tu mascota luzca increíble.',
             'cedula' => '123456787',
             'price' => 10.00,
-            'image' => 'img_public/dog_collars.jpg',
+            'image' => 'resources_products/dog_collars.jpg',
         ]);
 
         Product::create([
@@ -87,7 +87,7 @@ class ProductSeeder extends Seeder
             'description' => 'Un arnés práctico y elegante que asegura la comodidad y seguridad de tu perro durante los paseos. Su diseño ergonómico permite una movilidad óptima, haciendo de cada salida una experiencia agradable.',
             'cedula' => '123456788',
             'price' => 20.00,
-            'image' => 'img_public/dog_harness.jpg',
+            'image' => 'resources_products/dog_harness.jpg',
         ]);
 
         Product::create([
@@ -95,7 +95,7 @@ class ProductSeeder extends Seeder
             'description' => 'Una correa de alta calidad que proporciona control y estilo. Diseñada para asegurar la comodidad y seguridad de tu perro, es perfecta para paseos tranquilos y emocionantes aventuras.',
             'cedula' => '123456789',
             'price' => 15.00,
-            'image' => 'img_public/dog_leash.jpg',
+            'image' => 'resources_products/dog_leash.jpg',
         ]);
 
         Product::create([
@@ -103,7 +103,7 @@ class ProductSeeder extends Seeder
             'description' => 'Una hermosa casa para perros que combina estilo y comodidad. Diseñada para brindar un refugio acogedor, tu perro se sentirá seguro y feliz en su propio espacio personal.',
             'cedula' => '123456790',
             'price' => 100.00,
-            'image' => 'img_public/house_dog.jpg',
+            'image' => 'resources_products/house_dog.jpg',
         ]);
 
         Product::create([
@@ -111,7 +111,7 @@ class ProductSeeder extends Seeder
             'description' => 'Un juguete de cuerda resistente que fomenta la diversión y el ejercicio. Ideal para jugar a tirar y aflojar, este juguete no solo entretiene, sino que también fortalece el vínculo entre tú y tu perro.',
             'cedula' => '123456791',
             'price' => 8.00,
-            'image' => 'img_public/rope_tug.jpg',
+            'image' => 'resources_products/rope_tug.jpg',
         ]);
 
         Product::create([
@@ -119,7 +119,7 @@ class ProductSeeder extends Seeder
             'description' => 'Un champú suave y efectivo, formulado especialmente para el cuidado de la piel y el pelaje de tu mascota. Su aroma fresco y propiedades hidratantes dejan a tu compañero peludo luciendo y oliendo maravillosamente.',
             'cedula' => '123456792',
             'price' => 12.00,
-            'image' => 'img_public/shampoo.jpg',
+            'image' => 'resources_products/shampoo.jpg',
         ]);
     }
 }

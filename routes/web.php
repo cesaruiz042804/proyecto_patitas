@@ -60,3 +60,6 @@ Route::post('/payment/webhook', [PaypalController::class, 'webhook']);
 
 
 
+# git add .
+# git commit -m "Escribir"
+# git push origin main o master

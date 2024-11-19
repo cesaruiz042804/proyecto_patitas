@@ -95,13 +95,13 @@
    .item-foot a {
       font-size: 30px;
       color: #f7f5ff;
-      width: 18%;
+      width: 15%;
 
    }
 
    .item-foot p {
       width: 100%;
-      padding: 10px 0;
+      padding: 5px 0;
    }
 
    .nav-foot a{
@@ -113,7 +113,7 @@
    display: flex;
    flex-direction: column;
    width: 100%;
-   min-height: 20vh; /* Toma toda la altura disponible */
+   min-height: 15vh; /* Toma toda la altura disponible */
    height: auto;
 }
 

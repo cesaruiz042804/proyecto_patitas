@@ -8,7 +8,6 @@
     <title>Proceso de pago</title>
     <link rel="stylesheet" href="{{ asset('asset_css/payment_paypal.css') }}">
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
-    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
 </head>
 
 <body>
@@ -43,9 +42,9 @@
             @endif
 
             <!-- URLs de retorno -->
-            <input type="hidden" name="return" value="https://95b3-190-219-188-201.ngrok-free.app/payment/success">
+            <input type="hidden" name="return" value="{{ route('home') }}">
             <input type="hidden" name="notify_url" value="https://95b3-190-219-188-201.ngrok-free.app/payment/webhook">
-            <input type="hidden" name="cancel_return" value="https://95b3-190-219-188-201.ngrok-free.app/cart">
+            <input type="hidden" name="cancel_return" value="{{ route('home') }}">
 
             <input type="submit" value="Pagar con PayPal">
         </form>
