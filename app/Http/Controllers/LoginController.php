@@ -63,24 +63,32 @@ class LoginController extends Controller
                 'telefono' => $validatedData['tel'], // tel se convierte en telefono
                 'password' => Hash::make($validatedData['password']), // Encriptar la contraseña
             ]);
+            
+            //Log::debug($token);
 
             Mail::to($user->email)->send(new ConfirmationEmail($token));
+            //Mail::to('cesaruiz042804@gmail.com')->send(new ConfirmationEmail($token));
 
-            return redirect()->route('blank')->with('message', 'Te hemos enviado un correo para confirmar tu correo')->with('log', 'success');
+            return redirect()->route('login')->with('message', 'Te hemos enviado un correo para confirmar tu correo')->with('log', 'success')->with('partialMessage', 'ok');
         } catch (ValidationException $exception) {
-            Log::debug("Catch");
+            Log::debug("Catch 1 - exception");
             return redirect()->back()->withErrors($exception->errors())->withInput();
         }
     }
 
-    public function confirmEmail($token)
+    public function call_confirmEmail($token)
     {
+
+        if (empty($token)) {
+            return redirect()->route('login')->with('message', 'El token es inválido o no se proporcionó.')->with('partialMessage', 'okno');
+        }
+        
         try {
             // Buscar el token en la base de datos
             $confirmation =  table_email_confirmation::where('token', $token)->first();
 
             if (!$confirmation) {
-                return redirect()->route('blank')->with(['message' => 'Token no válido.'], 404);
+                return redirect()->route('login')->with(['message' => 'Token no válido.'])->with('partialMessage', 'okno');
             }
 
             // Verificar si el token ha expirado (por ejemplo, 60 minutos)
@@ -88,7 +96,7 @@ class LoginController extends Controller
             $createdAt = \Carbon\Carbon::parse($confirmation->created_at); // Obtener la fecha de creación
             if ($createdAt->addMinutes($expirationTime)->isPast()) {
                 // Si ha pasado el tiempo de expiración
-                return redirect()->route('blank')->with(['message' => 'El token ha expirado.']);
+                return  redirect()->route('login')->with(['message' => 'El token ha expirado.'])->with('partialMessage', 'okno');
             }
 
             // Crear el usuario definitivo
@@ -104,8 +112,9 @@ class LoginController extends Controller
             // Eliminar el token de la base de datos
             table_email_confirmation::where('token', $token)->delete();
 
-            return redirect()->route('blank')->with(['message' => 'Cuenta confirmada con éxito.']);
+            return redirect()->route('home')->with(['message' => 'Cuenta confirmada con éxito.'])->with('partialMessage', 'ok');
         } catch (\Illuminate\Database\QueryException $e) {
+            return redirect()->route('login')->with(['message' => 'Hubo un problema al procesar la solicitud.'])->with('partialMessage', 'okno');
         }
     }
 

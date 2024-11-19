@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros - Tu Clínica Veterinaria</title>
+    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
     <link rel="stylesheet" href="{{ asset('asset_css/about.css') }}">
 </head>
 
@@ -58,6 +59,7 @@
                 <div class="content-title-services">
                     <h3>¿Qué Ofrecemos?</h3>
                 </div>
+
                 <div class="content-list">
                     <div class="item">
                         <div class="item-img">
@@ -149,6 +151,21 @@
                             <p>Ayúdanos a continuar nuestra misión con una donación. Cada contribución es una
                                 oportunidad para salvar una vida.</p>
                         </div>
+                    </div>
+                </div>
+
+                <div class="container-flayers">
+                    <div class="flyer-preview">
+                        <button class="flyer-thumbnail"
+                            onclick="showFlyer('{{ asset('recursos_donation/img_flayers.jpg') }}')">Explora nuestra última novedad</button>
+                    </div>
+
+                    <div id="flyerModal" class="modal">
+                        <div class="caption"><a href="{{ route('donation') }}"
+                                style="color: aliceblue; text-decoration: none;">Puedes apoyarnos dandole click aquí</a>
+                        </div>
+                        <span class="close" onclick="closeFlyer()">&times;</span>
+                        <img class="modal-content" id="flyerImage">
                     </div>
                 </div>
             </div>

@@ -10,14 +10,25 @@
     <link rel="stylesheet" href="{{ asset('asset_css/login.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://unpkg.com/imask"></script>
+    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
 
 </head>
 
 <body>
     <main>
+
+        @if (session('partialMessage') == 'ok')
+            @include('partials.messageGood')
+        @else
+            @include('partials.messageErrors')
+        @endif
+
+        @php
+            session()->forget('partialMessage'); // Elimina la variable 'partialMessage' de la sesión
+        @endphp
+        
         <button class="btn-exit"><i class="fas fa-arrow-left"></i></button>
 
-        @include('partials.messageErrors')
 
         <div class="container" id="container">
             <div class="container-content">

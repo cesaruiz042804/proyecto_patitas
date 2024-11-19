@@ -8,8 +8,8 @@
 
             // Mostrar SweetAlert con soporte HTML
             Swal.fire({
-                icon: 'error', // Cambia 'error' a 'success' si es un mensaje de éxito
-                title: 'Oops...',
+                icon: 'success', // Cambia 'error' a 'success' si es un mensaje de éxito
+                title: 'Éxito',
                 html: message, // Usar 'html' para que acepte etiquetas HTML
                 confirmButtonText: 'Aceptar'
             });

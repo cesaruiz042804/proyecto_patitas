@@ -8,22 +8,38 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Symfony\Component\Mime\Email;
 
 class EmailCitaMedica extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     */
-    public function __construct()
+    public $pet;
+    public $date;
+    public $hour;
+
+    public function __construct($pet, $date, $hour)
     {
-        //
+        $this->pet = $pet;
+        $this->date = $date;
+        $this->hour = $hour;
     }
 
-    /**
-     * Get the message envelope.
-     */
+    public function build()
+    {
+        return $this->view('mails.consultationMail')
+        ->with(['pet' => $this->pet])
+        ->with(['date' => $this->date])
+        ->with(['hour' => $this->hour])
+        ->withSymfonyMessage(function (Email $message) {
+            $message->embed(fopen(public_path('recursos_donation/img_flayers.jpg'), 'r'), 'recursos_donation');
+        });
+
+        return $email;
+    }
+
+
+    /*
     public function envelope(): Envelope
     {
         return new Envelope(
@@ -31,9 +47,6 @@ class EmailCitaMedica extends Mailable
         );
     }
 
-    /**
-     * Get the message content definition.
-     */
     public function content(): Content
     {
         return new Content(
@@ -41,13 +54,12 @@ class EmailCitaMedica extends Mailable
         );
     }
 
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
-     */
+
     public function attachments(): array
     {
         return [];
     }
+    */
+
+
 }

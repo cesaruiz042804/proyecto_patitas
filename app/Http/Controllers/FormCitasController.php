@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use \App\Mail\EmailCitaMedica;
 
 class FormCitasController extends Controller
 {
@@ -63,32 +65,42 @@ class FormCitasController extends Controller
 
                 // Convertir fecha a Y-m-d
                 $dateConvert = Carbon::createFromFormat('Y-m-d', $validatedData['date'])->format('Y-m-d');
-                
+
                 Log::debug(session('user'));
-                // Crear la instancia del modelo para la cita
-                $cita = table_cita::create([
-                    'user_id' => $validatedData['user'],
-                    'fecha_cita' => $dateConvert,
-                    'hora_cita' => $validatedData['datetimepicker'],
-                    'motivo_consulta' => $validatedData['consultation'],
-                    'imagen' => $nameImage, // Guarda el nombre de la imagen
-                ]);
 
-                // Crear la instancia del modelo para la mascota
-                $mascota = table_dato_mascota::create([
-                    'user_id' => $validatedData['user'],
-                    'nombre_mascota' => $validatedData['petName'],
-                    'especie' => $validatedData['species'],
-                    'raza' => $validatedData['breed'],
-                    'peso' => $validatedData['weight'],
-                    'color' => $validatedData['color'],
-                    'edad' => $validatedData['old'],
-                ]);
 
+                $data = \App\Models\table_user::find($validatedData['user']);
+
+                if ($data) {
+                    // Crear la instancia del modelo para la cita
+                    $cita = table_cita::create([
+                        'user_id' => $validatedData['user'],
+                        'fecha_cita' => $dateConvert,
+                        'hora_cita' => $validatedData['datetimepicker'],
+                        'motivo_consulta' => $validatedData['consultation'],
+                        'imagen' => $nameImage, // Guarda el nombre de la imagen
+                    ]);
+
+                    // Crear la instancia del modelo para la mascota
+                    $mascota = table_dato_mascota::create([
+                        'user_id' => $validatedData['user'],
+                        'nombre_mascota' => $validatedData['petName'],
+                        'especie' => $validatedData['species'],
+                        'raza' => $validatedData['breed'],
+                        'peso' => $validatedData['weight'],
+                        'color' => $validatedData['color'],
+                        'edad' => $validatedData['old'],
+                    ]);
+
+                    Mail::to($data->email)->send(new EmailCitaMedica($mascota->nombre_mascota, $cita->fecha_cita, $cita->hora_cita));
+                    Log::debug($mascota->nombre_mascota);
+                } else {
+                    return redirect()->route('cita_medica')->with('message', 'Ocurrió un problema (debes estar logueado en la página')->with('partialMessage', 'okno');
+                }
             }
 
-            //Mail::to($user->email)->send(new ConfirmationEmail($token));
-            return redirect()->route('home');
+
+            return redirect()->route('home')->with('message', 'La cita médica de tu mascota ha sido creada con éxito. ¡Gracias por confiar en nosotros para el cuidado de tu peludo amigo!')->with('partialMessage', 'ok');;
         } catch (ValidationException $exception) {
             return redirect()->back()->withErrors($exception->errors())->withInput();
         }
