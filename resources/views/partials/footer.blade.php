@@ -20,9 +20,11 @@
                 <a href="https://www.whatsapp.com" target="_blank"><i class="bi bi-whatsapp"></i></a>
                 <a href="https://www.youtube.com" target="_blank"><i class="bi bi-youtube"></i></a>
             </div>
+        </div>
 
-            <hr class="divider">
-
+        <hr class="divider">
+        
+        <div>
             <div class="item-foot">
                 <p href="/politica-privacidad" target="_blank">Política de Privacidad</p>
                 <p href="/terminos-condiciones" target="_blank">Términos y Condiciones</p>

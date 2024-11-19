@@ -109,24 +109,6 @@
    }
 }
 
-.divider {
-   height: 2px;
-   background: linear-gradient(to right, #f7f5ff, #434372); /* Gradiente de color */
-   width: 80%;
-   margin: 20px auto;
-   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.945);
-   display: flex;
-   width: 100%;
-   flex-direction: column;
-   min-height: 40vh;
-   color: #f7f5ff;
-   justify-content: center;
-   justify-items: center;
-   align-items: center;
-   height: auto;
-   overflow-x: hidden;
-}
-
 .container-foot {
    display: flex;
    flex-direction: column;
@@ -226,5 +208,5 @@
    height: 2px;
    background: linear-gradient(to right, #f7f5ff, #434372); /* Gradiente de color */
    width: 80%;
-   margin: 20px auto;
+   margin: 2px auto;
 }
