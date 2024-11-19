@@ -20,7 +20,8 @@ body {
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;
-   background-color: rgba(7, 7, 12, 0.804); /* Un color de fondo oscuro para dar contraste */
+   background-color: rgba(7, 7, 12, 0.804);
+   /* Un color de fondo oscuro para dar contraste */
    background-blend-mode: darken;
 }
 
@@ -39,7 +40,7 @@ body {
    justify-items: center;
    flex-direction: column;
    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-   0 10px 10px rgba(0, 0, 0, 0.22);
+      0 10px 10px rgba(0, 0, 0, 0.22);
    background-color: rgba(255, 255, 255, 0.097);
    padding: 20px 0;
    border-radius: 5px;
@@ -82,13 +83,6 @@ body {
    font-weight: bold;
    cursor: pointer;
    transition: box-shadow 0.3s ease;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-   border-radius: 4%;
->>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
    margin: 4px 6px 4px 0;
 }
 
@@ -106,23 +100,18 @@ body {
 .container-form .quantity {
    border-radius: 20px;
    margin: 10px 5px;
-<<<<<<< HEAD
    width: 55%;
-=======
-<<<<<<< HEAD
    width: 55%;
-=======
-   width: 35%;
->>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
    padding: 3px 0px 3px 10px;
    font-weight: bolder;
-   transition: box-shadow 0.4s ease-in-out; /* Transición para suavizar el efecto */
-   box-shadow: 0 0 0 rgba(255, 255, 255, 0); /* Inicialmente sin sombra */
+   transition: box-shadow 0.4s ease-in-out;
+   /* Transición para suavizar el efecto */
+   box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+   /* Inicialmente sin sombra */
    border: 4px solid rgba(80, 80, 80, 0.557);
 }
 
-.container-text{
+.container-text {
    padding: 25px;
    color: #ffffffd9;
 }
@@ -131,7 +120,6 @@ body {
 
    .container-img {
       width: 90%;
-<<<<<<< HEAD
    }
 
    .container-form .quantity {
@@ -141,21 +129,9 @@ body {
    }
 }
 
-=======
-<<<<<<< HEAD
-   }
 
-   .container-form .quantity {
-      border-radius: 20px;
-      margin: 10px 5px;
-      width: 75%;
-   }
+.container-form .quantity {
+   border-radius: 20px;
+   margin: 10px 5px;
+   width: 75%;
 }
-
-=======
-
-   }
-
-}
->>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d

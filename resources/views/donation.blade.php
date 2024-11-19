@@ -6,43 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donación</title>
     <link rel="stylesheet" href="{{ asset('asset_css/donation.css') }}">
-<<<<<<< HEAD
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
-=======
-<<<<<<< HEAD
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
-=======
->>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 </head>
 
 <body>
 
     @include('partials.navbar')
-<<<<<<< HEAD
     
-=======
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
     <main>
         <div class="container">
             <div class="container-target">
                 <div class="container-img">
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-                    <!-- 
-                        <img src="{{ asset('recursos_donation/img_flayers.jpg') }}" alt="image">
-                    -->
->>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
                     <div class="container-form">
                         <div class="container-text">
                             <h1>Formulario de Donación</h1>

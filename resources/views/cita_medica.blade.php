@@ -8,14 +8,8 @@
     <link rel="preload" href="{{ asset('img_public/logo.png') }}" as="image">
     <link rel="preload" href="{{ asset('recursos_sobre_nosotros/img-form.jpg') }}" as="image">
     <link rel="stylesheet" href="{{ asset('asset_css/cita_medica.css') }}">
-<<<<<<< HEAD
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
-=======
-<<<<<<< HEAD
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
-=======
->>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
     <script src="https://unpkg.com/imask"></script>
 </head>
 
@@ -23,10 +17,6 @@
 
     @include('partials.navbar')
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
     @if (session('partialMessage') == 'ok')
         @include('partials.messageGood')
     @else
@@ -36,13 +26,6 @@
     @php
         session()->forget('partialMessage'); // Elimina la variable 'partialMessage' de la sesión
     @endphp
-<<<<<<< HEAD
-=======
-=======
-    @include('partials.messageErrors')
-    @include('partials.messageGood')
->>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 
     <main>
         <div class="container">

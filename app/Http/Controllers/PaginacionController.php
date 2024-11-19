@@ -43,17 +43,6 @@ class PaginacionController extends Controller
         return view('logout');
     }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-    public function call_blank()
-    {
-        return view('blank');
-    }
-
->>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
     public function call_checkout_paypal() 
     {
         return view('payment_paypal');

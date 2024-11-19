@@ -5,10 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-=======
-<<<<<<< HEAD
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <title>Patitas al rescate</title>
 </head>
@@ -74,8 +71,6 @@
 
     </footer>
 
-=======
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
     <title>Patitas al rescate</title>
 </head>
 
@@ -108,7 +103,6 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
     <footer
         style="background-color: #6c63ff; text-align: center; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.945); display: flex; width: 100%; flex-direction: column; min-height: 20vh; color: #f7f5ff; justify-content: center; justify-items: center; align-items: center; height: auto; overflow-x: hidden;">
         <div class="container-foot"
@@ -141,9 +135,6 @@
 
     </footer>
 
-=======
->>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 </body>
 
 </html>

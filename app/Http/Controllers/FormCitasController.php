@@ -8,16 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Mail;
 use \App\Mail\EmailCitaMedica;
-=======
-<<<<<<< HEAD
-use Illuminate\Support\Facades\Mail;
-use \App\Mail\EmailCitaMedica;
-=======
->>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 
 class FormCitasController extends Controller
 {
@@ -73,10 +65,6 @@ class FormCitasController extends Controller
 
                 // Convertir fecha a Y-m-d
                 $dateConvert = Carbon::createFromFormat('Y-m-d', $validatedData['date'])->format('Y-m-d');
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
 
                 Log::debug(session('user'));
 
@@ -111,11 +99,7 @@ class FormCitasController extends Controller
                 }
             }
 
-
             return redirect()->route('home')->with('message', 'La cita médica de tu mascota ha sido creada con éxito. ¡Gracias por confiar en nosotros para el cuidado de tu peludo amigo!')->with('partialMessage', 'ok');;
-=======
-                
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
                 Log::debug(session('user'));
 
 
@@ -147,16 +131,8 @@ class FormCitasController extends Controller
                 } else {
                     return redirect()->route('cita_medica')->with('message', 'Ocurrió un problema (debes estar logueado en la página')->with('partialMessage', 'okno');
                 }
-            }
-
-<<<<<<< HEAD
-
+            
             return redirect()->route('home')->with('message', 'La cita médica de tu mascota ha sido creada con éxito. ¡Gracias por confiar en nosotros para el cuidado de tu peludo amigo!')->with('partialMessage', 'ok');;
-=======
-            //Mail::to($user->email)->send(new ConfirmationEmail($token));
-            return redirect()->route('home');
->>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
         } catch (ValidationException $exception) {
             return redirect()->back()->withErrors($exception->errors())->withInput();
         }

@@ -1,9 +1,119 @@
 .foot {
    background-color: #434372;
    text-align: center;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.945);
+   display: flex;
+   width: 100%;
+   flex-direction: column;
+   min-height: 40vh;
+   color: #f7f5ff;
+   justify-content: center;
+   justify-items: center;
+   align-items: center;
+   height: auto;
+   overflow-x: hidden;
+}
+
+.container-foot {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   min-height: 20vh; /* Toma toda la altura disponible */
+   height: auto;
+}
+
+.nav-foot {
+   background-color: #bdbdbd3a;
+   color: black;
+   display: flex;
+   width: 100%;
+   justify-content: center;
+   align-items: center;
+   align-items: stretch; /* Ajusta los elementos hijos al alto del contenedor */
+}
+
+.nav-foot li {
+   text-decoration: none;
+   list-style: none;
+   width: 10%;
+   padding: 35px 25px;
+   color: black;
+   text-align: center;
+}
+
+.nav-foot a{
+   text-decoration: none;
+   color: #f7f5ff;
+   text-align: center;
+   font-size: 18px;
+   justify-content: center;
+   text-shadow: 2px 2px 3px rgb(182, 182, 182);
+   font-weight: 600;
+}
+
+.nav-foot a:hover{
+   color: rgb(34, 33, 34);
+}
+
+
+.foot svg {
+   margin-right: 8px;
+   overflow: visible;
+}
+
+.item-foot {
+   display: flex;
+   justify-content: center;  /* Centra los elementos horizontalmente */
+   width: 100%;
+   align-items: center;
+   justify-items: center;
+   padding: 8px 0;
+   flex-wrap: wrap;
+}
+
+.item-foot p {
+   width: 33%;
+   text-align: center;
+   color: #fff;
+   text-decoration: none;
+   font-size: 18px;
+   padding: 25px 0;
+}
+
+.item-foot a {
+   font-size: 30px;
+   color: #f7f5ff;
+   width: 6%;
+}
+
+.item-title {
+   font-size: 30px;
+}
+
+
+@media (max-width: 768px) {
+   .item-foot a {
+      font-size: 30px;
+      color: #f7f5ff;
+      width: 18%;
+
+   }
+
+   .item-foot p {
+      width: 100%;
+      padding: 10px 0;
+   }
+
+   .nav-foot a{
+      font-size: 15px;
+   }
+}
+
+.divider {
+   height: 2px;
+   background: linear-gradient(to right, #f7f5ff, #434372); /* Gradiente de color */
+   width: 80%;
+   margin: 20px auto;
    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.945);
    display: flex;
    width: 100%;
@@ -118,124 +228,3 @@
    width: 80%;
    margin: 20px auto;
 }
-=======
-   padding: 20px;
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
-   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.945);
-   display: flex;
-   width: 100%;
-   flex-direction: column;
-   min-height: 40vh;
-   color: #f7f5ff;
-   justify-content: center;
-   justify-items: center;
-   align-items: center;
-   height: auto;
-   overflow-x: hidden;
-}
-
-.container-foot {
-   display: flex;
-   flex-direction: column;
-   width: 100%;
-   min-height: 20vh; /* Toma toda la altura disponible */
-   height: auto;
-}
-
-.nav-foot {
-   background-color: #bdbdbd3a;
-   color: black;
-   display: flex;
-   width: 100%;
-   justify-content: center;
-   align-items: center;
-   align-items: stretch; /* Ajusta los elementos hijos al alto del contenedor */
-}
-
-.nav-foot li {
-   text-decoration: none;
-   list-style: none;
-   width: 10%;
-   padding: 35px 25px;
-   color: black;
-   text-align: center;
-}
-
-.nav-foot a{
-   text-decoration: none;
-   color: #f7f5ff;
-   text-align: center;
-   font-size: 18px;
-   justify-content: center;
-   text-shadow: 2px 2px 3px rgb(182, 182, 182);
-   font-weight: 600;
-}
-
-.nav-foot a:hover{
-   color: rgb(34, 33, 34);
-}
-
-
-.foot svg {
-   margin-right: 8px;
-   overflow: visible;
-}
-<<<<<<< HEAD
-
-.item-foot {
-   display: flex;
-   justify-content: center;  /* Centra los elementos horizontalmente */
-   width: 100%;
-   align-items: center;
-   justify-items: center;
-   padding: 8px 0;
-   flex-wrap: wrap;
-}
-
-.item-foot p {
-   width: 33%;
-   text-align: center;
-   color: #fff;
-   text-decoration: none;
-   font-size: 18px;
-   padding: 25px 0;
-}
-
-.item-foot a {
-   font-size: 30px;
-   color: #f7f5ff;
-   width: 6%;
-}
-
-.item-title {
-   font-size: 30px;
-}
-
-
-@media (max-width: 768px) {
-   .item-foot a {
-      font-size: 30px;
-      color: #f7f5ff;
-      width: 18%;
-
-   }
-
-   .item-foot p {
-      width: 100%;
-      padding: 10px 0;
-   }
-
-   .nav-foot a{
-      font-size: 15px;
-   }
-}
-
-.divider {
-   height: 2px;
-   background: linear-gradient(to right, #f7f5ff, #434372); /* Gradiente de color */
-   width: 80%;
-   margin: 20px auto;
-}
-=======
->>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
