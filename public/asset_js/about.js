@@ -19,6 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
    lazyBackgrounds.forEach(bg => observer.observe(bg));
 });
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 
 
 function showFlyer(img) {
@@ -31,3 +35,8 @@ function showFlyer(img) {
 function closeFlyer() {
     document.getElementById('flyerModal').style.display = "none";
 }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d

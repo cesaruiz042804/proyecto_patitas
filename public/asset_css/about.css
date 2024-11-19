@@ -9,7 +9,14 @@
 
 body {
     text-align: center;
+<<<<<<< HEAD
     background-color: #edededa1;
+=======
+<<<<<<< HEAD
+    background-color: #edededa1;
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 }
 
 .container {
@@ -27,7 +34,14 @@ body {
     justify-content: center;
     margin: auto;
     padding: 40px 0;
+<<<<<<< HEAD
     background-color: #dadada35;
+=======
+<<<<<<< HEAD
+    background-color: #dadada35;
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 }
 
 .text-principal {
@@ -35,7 +49,14 @@ body {
     flex-direction: column;
     width: 60%;
     margin: auto;
+<<<<<<< HEAD
     color: #403192;
+=======
+<<<<<<< HEAD
+    color: #403192;
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 }
 
 .video {
@@ -136,8 +157,16 @@ h3 {
     min-height: 100vh;
     height: auto;
     margin: auto;
+<<<<<<< HEAD
     background-color: #dadada35;
     padding: 20px 0;
+=======
+<<<<<<< HEAD
+    background-color: #dadada35;
+    padding: 20px 0;
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 }
 
 .content-title-services {
@@ -211,11 +240,20 @@ h3 {
     color: #363636;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 .container-flayers img {
     height: 80vh;
     height: 60vw;
 }
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 .about-us-form {
     display: flex;
     flex-direction: column;
@@ -300,6 +338,10 @@ h3 {
     color: #ddd;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 .container-flayers button {
     border-radius: 20px;
     background-color: #403192;
@@ -324,6 +366,11 @@ h3 {
     /* Sombra al hacer hover */
 }
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 @media (max-width: 768px) {
     .menu__btn>span,
     .menu__btn>span::before,
@@ -419,6 +466,10 @@ h3 {
     .form-group button {
         width: 80%;
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 }
 
 /* Esto es para el modal */
@@ -467,3 +518,9 @@ h3 {
     font-size: 20px;
     padding: 10px 0;
 }
+<<<<<<< HEAD
+=======
+=======
+}
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d

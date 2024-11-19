@@ -8,8 +8,17 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+<<<<<<< HEAD
 use Symfony\Component\Mime\Email;
 use Illuminate\Support\Facades\Storage;
+=======
+<<<<<<< HEAD
+use Symfony\Component\Mime\Email;
+use Illuminate\Support\Facades\Storage;
+=======
+
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 
 class ConfirmationEmail extends Mailable
 {
@@ -17,12 +26,23 @@ class ConfirmationEmail extends Mailable
 
     public $token;
 
+<<<<<<< HEAD
     
+=======
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
     public function __construct($token)
     {
         $this->token = $token;
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
     public function build()
     {
         return $this->view('mails.confirmationMail')
@@ -37,6 +57,11 @@ class ConfirmationEmail extends Mailable
     
     /*
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
     public function content(): Content
     {
         
@@ -55,19 +80,39 @@ class ConfirmationEmail extends Mailable
         );
     }
 
+<<<<<<< HEAD
     */
 
+=======
+<<<<<<< HEAD
+    */
+
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
     /**
      * Get the attachments for the message.
      *
      * @return array<int, \Illuminate\Mail\Mailables\Attachment>
      */
+<<<<<<< HEAD
 
     /*
+=======
+<<<<<<< HEAD
+
+    /*
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
     public function attachments(): array
     {
         return [];
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
         */
 
     //public function build()
@@ -111,4 +156,9 @@ class ConfirmationEmail extends Mailable
     }
     */
     
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 }

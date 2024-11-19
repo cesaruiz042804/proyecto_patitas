@@ -10,12 +10,23 @@
     <link rel="stylesheet" href="{{ asset('asset_css/login.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://unpkg.com/imask"></script>
+<<<<<<< HEAD
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
+=======
+<<<<<<< HEAD
+    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 
 </head>
 
 <body>
     <main>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 
         @if (session('partialMessage') == 'ok')
             @include('partials.messageGood')
@@ -27,8 +38,18 @@
             session()->forget('partialMessage'); // Elimina la variable 'partialMessage' de la sesión
         @endphp
         
+<<<<<<< HEAD
         <button class="btn-exit"><i class="fas fa-arrow-left"></i></button>
 
+=======
+        <button class="btn-exit"><i class="fas fa-arrow-left"></i></button>
+
+=======
+        <button class="btn-exit"><i class="fas fa-arrow-left"></i></button>
+
+        @include('partials.messageErrors')
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 
         <div class="container" id="container">
             <div class="container-content">

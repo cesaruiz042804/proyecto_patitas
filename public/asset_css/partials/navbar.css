@@ -69,11 +69,20 @@
    /* Esto asegurará que el botón del menú esté siempre por encima de cualquier otro contenido */
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 .img-login {
    width: 60px;
    height: 60px;
 }
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
 @media (max-width: 768px) {
 
    /* */
@@ -101,9 +110,21 @@
 
    .menu__btn {
       position: fixed;
+<<<<<<< HEAD
       top: 25px;
       left: 20px;
       width: 30px;
+=======
+<<<<<<< HEAD
+      top: 25px;
+      left: 20px;
+      width: 30px;
+=======
+      top: 20px;
+      left: 20px;
+      width: 26px;
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
       height: 26px;
       cursor: pointer;
    }
@@ -114,7 +135,15 @@
       display: block;
       position: absolute;
       width: 100%;
+<<<<<<< HEAD
       height: 4px;
+=======
+<<<<<<< HEAD
+      height: 4px;
+=======
+      height: 3px;
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
       transition-duration: 0.9s;
    }
 
@@ -149,18 +178,42 @@
 
    .menu__btn>span::before {
       content: '';
+<<<<<<< HEAD
       top: 10px;
+=======
+<<<<<<< HEAD
+      top: 10px;
+=======
+      top: -8px;
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
    }
 
    .menu__btn>span::after {
       content: '';
+<<<<<<< HEAD
       top: 20px;
+=======
+<<<<<<< HEAD
+      top: 20px;
+=======
+      top: 8px;
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
    }
 
    .menu__box {
       display: block;
       position: fixed;
+<<<<<<< HEAD
       top: 0px;
+=======
+<<<<<<< HEAD
+      top: 0px;
+=======
+      top: 0;
+>>>>>>> 3ecf386a971d995b5edfb425f5d926b8e8574bf6
+>>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
       transform: translateX(-100%);
       width: 300px;
       height: 100%;
