@@ -31,7 +31,7 @@ class PaypalController extends Controller
 
   public function call_success_donation()
   {
-    return redirect()->route('home')->with('message', '¡Gracias por tu ayuda!');
+    return redirect()->route('home')->with('message', '¡Gracias por tu ayuda!')->with('partialsMessage', 'ok');
   }
 
   public function call_notify_donation()

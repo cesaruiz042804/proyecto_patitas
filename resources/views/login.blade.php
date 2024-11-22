@@ -11,20 +11,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://unpkg.com/imask"></script>
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
-    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
 
 </head>
 
 <body>
     <main>
-        @if (session('partialMessage') == 'ok')
+        @if (session()->has('partialsMessage') && session('partialsMessage') == 'ok')
             @include('partials.messageGood')
         @else
             @include('partials.messageErrors')
         @endif
 
         @php
-            session()->forget('partialMessage'); // Elimina la variable 'partialMessage' de la sesión
+            session()->forget('partialsMessage'); // Elimina la variable 'partialMessage' de la sesión
         @endphp
         
         <button class="btn-exit"><i class="fas fa-arrow-left"></i></button>

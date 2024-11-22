@@ -6,7 +6,7 @@ use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\FormCitasController;
-use App\Http\Controllers\PaymentStripeController;
+use App\Http\Controllers\AdminController;
 use App\Http\Middleware\SessionMiddleware;
 
 Route::get('/', function () {
@@ -55,11 +55,18 @@ Route::get('/payment/cancel', [PaypalController::class, 'call_cancel'])->name('p
 Route::get('/payment/success/donation', [PaypalController::class, 'call_success_donation'])->name('paypal.success.donation');
 Route::get('/payment/notify/donation', [PaypalController::class, 'call_notify_donation'])->name('paypal.notify.donation');
 Route::get('/payment/cancel/donation', [PaypalController::class, 'call_cancel_donation'])->name('paypal.cancel.donation');
-Route::post('/payment/webhook', [PaypalController::class, 'webhook']);
+//Route::post('/payment/webhook', [PaypalController::class, 'webhook']);
 
+
+// Rutas para la parte de los productos
+Route::get('/admin-login-session', [AdminController::class, 'call_admin_login_session'])->name('admin.login.session');
+Route::post('/admin-login-session', [AdminController::class, 'call_admin_session'])->name('admin.session');
 
 
 
 # git add .
 # git commit -m "Escribir"
 # git push origin main o master
+
+# php artisan migrate:reset
+# php artisan migrate

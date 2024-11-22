@@ -9,7 +9,6 @@
     <link rel="preload" href="{{ asset('recursos_sobre_nosotros/img-form.jpg') }}" as="image">
     <link rel="stylesheet" href="{{ asset('asset_css/cita_medica.css') }}">
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
-    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
     <script src="https://unpkg.com/imask"></script>
 </head>
 
@@ -34,7 +33,6 @@
 
                 <!-- Campo oculto para el ID del dueño -->
                 <input type="hidden" name="user" value="{{ session('user') }}">
-
                 <h2 class="title-1">Historia Clínica</h2>
 
                 <div class="content-animal">
@@ -148,24 +146,15 @@
 
                 <div class="content-textarea">
                     <div class="textarea-dato">
-                        <label for="">Motivo de la consulta</label>
+                        <label for="">Motivo y asignación de la consulta</label>
                         <textarea name="consultation" id="consultation" placeholder="Observaciones"></textarea>
                         <div class="content-consulta">
-                            <input type="date" id="date" name="date" min="2024-11-1" max="2024-1-30"
-                                value="{{ old('date') }}">
-                            <select type="text" id="datetimepicker" name="datetimepicker"
-                                value="{{ old('datetimepicker') }}">
-                                <option value="08:00">08:00 am</option>
-                                <option value="09:00">09:00 am</option>
-                                <option value="10:00">10:00 am</option>
-                                <option value="11:00">11:00 am</option>
-                                <option value="12:00">12:00 pm</option>
-                                <option value="13:00">01:00 pm</option>
-                                <option value="14:00">02:00 pm</option>
-                                <option value="15:00">03:00 pm</option>
-                                <option value="16:00">04:00 pm</option>
-                            </select>
-                            <input type="file" id="image" name="image" accept="image/*">
+                            @include('calendar')
+                            <div class="date">
+                                <input type="text" name="time_start" id="time_start1" readonly>
+                                <input type="text" name="time_end" id="time_end1" readonly>
+                            </div>
+
                         </div>
                     </div>
                 </div>

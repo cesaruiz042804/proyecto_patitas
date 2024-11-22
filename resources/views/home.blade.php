@@ -10,22 +10,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
-    <!-- Librería para el uso de íconos
+    <!-- 
     php -S localhost:8000 -t public
-    php -S 192.168.0.11:8000 -t public movil -->
+    php -S 192.168.0.11:8000 -t public movil
+ -->
     <title>Home</title>
 </head>
 
 <body>
 
-    @if (session('partialMessage') == 'ok')
+    @if (session()->has('partialsMessage') && session('partialsMessage') == 'ok')
         @include('partials.messageGood')
     @else
         @include('partials.messageErrors')
     @endif
 
     @php
-        session()->forget('partialMessage'); // Elimina la variable 'partialMessage' de la sesión
+        session()->forget('partialsMessage'); // Elimina la variable 'partialMessage' de la sesión
     @endphp
 
     @include('partials.navbar')

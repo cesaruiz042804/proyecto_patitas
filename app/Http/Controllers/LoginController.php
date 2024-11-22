@@ -71,7 +71,7 @@ class LoginController extends Controller
             Mail::to($user->email)->send(new ConfirmationEmail($token));
             //Mail::to('cesaruiz042804@gmail.com')->send(new ConfirmationEmail($token));
 
-            return redirect()->route('login')->with('message', 'Te hemos enviado un correo para confirmar tu correo')->with('log', 'success')->with('partialMessage', 'ok');
+            return redirect()->route('login')->with('message', 'Te hemos enviado un correo para confirmar tu correo')->with('log', 'success')->with('partialsMessage', 'ok');
         } catch (ValidationException $exception) {
             Log::debug("Catch 1 - exception");
             return redirect()->back()->withErrors($exception->errors())->withInput();
@@ -83,7 +83,7 @@ class LoginController extends Controller
     {
 
         if (empty($token)) {
-            return redirect()->route('login')->with('message', 'El token es inválido o no se proporcionó.')->with('partialMessage', 'okno');
+            return redirect()->route('login')->with('message', 'El token es inválido o no se proporcionó.')->with('partialsMessage', 'okno');
         }
         
         try {
@@ -91,8 +91,7 @@ class LoginController extends Controller
             $confirmation =  table_email_confirmation::where('token', $token)->first();
 
             if (!$confirmation) {
-                return redirect()->route('login')->with(['message' => 'Token no válido.'])->with('partialMessage', 'okno');
-                return redirect()->route('login')->with(['message' => 'Token no válido.'])->with('partialMessage', 'okno');
+                return redirect()->route('login')->with(['message' => 'Token no válido.'])->with('partialsMessage', 'okno');
             }
 
             // Verificar si el token ha expirado (por ejemplo, 60 minutos)
@@ -100,8 +99,7 @@ class LoginController extends Controller
             $createdAt = \Carbon\Carbon::parse($confirmation->created_at); // Obtener la fecha de creación
             if ($createdAt->addMinutes($expirationTime)->isPast()) {
                 // Si ha pasado el tiempo de expiración
-                return  redirect()->route('login')->with(['message' => 'El token ha expirado.'])->with('partialMessage', 'okno');
-                return  redirect()->route('login')->with(['message' => 'El token ha expirado.'])->with('partialMessage', 'okno');
+                return  redirect()->route('login')->with(['message' => 'El token ha expirado.'])->with('partialsMessage', 'okno');
             }
 
             // Crear el usuario definitivo
@@ -117,12 +115,9 @@ class LoginController extends Controller
             // Eliminar el token de la base de datos
             table_email_confirmation::where('token', $token)->delete();
 
-            return redirect()->route('home')->with(['message' => 'Cuenta confirmada con éxito.'])->with('partialMessage', 'ok');
+            return redirect()->route('home')->with(['message' => 'Cuenta confirmada con éxito.'])->with('partialsMessage', 'ok');
         } catch (\Illuminate\Database\QueryException $e) {
-            return redirect()->route('login')->with(['message' => 'Hubo un problema al procesar la solicitud.'])->with('partialMessage', 'okno');
-            return redirect()->route('home')->with(['message' => 'Cuenta confirmada con éxito.'])->with('partialMessage', 'ok');
-        } catch (\Illuminate\Database\QueryException $e) {
-            return redirect()->route('login')->with(['message' => 'Hubo un problema al procesar la solicitud.'])->with('partialMessage', 'okno');
+            return redirect()->route('login')->with(['message' => 'Hubo un problema al procesar la solicitud.'])->with('partialsMessage', 'okno');
         }
     }
 
@@ -145,12 +140,13 @@ class LoginController extends Controller
             session(['user' => $user->id]);
             Log::debug(session('user'));
             $intendedUrl = session('intended_url', route('home')); // Cambia 'default.route' por la ruta que deseas por defecto
+            session()->flash('partialsMessage', 'ok');
+            session()->flash('message', 'Has iniciado sesión correctamente.');
             session()->forget('intended_url'); // Eliminar la URL de la sesión
             return redirect($intendedUrl);
-            //return redirect()->route('home'); // Redirigir a la página principal
         } else {
             // Credenciales incorrectas
-            return back()->withErrors(['email2' => 'Las credenciales son incorrectas.']);
+            return back()->withErrors(['email2' => 'Las credenciales son incorrectas o no se encuentra registrado.']);
         }
     }
 

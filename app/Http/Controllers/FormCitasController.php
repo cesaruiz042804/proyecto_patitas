@@ -27,9 +27,8 @@ class FormCitasController extends Controller
                     'color' => 'required|string|max:255',
                     'old' => 'required|integer|min:0|max:30',
                     'consultation' => 'required|string|max:255',
-                    'date' => 'required|date|date_format:Y-m-d|after_or_equal:today',
-                    'datetimepicker' => 'required|string',
-                    'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:5120',
+                    'time_start' => 'required|string',
+                    'time_end' => 'required|string',
                 ],
                 [
                     'user' => 'El ID no se ha encontrado.',
@@ -45,96 +44,52 @@ class FormCitasController extends Controller
                     'old.integer' => 'La edad debe ser un número entero.',
                     'old.max' => 'La edad no puede ser mayor a 30 años.',
                     'consultation.required' => 'El motivo de la consulta es obligatorio.',
-                    'date.required' => 'La fecha es obligatoria.',
-                    'date.after_or_equal' => 'La fecha debe ser hoy o una fecha futura.',
-                    'date.date_format' => 'La fecha debe ser en el formato dia/mes/año.',
-                    'datetimepicker.required' => 'La hora de la cita es obligatoria.',
-                    'image.required' => 'La imagen es obligatoria.',
-                    'image.image' => 'El archivo debe ser una imagen.',
-                    'image.mimes' => 'La imagen debe estar en formato jpeg, png, jpg o gif.',
-                    'image.max' => 'La imagen no debe ser mayor a 5 MB.',
+                    'time_start.required' => 'La fecha es obligatoria.',
+                    'time_end.required' => 'La hora es obligatoria.',
                 ]
             );
 
-            //$token = Str::random(60);
+            // Convertir fecha a Y-m-d
+            //$dateConvert = Carbon::createFromFormat('Y-m-d', $validatedData['date'])->format('Y-m-d');
 
-            if ($request->hasFile('image')) {
-                $imagen = $request->file('image');
-                $nameImage = time() . '.' . $imagen->getClientOriginalExtension();
-                $ruta = $imagen->storeAs('image_consultation', $nameImage, 'public'); // Guarda la imagen en storage/app/public/imagenes
-
-                // Convertir fecha a Y-m-d
-                $dateConvert = Carbon::createFromFormat('Y-m-d', $validatedData['date'])->format('Y-m-d');
-
-                Log::debug(session('user'));
+            Log::debug(session('user'));
 
 
-                $data = \App\Models\table_user::find($validatedData['user']);
+            $data = \App\Models\table_user::find($validatedData['user']); // Busca si el usuario existe
+            $cont = \App\Models\table_cita::count(); // Busca la cantidad total de registros
 
-                if ($data) {
-                    // Crear la instancia del modelo para la cita
-                    $cita = table_cita::create([
-                        'user_id' => $validatedData['user'],
-                        'fecha_cita' => $dateConvert,
-                        'hora_cita' => $validatedData['datetimepicker'],
-                        'motivo_consulta' => $validatedData['consultation'],
-                        'imagen' => $nameImage, // Guarda el nombre de la imagen
-                    ]);
+            if ($data) {
+                // Crear la instancia del modelo para la cita
+                $cita = table_cita::create([
+                    'user_id' => $validatedData['user'],
+                    'consultation' => $validatedData['consultation'],
+                    'event' => 'Cita #' . strval($cont + 1),
+                    'start_date' => $validatedData['time_start'],
+                    'end_date' => $validatedData['time_end'],
+                ]);
 
-                    // Crear la instancia del modelo para la mascota
-                    $mascota = table_dato_mascota::create([
-                        'user_id' => $validatedData['user'],
-                        'nombre_mascota' => $validatedData['petName'],
-                        'especie' => $validatedData['species'],
-                        'raza' => $validatedData['breed'],
-                        'peso' => $validatedData['weight'],
-                        'color' => $validatedData['color'],
-                        'edad' => $validatedData['old'],
-                    ]);
+                // Crear la instancia del modelo para la mascota
+                $mascota = table_dato_mascota::create([
+                    'user_id' => $validatedData['user'],
+                    'nombre_mascota' => $validatedData['petName'],
+                    'especie' => $validatedData['species'],
+                    'raza' => $validatedData['breed'],
+                    'peso' => $validatedData['weight'],
+                    'color' => $validatedData['color'],
+                    'edad' => $validatedData['old'],
+                ]);
 
-                    Mail::to($data->email)->send(new EmailCitaMedica($mascota->nombre_mascota, $cita->fecha_cita, $cita->hora_cita));
-                    Log::debug($mascota->nombre_mascota);
-                } else {
-                    return redirect()->route('cita_medica')->with('message', 'Ocurrió un problema (debes estar logueado en la página')->with('partialMessage', 'okno');
-                }
+                Mail::to($data->email)->send(new EmailCitaMedica($mascota->nombre_mascota, $cita->start_date));
+                Log::debug($mascota->nombre_mascota);
+            } else {
+                return redirect()->route('cita_medica')->with('message', 'Ocurrió un problema (debes estar logueado en la página')->with('partialsMessage', 'okno');
             }
 
-            return redirect()->route('home')->with('message', 'La cita médica de tu mascota ha sido creada con éxito. ¡Gracias por confiar en nosotros para el cuidado de tu peludo amigo!')->with('partialMessage', 'ok');;
-                Log::debug(session('user'));
-
-
-                $data = \App\Models\table_user::find($validatedData['user']);
-
-                if ($data) {
-                    // Crear la instancia del modelo para la cita
-                    $cita = table_cita::create([
-                        'user_id' => $validatedData['user'],
-                        'fecha_cita' => $dateConvert,
-                        'hora_cita' => $validatedData['datetimepicker'],
-                        'motivo_consulta' => $validatedData['consultation'],
-                        'imagen' => $nameImage, // Guarda el nombre de la imagen
-                    ]);
-
-                    // Crear la instancia del modelo para la mascota
-                    $mascota = table_dato_mascota::create([
-                        'user_id' => $validatedData['user'],
-                        'nombre_mascota' => $validatedData['petName'],
-                        'especie' => $validatedData['species'],
-                        'raza' => $validatedData['breed'],
-                        'peso' => $validatedData['weight'],
-                        'color' => $validatedData['color'],
-                        'edad' => $validatedData['old'],
-                    ]);
-
-                    Mail::to($data->email)->send(new EmailCitaMedica($mascota->nombre_mascota, $cita->fecha_cita, $cita->hora_cita));
-                    Log::debug($mascota->nombre_mascota);
-                } else {
-                    return redirect()->route('cita_medica')->with('message', 'Ocurrió un problema (debes estar logueado en la página')->with('partialMessage', 'okno');
-                }
-            
-            return redirect()->route('home')->with('message', 'La cita médica de tu mascota ha sido creada con éxito. ¡Gracias por confiar en nosotros para el cuidado de tu peludo amigo!')->with('partialMessage', 'ok');;
+            return redirect()->route('home')->with('message', 'La cita médica de tu mascota ha sido creada con éxito. ¡Gracias por confiar en nosotros para el cuidado de tu peludo amigo!')->with('partialsMessage', 'ok');;
         } catch (ValidationException $exception) {
             return redirect()->back()->withErrors($exception->errors())->withInput();
         }
     }
 }
+
+

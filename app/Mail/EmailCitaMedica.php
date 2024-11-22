@@ -15,18 +15,20 @@ class EmailCitaMedica extends Mailable
     use Queueable, SerializesModels;
 
     public $pet;
+    public $datetime;
     public $date;
     public $hour;
 
-    public function __construct($pet, $date, $hour)
+    public function __construct($pet, $datetime)
     {
         $this->pet = $pet;
-        $this->date = $date;
-        $this->hour = $hour;
+        $this->datetime = $datetime;
     }
 
     public function build()
     {
+        list($this->date, $this->hour) = explode(' ', $this->datetime);
+
         return $this->view('mails.consultationMail')
         ->with(['pet' => $this->pet])
         ->with(['date' => $this->date])

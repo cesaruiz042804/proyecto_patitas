@@ -7,15 +7,11 @@
     <title>Donación</title>
     <link rel="stylesheet" href="{{ asset('asset_css/donation.css') }}">
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
-    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
-    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
-    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
 </head>
 
 <body>
 
     @include('partials.navbar')
-    
     
     <main>
         <div class="container">
@@ -33,12 +29,10 @@
                             <input type="hidden" name="upload" value="1">
                             <input type="hidden" name="business" value="sb-ytpyc33388420@business.example.com">
                             <input type="hidden" name="currency_code" value="USD">
-
                             <input type="hidden" name="item_name" value="Donación">
                             <input type="hidden" name="item_number" value="000">
                             <input type="number" name="amount" value="1" min="1" class="quantity">
                             <input type="hidden" name="quantity" value="1">
-
                             <!-- URLs de retorno -->
                             <input type="hidden" name="return" value="{{ route('paypal.success.donation') }}">
                             <input type="hidden" name="notify_url" value="{{ route('paypal.notify.donation') }}">

@@ -10,10 +10,6 @@
             Swal.fire({
                 icon: 'success', // Cambia 'error' a 'success' si es un mensaje de éxito
                 title: 'Éxito',
-                icon: 'success', // Cambia 'error' a 'success' si es un mensaje de éxito
-                title: 'Éxito',
-                icon: 'error', // Cambia 'error' a 'success' si es un mensaje de éxito
-                title: 'Oops...',
                 html: message, // Usar 'html' para que acepte etiquetas HTML
                 confirmButtonText: 'Aceptar'
             });
