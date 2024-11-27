@@ -14,11 +14,11 @@
 
         <div class="container-foot">
             <div class="item-foot">
-                <a href="https://www.facebook.com" target="_blank" title="Síguenos"><i class="bi bi-facebook"></i></a>
-                <a href="https://www.twitter.com" target="_blank" title="Síguenos"><i class="bi bi-twitter-x"></i></a>
-                <a href="https://www.instagram.com" target="_blank" title="Síguenos"><i class="bi bi-instagram"></i></a>
-                <a href="https://www.whatsapp.com" target="_blank" title="Síguenos"><i class="bi bi-whatsapp"></i></a>
-                <a href="https://www.youtube.com" target="_blank" title="Síguenos"><i class="bi bi-youtube"></i></a>
+                <a href="https://www.facebook.com" target="_blank" title="Síguenos en nuestra cuenta de facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.twitter.com" target="_blank" title="Síguenos en nuestra cuenta de twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://www.instagram.com" target="_blank" title="Síguenos en nuestra cuenta de instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.whatsapp.com" target="_blank" title="Síguenos en nuestra cuenta de whatsapp"><i class="bi bi-whatsapp"></i></a>
+                <a href="https://www.youtube.com" target="_blank" title="Síguenos en nuestra cuenta de youtube"><i class="bi bi-youtube"></i></a>
             </div>
         </div>
 
