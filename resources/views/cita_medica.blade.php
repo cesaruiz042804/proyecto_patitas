@@ -35,10 +35,10 @@
 
                 <!-- Campo oculto para el ID del dueño -->
                 <input type="hidden" name="user" value="{{ session('user') }}">
-                <h2 class="title-1">Historia Clínica</h2>
+                <h1 class="title-1">Historia Clínica</h1>
 
                 <div class="content-animal">
-                    <h3>Datos del paciente</h3>
+                    <h2>Datos del paciente</h2>
                     <input type="text" id="petName" name="petName" placeholder="Nombre de la mascota"
                         value="{{ old('petName') }}">
 

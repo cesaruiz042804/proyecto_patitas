@@ -41,9 +41,9 @@
                         @csrf
                         <h1>Crear cuenta</h1>
                         <div class="social-container">
-                            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" title="Click para encontrat nuestra cuenta de facebook" class="social"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" title="Click para encontrat nuestra cuenta de google plus" class="social"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#" title="Click para encontrat nuestra cuenta de linkedin" class="social"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                         <span>Usa tu correo para registrarte</span>
                         <input class="inputName" type="text" placeholder="Nombre" name="name"
@@ -65,15 +65,15 @@
                         @csrf
                         <h1>Inicio de sesión</h1>
                         <div class="social-container">
-                            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" title="Click para encontrat nuestra cuenta de facebook" class="social"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" title="Click para encontrat nuestra cuenta de google plus" class="social"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#" title="Click para encontrat nuestra cuenta de linkedin" class="social"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                         <span>Inicia sesión con tu cuenta</span>
                         <input type="email" placeholder="email: example@dominio" name="email2"
                             value="{{ old('email2') }}" />
                         <input type="password" placeholder="Password" name="password" />
-                        <a href="#">Olvidaste tu contraseña?</a>
+                        <a href="#" title="Click para cambiar tu contraseña">>Olvidaste tu contraseña?</a>
                         <button onclick="pageLoading('.container')">Iniciar sesión</button>
                     </form>
                 </div>

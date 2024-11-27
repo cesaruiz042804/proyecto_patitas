@@ -12,7 +12,7 @@
         </label>
         <ul class="menu__box">
             <div class="logo">
-                <a href="{{ route('home') }}">
+                <a href="{{ route('home') }}" title="Visitar nuestra página principal">
                     <img src="{{ asset('img_public/logo.png') }}" alt="Logo">
                 </a>
             </div>

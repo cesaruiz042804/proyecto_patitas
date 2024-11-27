@@ -35,7 +35,7 @@
             <div class="content-about">
                 <div class="content-vision">
                     <div class="content-text">
-                        <h3>Visión</h3>
+                        <h2>Visión</h2>
                         <p>"Construir una comunidad unida por el amor a los animales, ofreciendo servicios veterinarios
                             de
                             excelencia y facilitando la adopción de mascotas abandonadas, creando un mundo más compasivo
@@ -48,7 +48,7 @@
                 </div>
                 <div class="content-mision">
                     <div class="content-text">
-                        <h3>Misión</h3>
+                        <h2>Misión</h2>
                         <p>"Rescatar, rehabilitar y encontrar hogares para animales abandonados, ofreciendo servicios
                             veterinarios especializados y promoviendo la adopción responsable, y la mejor opción para
                             compartir la vida con una mascota. A través de programas de adopción, campañas de
@@ -168,7 +168,7 @@
                                 style="color: aliceblue; text-decoration: none;">Puedes apoyarnos dandole click aquí</a>
                         </div>
                         <span class="close" onclick="closeFlyer()">&times;</span>
-                        <img class="modal-content" id="flyerImage">
+                        <img class="modal-content" id="flyerImage" alt="Flyer de Patitas al Rescate">
                     </div>
                 </div>
             </div>

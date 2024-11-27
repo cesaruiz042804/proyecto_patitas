@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -36,7 +36,7 @@
 
     <main>
         <div class="content-header">
-            <h2 class="title-h1">Patitas al rescate</h2>
+            <h1 class="title-h1">Patitas al rescate</h1>
             <p>"Un centro para salvar perros y gatos es una noble iniciativa"</p>
             <div class="btn-home">
                 <a href="{{ route('donation') }}" class="btn">Realizar donación</a>

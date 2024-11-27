@@ -8,7 +8,7 @@
       <div id="ring"></div>
       <div id="ring"></div>
       <div id="ring"></div>
-      <h3 id="title-loading">Cargando...</h3>
+      <span id="title-loading">Cargando...</span>
    </div>
 </div>
 
