@@ -13,7 +13,7 @@
         <ul class="menu__box">
             <div class="logo">
                 <a href="{{ route('home') }}" title="Visitar nuestra página principal">
-                    <img src="{{ asset('img_public/logo.png') }}" alt="Logo">
+                    <img src="{{ asset('img_public/logo.png') }}" alt="Logo de Patitas al Rescate" title="Haz clic para visitar página principal">>
                 </a>
             </div>
             <li><a class="menu__item" href="{{ route('home') }}">Inicio</a></li>
