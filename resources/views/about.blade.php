@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description"
+        content='"Agenda fácilmente citas médicas para perros y gatos en nuestra plataforma. Promovemos la concientización sobre el cuidado responsable de los animales y ofrecemos servicios veterinarios de calidad. ¡Cuida a tu mascota con nosotros!"'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros - Tu Clínica Veterinaria</title>
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
@@ -157,7 +159,8 @@
                 <div class="container-flayers">
                     <div class="flyer-preview">
                         <button class="flyer-thumbnail"
-                            onclick="showFlyer('{{ asset('recursos_donation/img_flayers.jpg') }}')">Explora nuestra última novedad</button>
+                            onclick="showFlyer('{{ asset('recursos_donation/img_flayers.jpg') }}')">Explora nuestra
+                            última novedad</button>
                     </div>
 
                     <div id="flyerModal" class="modal">

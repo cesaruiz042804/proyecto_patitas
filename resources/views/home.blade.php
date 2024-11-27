@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="{{ asset('asset_css/home.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
-    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
     <!-- 
     php -S localhost:8000 -t public
     php -S 192.168.0.11:8000 -t public movil

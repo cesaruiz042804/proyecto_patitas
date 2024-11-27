@@ -39,39 +39,4 @@ class EmailCitaMedica extends Mailable
 
         return $email;
     }
-
-
-    /*
->>>>>>> 51923894247a93a57e2907aaff37b1b93760fe7d
-    public function envelope(): Envelope
-    {
-        return new Envelope(
-            subject: 'Email Cita Medica',
-        );
-    }
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-    /**
-     * Get the message content definition.
-     */
-    /*
-    public function content(): Content
-    {
-        return new Content(
-            view: 'view.name',
-        );
-    }
-
-    /**
- 
-    public function attachments(): array
-    {
-        return [];
-    }
-    */
-
-
 }

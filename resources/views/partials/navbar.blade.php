@@ -21,13 +21,8 @@
             <li><a class="menu__item" href="{{ route('cita_medica') }}">Cita médica</a></li>
             <li><a class="menu__item" href="{{ route('donation') }}">Donación</a></li>
             <li><a class="menu__item" href="{{ route('products') }}">Tienda</a></li>
-            <li><a class="menu__item" href="{{ route('admin.login.session') }}">Admin</a></li>
+            <li><a class="menu__item" href="{{ route('admin.login.session') }}">Admin (solo para acceso rápido)</a></li>
             @if (session()->has('user'))
-                <!-- Sección de perfil cuando el usuario está autenticado -->
-                <!--
-                <img class="img-login"
-                            src="{ asset('img_public/img_user.png') }}" alt="">
-                -->
                 <li>
                     <a class="menu__item" href="{{ route('logout') }}">Cerrar sesión</a>
                 </li>

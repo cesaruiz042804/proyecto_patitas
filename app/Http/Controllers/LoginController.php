@@ -78,7 +78,6 @@ class LoginController extends Controller
         }
     }
 
-    
     public function call_confirmEmail($token)
     {
 
