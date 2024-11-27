@@ -16,19 +16,19 @@
                     <img src="{{ asset('img_public/logo.png') }}" alt="Logo de Patitas al Rescate" title="Haz clic para visitar página principal">>
                 </a>
             </div>
-            <li><a class="menu__item" href="{{ route('home') }}">Inicio</a></li>
-            <li><a class="menu__item" href="{{ route('about') }}">Sobre nosotros</a></li>
-            <li><a class="menu__item" href="{{ route('cita_medica') }}">Cita médica</a></li>
-            <li><a class="menu__item" href="{{ route('donation') }}">Donación</a></li>
-            <li><a class="menu__item" href="{{ route('products') }}">Tienda</a></li>
-            <li><a class="menu__item" href="{{ route('admin.login.session') }}">Admin (solo para acceso rápido)</a></li>
+            <li><a class="menu__item" href="{{ route('home') }}" title="Ir a la página de home">Inicio</a></li>
+            <li><a class="menu__item" href="{{ route('about') }}" title="Ir a la página de Sobre nosotros">Sobre nosotros</a></li>
+            <li><a class="menu__item" href="{{ route('cita_medica') }}" title="Ir a la página de Cita médica">Cita médica</a></li>
+            <li><a class="menu__item" href="{{ route('donation') }}" title="Ir a la página de Donación">Donación</a></li>
+            <li><a class="menu__item" href="{{ route('products') }}" title="Ir a la página de Tienda">Tienda</a></li>
+            <li><a class="menu__item" href="{{ route('admin.login.session') }}" title="Ir a la página de admin">Admin (solo para acceso rápido)</a></li>
             @if (session()->has('user'))
                 <li>
-                    <a class="menu__item" href="{{ route('logout') }}">Cerrar sesión</a>
+                    <a class="menu__item" href="{{ route('logout') }}" title="Click para cerrar sesión">Cerrar sesión</a>
                 </li>
             @else
                 <!-- Botón de iniciar sesión cuando el usuario no está autenticado -->
-                <li><a class="menu__item" href="{{ route('login') }}">Iniciar sesión</a></li>
+                <li><a class="menu__item" href="{{ route('login') }}" title="Click para iniciar sesión">Iniciar sesión</a></li>
             @endif
         </ul>
     </div>
