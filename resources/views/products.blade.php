@@ -55,10 +55,12 @@
                                     </span>
                                 </div>
                             @else
+                            
                                 <div class="text-span">
                                     <span class="product-status" data-product-id="{{ $product->id }}">¡No te lo
                                         pierdas!</span>
                                 </div>
+                            
                             @endif
                             <div class="card-body-item">
                                 <img src="{{ $product->image }}?v={{ $product->updated_at->timestamp }}"

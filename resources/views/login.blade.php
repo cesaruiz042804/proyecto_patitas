@@ -57,6 +57,7 @@
                         <input class="inputTel" type="text" placeholder="Teléfono (0000-0000)" name="tel"
                             value="{{ old('tel') }}" />
                         <input class="inputPassword" type="password" placeholder="Password" name="password" />
+                        <input class="inputConfirmPassword" type="password" placeholder="Confirm password" name="confirmPassword" />
                         <button class="btn-register" onclick="pageLoading('.container')">Crear cuenta</button>
                     </form>
                 </div>
@@ -73,7 +74,7 @@
                         <input type="email" placeholder="email: example@dominio" name="email2"
                             value="{{ old('email2') }}" />
                         <input type="password" placeholder="Password" name="password" />
-                        <a href="#" title="Click para cambiar tu contraseña">>Olvidaste tu contraseña?</a>
+                        <a href="#" title="Click para cambiar tu contraseña">Olvidaste tu contraseña?</a>
                         <button onclick="pageLoading('.container')">Iniciar sesión</button>
                     </form>
                 </div>

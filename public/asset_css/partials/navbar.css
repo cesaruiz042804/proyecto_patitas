@@ -133,7 +133,7 @@
    .about .menu__btn>span,
    .about .menu__btn>span::before,
    .about .menu__btn>span::after {
-      background-color: #2b2828;
+      background-color: #ffffff;
       /* Cambia el color a negro */
    }
 
@@ -141,14 +141,18 @@
    .products .menu__btn>span::before,
    .products .menu__btn>span::after {
       background-color: #2b2828;
-      /* Cambia el color a negro */
    }
 
    .donation .menu__btn>span,
    .donation .menu__btn>span::before,
    .donation .menu__btn>span::after {
       background-color: #fffdfd;
-      /* Cambia el color a negro */
+   }
+
+   .cita_medica .menu__btn>span,
+   .cita_medica .menu__btn>span::before,
+   .cita_medica .menu__btn>span::after {
+      background-color: #fffdfd;
    }
 
    .menu__btn>span::before {

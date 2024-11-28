@@ -41,9 +41,9 @@ Route::get('/logout', [PaginacionController::class, 'call_logout'])->name('logou
 Route::post('/logout-session', [LoginController::class, 'call_logout_session'])->name('logout.session');
 
 // Rutas para a la parte de los productos y el carrito
-Route::get('/products', [CartController::class, 'viewProducts'])->name('products')->middleware(SessionMiddleware::class);
+Route::get('/products', [CartController::class, 'viewProducts'])->name('products');
 Route::post('/cart/add/{productId}', [CartController::class, 'addToCart'])->name('cart.add');
-Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
+Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show')->middleware(SessionMiddleware::class);
 Route::delete('/cart/remove/{productId}', [CartController::class, 'removeFromCart'])->name('cart.remove');
 Route::get('/checkout', [PaginacionController::class, 'call_checkout_paypal'])->name('checkout_paypal');
 Route::get('/charge-checkout', [PaginacionController::class, 'call_payment_charge'])->name('charge_stripe');
@@ -56,7 +56,6 @@ Route::get('/payment/success/donation', [PaypalController::class, 'call_success_
 Route::get('/payment/notify/donation', [PaypalController::class, 'call_notify_donation'])->name('paypal.notify.donation');
 Route::get('/payment/cancel/donation', [PaypalController::class, 'call_cancel_donation'])->name('paypal.cancel.donation');
 //Route::post('/payment/webhook', [PaypalController::class, 'webhook']);
-
 
 // Rutas para la parte de los productos
 Route::get('/admin-login-session', [AdminController::class, 'call_admin_login_session'])->name('admin.login.session');

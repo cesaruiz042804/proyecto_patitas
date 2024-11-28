@@ -10,6 +10,7 @@
 .container {
    width: 100%;
    align-items: center;
+   padding: 30px 0;
 }
 
 .header-products {
@@ -45,7 +46,9 @@
 
 .col {
    margin: 15px auto;
+   /*
    border: 3px solid rgb(218, 211, 211);
+   */
    width: 45%;
    padding: 8px 15px;
    /* Margen arriba - abajo - a los lados */
@@ -109,6 +112,10 @@
 }
 
 @media (max-width: 768px) {
+   .container {
+      padding: 80px 0px;
+   }
+
    .header-items {
       width: 75%;
    }
@@ -122,3 +129,9 @@
       margin: 8px 15px;
    }
 }
+
+
+
+
+
+

@@ -18,7 +18,7 @@
 
     <main>
         <div class="container">
-            <div class="content-about-principal">
+              <div class="content-about-principal">
                 <div class="text-principal">
                     <h1>Bienvenidos al Centro de Rehabilitación Animal "Patitas al Rescate"</h1>
                     <p>Somos una organización comprometida con el rescate, rehabilitación y cuidado de perros y gatos en

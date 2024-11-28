@@ -11,7 +11,7 @@
     text-align: center;
  }
 
-.form h2,
+.form h1,
 .form h3, label {
     font-size: 20px;
     margin-bottom: 7px;
@@ -47,12 +47,12 @@
     background-color: rgba(17, 16, 16, 0.288); /* Color de fondo para mayor visibilidad */
 }
 
-.form h2 {
+.form h1 {
     color: #f7f4f4;
     font-size: 25px;
 }
 
-.form h3, label{
+.form h2, label{
     color: #eee7e7;
     font-size: 18px;
 }
