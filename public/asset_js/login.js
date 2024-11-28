@@ -48,3 +48,26 @@ document.addEventListener('DOMContentLoaded', function () {
     var mask = IMask(inputElementCedula, maskOptionsCedula);
 });
 
+
+// Selecciona el botón
+const btn_register = document.querySelector(".btn-register");
+const btn_sign = document.querySelector(".btn-sign");
+
+// Agrega un evento 'click' al botón
+btn_register.addEventListener("click", function() {
+    // Desactiva el botón
+    btn_register.disabled = true;
+    
+    // Opcional: Cambia el texto o estilo para indicar que está desactivado
+    btn_register.textContent = "Enviando datos...";
+    document.querySelector('.form1').submit();
+});
+
+btn_sign.addEventListener("click", function() {
+    // Desactiva el botón
+    btn_sign.disabled = true;
+
+    // Opcional: Cambia el texto o estilo para indicar que está desactivado
+    btn_sign.textContent = "Iniciando sesión...";
+    document.querySelector('.form2').submit();
+});

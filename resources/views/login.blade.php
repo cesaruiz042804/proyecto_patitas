@@ -75,7 +75,7 @@
                             value="{{ old('email2') }}" />
                         <input type="password" placeholder="Password" name="password" />
                         <a href="#" title="Click para cambiar tu contraseña">Olvidaste tu contraseña?</a>
-                        <button onclick="pageLoading('.container')">Iniciar sesión</button>
+                        <button class="btn-sign" onclick="pageLoading('.container')">Iniciar sesión</button>
                     </form>
                 </div>
             </div>

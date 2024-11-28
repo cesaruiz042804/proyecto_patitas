@@ -20,3 +20,18 @@ document.getElementById('species').addEventListener('change', function () {
 // Opciones iniciales ocultas hasta seleccionar la especie
 document.querySelector('.cat-breeds').style.display = 'none';
 document.querySelector('.dog-breeds').style.display = 'none';
+
+
+// Selecciona el botón
+const btn_send = document.querySelector(".btn-send");
+
+// Agrega un evento 'click' al botón
+btn_send.addEventListener("click", function() {
+
+    // Desactiva el botón
+    btn_send.disabled = true;
+
+    // Opcional: Cambia el texto o estilo para indicar que está desactivado
+    btn_send.textContent = "Enviando datos...";
+    document.querySelector('.form').submit();
+});

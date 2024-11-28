@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros - Tu Clínica Veterinaria</title>
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
-    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
     <link rel="stylesheet" href="{{ asset('asset_css/about.css') }}">
+
 </head>
 
 <body>
@@ -21,10 +21,12 @@
               <div class="content-about-principal">
                 <div class="text-principal">
                     <h1>Bienvenidos al Centro de Rehabilitación Animal "Patitas al Rescate"</h1>
+                    <hr class="divider">
                     <p>Somos una organización comprometida con el rescate, rehabilitación y cuidado de perros y gatos en
                         situación de peligro. En "Amigos al Rescate", nuestro objetivo principal es dar una segunda
                         oportunidad a aquellos animales que han sufrido abandono, maltrato o que se encuentran en
                         condiciones vulnerables.</p>
+                        <button class="btn-register">Registrate con nosotros</button>
                 </div>
                 <div class="video video-fade">
                     <video preload="none" controls autoplay muted class="fade-in-video">

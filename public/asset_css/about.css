@@ -4,7 +4,6 @@
     border: 0;
     font-size: 100%;
     vertical-align: baseline;
-    font-family: 'Trebuchet MS', sans-serif;
 }
 
 body {
@@ -21,12 +20,11 @@ body {
 
 .content-about-principal {
     display: flex;
-    flex-direction: column;
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     justify-content: center;
     margin: auto;
-    background-color: #403192d7;
+    background-color: #0b023d;
 }
 
 .video {
@@ -52,13 +50,35 @@ body {
 .text-principal {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 50%;
     margin: auto;
-    color: #ffffff;
+    color: #161616;
+    height: 56%;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.content-about-principal button{
+    background-color: #403192;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 45px;
+    transition: transform 80ms ease-in;
+    font-weight: bold;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    margin: 15px 0;
+}
+
+.content-about-principal button:hover {
+    background-color: #684a97;
+    box-shadow: 0 4px 15px rgba(59, 5, 221, 0.5);
 }
 
 .content-about-principal h1 {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 .content-about-principal video {
@@ -68,11 +88,21 @@ body {
 
 .content-about-principal h1 {
     font-size: 35px;
+    text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.795); /* Sombra sutil en el texto */
 }
 
 .content-about-principal p {
     font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.747); /* Sombra sutil en el texto */
 }
+
+.divider {
+    height: 2px;
+    background: linear-gradient(to right, #f7f5ff, #48ff00); /* Gradiente de color */
+    margin: 2px 0;
+    width: 20%;
+ }
 
 .content-about {
     display: flex;
@@ -83,12 +113,13 @@ body {
     height: auto;
     padding: 40px auto;
     align-items: center;
+    /*
     background-image: 
-    linear-gradient(to right, #ccc 1px, transparent 1px),
+    linear-gradient(to right, #ccc px, transparent 1px),
     linear-gradient(to bottom, #ccc 1px, transparent 1px);
-    background-size: 20px 20px; /* Tamaño de cada celda */
+    background-size: 20px 20px; /* Tamaño de cada celda 
     background-position: top left;
-
+    */
 }
 
 .content-about p {
@@ -105,24 +136,28 @@ h3 {
 .content-vision {
     display: flex;
     width: 40%;
-    min-height: 50vh;
+    min-height: 70vh;
     height: auto;
     justify-content: center;
     align-items: center;
     margin: 5px auto;
     background-color: rgba(255, 255, 255, 0.795);
+    background-image: url('/recursos_sobre_nosotros/img_mision_vision.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     border-radius: 20px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .content-text {
-    width: 50%;
+    width: 60%;
     margin: auto 10px;
 }
 
-.content-mision h3,
-.content-vision h3 {
-    font-size: 23px;
+.content-mision h2,
+.content-vision h2 {
+    font-size: 33px;
     color: #363636;
 }
 
@@ -142,7 +177,6 @@ h3 {
     margin: auto;
     background-color: #dadada35;
     padding: 20px 0;
-    background-color: #dadada35;
     padding: 20px 0;
 }
 
@@ -348,7 +382,8 @@ h3 {
 
     .content-about-principal {
         width: 100%;
-        height: 90vh;
+        height: 100vh;
+        flex-direction: column;
     }
 
     .text-principal {
