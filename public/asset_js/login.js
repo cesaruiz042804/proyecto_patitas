@@ -22,7 +22,6 @@ signInButton.addEventListener('click', () => {
     signInButton.style.background = "#35ad35";
     form1.style.display = "block";
     form2.style.display = "none";
-    //form1.classList.add("form-active");
 
     form1.classList.remove('form-active'); // Remueve la clase
     setTimeout(() => {
@@ -47,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var mask = IMask(inputElementTel, maskOptionsTel);
     var mask = IMask(inputElementCedula, maskOptionsCedula);
 });
-
 
 // Selecciona el botón
 const btn_register = document.querySelector(".btn-register");

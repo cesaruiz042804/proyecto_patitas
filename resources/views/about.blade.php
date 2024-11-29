@@ -3,12 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description"
         content='"Agenda fácilmente citas médicas para perros y gatos en nuestra plataforma. Promovemos la concientización sobre el cuidado responsable de los animales y ofrecemos servicios veterinarios de calidad. ¡Cuida a tu mascota con nosotros!"'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nosotros - Tu Clínica Veterinaria</title>
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
     <link rel="stylesheet" href="{{ asset('asset_css/about.css') }}">
+    <title>Sobre Nosotros - Tu Clínica Veterinaria</title>
 
 </head>
 
@@ -18,7 +19,7 @@
 
     <main>
         <div class="container">
-              <div class="content-about-principal">
+            <div class="content-about-principal">
                 <div class="text-principal">
                     <h1>Bienvenidos al Centro de Rehabilitación Animal "Patitas al Rescate"</h1>
                     <hr class="divider">
@@ -26,7 +27,7 @@
                         situación de peligro. En "Amigos al Rescate", nuestro objetivo principal es dar una segunda
                         oportunidad a aquellos animales que han sufrido abandono, maltrato o que se encuentran en
                         condiciones vulnerables.</p>
-                        <button class="btn-register">Registrate con nosotros</button>
+                    <button class="btn-register">Registrate con nosotros</button>
                 </div>
                 <div class="video video-fade">
                     <video preload="none" controls autoplay muted class="fade-in-video">

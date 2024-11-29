@@ -3,16 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description"
         content='"Agenda fácilmente citas médicas para perros y gatos en nuestra plataforma. Promovemos la concientización sobre el cuidado responsable de los animales y ofrecemos servicios veterinarios de calidad. ¡Cuida a tu mascota con nosotros!"'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Iniciar sesión</title>
+    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
     <link rel="preload" href="{{ asset('recursos_home/img_registro.jpg') }}" as="image">
-    <link rel="stylesheet" href="{{ asset('asset_css/login.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://unpkg.com/imask"></script>
-    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
+    <link rel="stylesheet" href="{{ asset('asset_css/login.css') }}">
+    <title>Iniciar sesión</title>
 
 </head>
 

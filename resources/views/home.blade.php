@@ -3,16 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content='"Agenda fácilmente citas médicas para perros y gatos en nuestra plataforma. Promovemos la concientización sobre el cuidado responsable de los animales y ofrecemos servicios veterinarios de calidad. ¡Cuida a tu mascota con nosotros!"'>
     <meta name="keywords"
         content="adopción de mascotas, rescate de perros y gatos, donación para animales, servicios veterinarios, agenda de citas médicas para mascotas">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preload" href="{{ asset('img_public/logo.png') }}" as="image">
     <link rel="preload" href="{{ asset('/recursos_home/img_background_login.jpg') }}" as="image">
-    <link rel="stylesheet" href="{{ asset('asset_css/home.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
+    <link rel="stylesheet" href="{{ asset('asset_css/home.css') }}">
     <!--
     php -S localhost:8000 -t public
     php -S 192.168.0.11:8000 -t public movil

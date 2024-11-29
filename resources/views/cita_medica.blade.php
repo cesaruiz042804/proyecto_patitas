@@ -3,15 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content='"Agenda fácilmente citas médicas para perros y gatos en nuestra plataforma. Promovemos la concientización sobre el cuidado responsable de los animales y ofrecemos servicios veterinarios de calidad. ¡Cuida a tu mascota con nosotros!"'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamiento</title>
+    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
     <link rel="preload" href="{{ asset('img_public/logo.png') }}" as="image">
     <link rel="preload" href="{{ asset('recursos_sobre_nosotros/img-form.jpg') }}" as="image">
     <link rel="stylesheet" href="{{ asset('asset_css/cita_medica.css') }}">
-    <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
     <script src="https://unpkg.com/imask"></script>
+    <title>Agendamiento</title>
 </head>
 
 <body>
