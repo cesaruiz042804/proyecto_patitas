@@ -1,0 +1,33 @@
+.fc-header-title {
+   color: #000000; /
+}
+
+.fc-daygrid-day {
+   color: #000000; 
+}
+
+.fc-col-header-cell {
+   color: #000000; 
+}
+
+.calendar {
+   width: 100%;
+}
+
+.data-time {
+   width: 100%;
+}
+
+.data-time label {
+   color: #000000;
+}
+
+.fc-toolbar-title {
+   color: #000000 !important; /* Cambiar el color de las fechas del rango */
+}
+
+.fc-selection {
+   background-color: #FF5733 !important;  /* Naranja brillante */
+   opacity: 0.5;  /* Ajusta la opacidad si lo deseas */
+   border-radius: 4px;  /* Bordes redondeados */
+}

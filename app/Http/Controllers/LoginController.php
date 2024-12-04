@@ -73,8 +73,6 @@ class LoginController extends Controller
                 'password' => Hash::make($validatedData['password']), // Encriptar la contraseña
             ]);
             
-            //Log::debug($token);
-
             Mail::to($user->email)->send(new ConfirmationEmail($token));
             //Mail::to('cesaruiz042804@gmail.com')->send(new ConfirmationEmail($token));
 

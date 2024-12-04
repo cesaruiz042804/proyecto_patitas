@@ -21,7 +21,7 @@
             <li><a class="menu__item" href="{{ route('cita_medica') }}" title="Ir a la página de Cita médica">Cita médica</a></li>
             <li><a class="menu__item" href="{{ route('donation') }}" title="Ir a la página de Donación">Donación</a></li>
             <li><a class="menu__item" href="{{ route('products') }}" title="Ir a la página de Tienda">Tienda</a></li>
-            <li><a class="menu__item" href="{{ route('admin.login.session') }}" title="Ir a la página de admin">Admin (solo para acceso rápido)</a></li>
+            <li><a class="menu__item" href="{{ route('admin.dashboard') }}" title="Ir a la página de admin">Admin (solo para acceso rápido)</a></li>
             @if (session()->has('user'))
                 <li>
                     <a class="menu__item" href="{{ route('logout') }}" title="Click para cerrar sesión">Cerrar sesión</a>

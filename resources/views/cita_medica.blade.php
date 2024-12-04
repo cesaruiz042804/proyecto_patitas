@@ -150,14 +150,6 @@
                     <div class="textarea-dato">
                         <label for="">Motivo y asignación de la consulta</label>
                         <textarea name="consultation" id="consultation" placeholder="Observaciones"></textarea>
-                        <div class="content-consulta">
-                            @include('calendar')
-                            <div class="date">
-                                <input type="text" name="time_start" id="time_start1" readonly>
-                                <input type="text" name="time_end" id="time_end1" readonly>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
 

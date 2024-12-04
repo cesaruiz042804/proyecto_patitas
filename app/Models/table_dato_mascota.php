@@ -22,4 +22,14 @@ class table_dato_mascota extends Model
     protected $hidden = [
         'user_id',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(table_user::class, 'user_id');
+    }
+    
+    public function citas()
+    {
+        return $this->hasMany(table_cita::class, 'mascota_id');
+    }
 }

@@ -74,21 +74,17 @@
                                 <form action="{{ route('cart.add', $product->id) }}" method="POST"
                                     class="add-to-cart-form" data-product-id="{{ $product->id }}">
                                     @csrf
-
-
                                     <input type="hidden" name="quantity" class="inputQuantity"
                                         value="{{ $quantity }}" min="1" step="1">
 
                                     @if ($inCart)
                                         <button class="box-quantity">Actualizar cantidad</button>
                                     @else
-                                        <!--
-                                                <button type="submit" class="btn-primary btn-send">Agregar al carrito</button>
-                                            -->
                                         <button class="box-quantity">Agregar al carrito</button>
                                     @endif
                                 </form>
                             </div>
+                            
                         </div>
                     </div>
                 </div>

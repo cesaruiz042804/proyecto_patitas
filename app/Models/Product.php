@@ -12,7 +12,7 @@ class Product extends Model
         'id',
         'name',
         'description',
-        'cedula',
+        'code',
         'price',
         'image',
     ];

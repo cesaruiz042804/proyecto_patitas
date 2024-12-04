@@ -21,8 +21,9 @@
                     <img src="{{ $message->embed(public_path('img_public/img_check.png')) }}" alt="Check Icon"
                         width="100" height="100" style="display: block; margin: 0 auto;">
                 </p>
-                <p style="font-size: 16px; margin: 10px 0;">⭐ ¡Confirmación exitosa! ⭐ <br>Tu cita médica para {{ $pet }} 🐶🐱
-                  está programada para el {{ $date }} 📅 a las {{ $hour }} 🕒. <br>¡Nos vemos pronto!</p>
+                <p style="font-size: 16px; margin: 10px 0;">⭐ ¡Hola, {{ $name }}! ⭐ <br>Tu cita médica para
+                    {{ $pet }} 🐶🐱
+                    ha sido recibida y está en proceso de confirmación. <br>¡Nos vemos pronto!</p>
             </div>
             <div style="justify-content: center; align-content: center; text-align: center;">
                 <a href="{{ route('home') }}"

@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\FormCitasController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminProductsController;
 use App\Http\Middleware\SessionMiddleware;
 
 Route::get('/', function () {
@@ -55,13 +56,34 @@ Route::get('/payment/cancel', [PaypalController::class, 'call_cancel'])->name('p
 Route::get('/payment/success/donation', [PaypalController::class, 'call_success_donation'])->name('paypal.success.donation');
 Route::get('/payment/notify/donation', [PaypalController::class, 'call_notify_donation'])->name('paypal.notify.donation');
 Route::get('/payment/cancel/donation', [PaypalController::class, 'call_cancel_donation'])->name('paypal.cancel.donation');
-//Route::post('/payment/webhook', [PaypalController::class, 'webhook']);
 
-// Rutas para la parte de los productos
-Route::get('/admin-login-session', [AdminController::class, 'call_admin_login_session'])->name('admin.login.session');
-Route::post('/admin-login-session', [AdminController::class, 'call_admin_session'])->name('admin.session');
+// Rutas para la parte del admin - Login 
+Route::get('/admin/login-session', [AdminController::class, 'call_admin_login_session'])->name('admin.login.session');
+Route::post('/admin/login-session', [AdminController::class, 'call_admin_session'])->name('admin.session');
+
+// Rutas para la parte del admin - Dashboard - Calendar - Estado de citas
+/*
+Route::get('/admin-dashboard', [AdminController::class, 'call_admin_dashboard'])->name('admin.dashboard');
+Route::get('/admin-datatables-users', [AdminController::class, 'call_admin_datatables'])->name('admin.datatables.users');
+Route::get('/admin-form-products', [AdminController::class, 'call_admin_form_products'])->name('admin.form.products');
+Route::get('/admin-asignar-cita', [AdminController::class, 'call_admin_appointment'])->name('admin.appointment');
+Route::get('/admin-estado-cita-medica', [AdminController::class, 'call_admin_status_medical'])->name('admin.status.medical');
+Route::post('/admin-asignar-cita-submit', [AdminController::class, 'call_admin_appointment_submit'])->name('admin.appointment.submit');
+Route::post('/admin-actualizar-estado-cita', [AdminController::class, 'call_update_status_appointment'])->name('update.status.appointment');
+*/
+
+Route::get('/admin/dashboard', [AdminController::class, 'call_admin_dashboard'])->name('admin.dashboard');
+Route::get('/admin/users/datatables', [AdminController::class, 'call_admin_datatables'])->name('admin.datatables.users');
+Route::get('/admin/products', [AdminController::class, 'call_admin_form_products'])->name('admin.form.products');
+Route::get('/admin/appointments/assign', [AdminController::class, 'call_admin_appointment'])->name('admin.appointment');
+Route::get('/admin/appointments/status', [AdminController::class, 'call_admin_status_medical'])->name('admin.status.medical');
+Route::post('/admin/appointments/assign', [AdminController::class, 'call_admin_appointment_submit'])->name('admin.appointment.submit');
+Route::post('/admin/appointments/status/update', [AdminController::class, 'call_update_status_appointment'])->name('update.status.appointment');
 
 
+// Rutas para la parte del admin - Dashboard - Calendar - Estado de citas
+Route::get('/admin-cart-add', [AdminProductsController::class, 'call_admin_cart_add'])->name('admin.cart.add');
+Route::post('/admin-cart-add-product', [AdminProductsController::class, 'call_admin_cart_add_product'])->name('admin.cart.add.product');
 
 # git add .
 # git commit -m "Escribir"
@@ -69,3 +91,20 @@ Route::post('/admin-login-session', [AdminController::class, 'call_admin_session
 
 # php artisan migrate:reset
 # php artisan migrate
+
+
+# Comandos artisan
+# php artisan make:seeder UsersTableSeeder
+# php artisan db:seed --class=UsersTableSeeder      Uno solo
+# php artisan db:seed     Todos
+# php artisan migrate:refresh --seed
+# php artisan make:controller UsersController
+# php artisan make:model User
+# php artisan make:migration UsersTable
+# php artisan migrate:refresh
+
+
+
+
+
+

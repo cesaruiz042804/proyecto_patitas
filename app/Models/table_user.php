@@ -26,6 +26,11 @@ class table_user extends Model
         'password', // Oculta la contraseña cuando el modelo es transformado a JSON
         'remember_token',
     ];
+
+    public function mascotas()
+    {
+        return $this->hasMany(table_dato_mascota::class, 'user_id');
+    }
 }
 
 /*

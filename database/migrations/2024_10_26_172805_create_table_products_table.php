@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->string('cedula')->nullable();
+            $table->string('code')->nullable();
             $table->decimal('price', 10, 2);
             $table->string('image')->nullable();
             $table->timestamps();

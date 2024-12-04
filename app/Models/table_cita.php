@@ -10,15 +10,25 @@ class table_cita extends Model
     protected $table = 'table_cita';
 
     protected $fillable = [ // Campos que se pueden asignar masivamente
-        'user_id',
+        'mascota_id',
+        'consultation',
         'event',
         'start_date',
         'end_date',
-        'consultation',
+        'status',
     ];
 
     protected $hidden = [
-        'user_id',
-        'consultation'
+        'mascota_id',
+        'consultation',
+        'event',
+        'start_date',
+        'end_date',
+        'status',
     ];
+
+    public function mascota() // Esto ayuda a crear una relación entre tablas
+    {
+        return $this->belongsTo(table_dato_mascota::class, 'mascota_id');
+    }
 }

@@ -11,11 +11,12 @@ return new class extends Migration
     {
         Schema::create('table_cita', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('table_users')->onDelete('cascade'); // Asegúrate de que apunte a 'table_users'
+            $table->foreignId('mascota_id')->constrained('table_datos_mascota')->onDelete('cascade'); // Relacionamos con la mascota
             $table->string('consultation');
-            $table->string('event');
-            $table->datetime('start_date');
-            $table->datetime('end_date');
+            $table->string('event')->nullable();
+            $table->datetime('start_date')->nullable();
+            $table->datetime('end_date')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
