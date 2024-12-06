@@ -139,7 +139,7 @@ td, h1{
    
    .table tbody tr td {
       border-bottom: 3px solid #3333335b; /* Borde inferior para cada celda */
-      padding: 5px 11px;
+      padding: 5px 3px;
    }
    
     .table tbody td {
