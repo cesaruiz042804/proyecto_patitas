@@ -37,7 +37,8 @@
                         </thead>
                         <tbody>
                             @foreach ($cartItems as $item)
-                                <tr id="row-{{ $item->id }}" data-subtotal="{{ $item->price * $cart[$item->id]['quantity'] }}">
+                                <tr id="row-{{ $item->id }}"
+                                    data-subtotal="{{ $item->price * $cart[$item->id]['quantity'] }}">
                                     <td>{{ $item->name }}</td>
                                     <td>${{ number_format($item->price, 2) }}</td>
                                     <td>{{ $cart[$item->id]['quantity'] }}</td>
@@ -54,10 +55,11 @@
                             @endforeach
                         </tbody>
                     </table>
-    
+
                     <h3>Total: $<span id="total">{{ number_format($totalPrice, 2) }}</span></h3>
+                    <!--
                     <a href="{{ route('checkout_paypal') }}" class="btn-primary">Proceder al Pago</a>
-                    <button id="openModal">Abrir Formulario</button>
+                    -->
                     @include('payment_paypal')
                 </div>
             @else
@@ -68,7 +70,7 @@
             @endif
         </div>
     </main>
-    
+
 
     @include('partials.footer')
 
@@ -114,11 +116,13 @@
                         // Si la eliminación fue exitosa, muestra un mensaje de éxito usando la función showToast.
                         showToast('Producto eliminado del carrito.', 'success');
                         const row = document.getElementById(`row-${productId}`);
-                        const subtotal = parseFloat(row.getAttribute('data-subtotal')); // Obtener el subtotal del producto
+                        const subtotal = parseFloat(row.getAttribute(
+                        'data-subtotal')); // Obtener el subtotal del producto
                         const totalElement = document.getElementById("total");
-                        let currentTotal = parseFloat(totalElement.innerText); // Obtener el total actual sin comas
+                        let currentTotal = parseFloat(totalElement
+                        .innerText); // Obtener el total actual sin comas
                         // Restar el subtotal del producto eliminado
-                        const newTotal = currentTotal - subtotal; 
+                        const newTotal = currentTotal - subtotal;
                         totalElement.innerText = newTotal.toFixed(2); // Actualizar el total formateado
                         document.getElementById(`row-${productId}`).remove();
 

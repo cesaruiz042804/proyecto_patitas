@@ -1,110 +1,89 @@
-/* Estilo del botón que abre el modal */
-button {
-    padding: 10px 20px;
-    background-color: #403192;
-    color: #fff;
+.openModal {
+    padding: 10px 40px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #35297a;
-}
-
-/* Estilo del fondo del modal (oscurecido) */
-.modal-overlay {
+    width: 40%;
+  }
+  
+  .openModal:hover {
+    background-color: #68ce68;
+  }
+  
+  /* Estilo del modal */
+  .modal {
+    display: none; /* Oculto por defecto */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Cambié a 100% para cubrir toda la pantalla */
+    height: 100%;  /* Ocupa toda la pantalla */
     background-color: rgba(0, 0, 0, 0.5);
-    display: none;
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* Asegúrate de que esté sobre el contenido */
-}
-
-/* Estilo del modal */
-.modal {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 500px; /* Tamaño más adecuado para el modal */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 9999;  /* Asegura que el modal esté por encima de otros elementos */
+  }
+  
+  .modal-content {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 50%;
+    max-width: 600px;
+    height: 300px;  /* Permite que el contenido ajuste la altura */
+    max-height: 40%;  /* Asegura que no sea más alto que el 80% de la pantalla */
+    text-align: center;
     position: relative;
-    z-index: 10000; /* Asegúrate de que el modal esté sobre el fondo */
-}
-
-/* Título del modal */
-.modal h2 {
-    margin: 0 0 15px;
-    font-size: 24px;
-    color: #333;
-}
-
-/* Estilo del formulario dentro del modal */
-.modal form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-}
-
-/* Etiquetas dentro del formulario */
-.modal label {
-    font-size: 14px;
-    color: #555;
-}
-
-/* Campos de entrada del formulario */
-.modal input {
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-}
-
-/* Efecto cuando los campos de entrada están enfocados */
-.modal input:focus {
-    border-color: #403192;
-}
-
-/* Estilo del botón dentro del modal */
-.modal button {
-    background-color: #403192;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.modal button:hover {
-    background-color: #35297a;
-}
-
-/* Estilo del botón de cierre del modal */
-.modal .close-btn {
+    align-items: center;
+    justify-content: flex-start;  /* Flex-start para alinear los elementos al principio */
+  }
+ 
+  .close {
     position: absolute;
     top: 10px;
     right: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
     background: none;
     border: none;
-    font-size: 18px;
-    cursor: pointer;
-    color: #999;
-}
+  }
+  
+  .close:hover {
+    color: black;
+  }
 
-.modal .close-btn:hover {
-    color: #333;
-}
-
-/* Mostrar el modal cuando esté activo */
-.modal-overlay.active {
+  .container {
+    width: 100%;
     display: flex;
-}
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* Asegurarse que el formulario no sea demasiado grande */
+  form {
+    width: 100%;
+  }
+
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 200px;
+    margin-top: 20px;
+    margin-bottom: 160px;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
