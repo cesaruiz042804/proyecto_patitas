@@ -52,9 +52,9 @@ td, h1{
 }
 
 .table thead th {
-   background-color: #3835db65; /* Color verde */
+   background-color: #3835db65; 
    color: white; /* Color del texto en blanco */
-   padding: 10px 15px; /* Ajuste de padding si es necesario */
+   padding: 10px 4px; /* Ajuste de padding si es necesario */
    text-align: center; /* Alineación del texto al centro */
 }
 
