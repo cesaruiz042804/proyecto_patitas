@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class table_admin_user extends Model
 {
-    protected $table = 'table_users';
+    protected $table = 'table_admin_users';
 
     protected $fillable = [ // Campos que se pueden asignar masivamente
         'email',
@@ -21,6 +21,5 @@ class table_admin_user extends Model
         'email',
         'telefono',
         'password', // Oculta la contraseña cuando el modelo es transformado a JSON
-        'remember_token',
     ];
 }
