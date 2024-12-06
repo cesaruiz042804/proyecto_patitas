@@ -16,6 +16,7 @@ use App\Models\table_cita;
 use App\Models\table_dato_mascota;
 use Illuminate\Support\Facades\Mail;
 use \App\Mail\EmailAppointment;
+use App\Models\table_email_confirmation;
 
 class AdminController extends Controller
 {
@@ -32,6 +33,7 @@ class AdminController extends Controller
             'password' => 'required|string',
         ],  [
             'email.required' => 'El campo de correo electrónico es obligatorio.',
+            'email.email' => 'El campo de correo electrónico es inválido..',
             'password.required' => 'El campo de contraseña es obligatorio.',
         ]);
 
@@ -41,11 +43,17 @@ class AdminController extends Controller
         if ($user && Hash::check($request->password, $user->password)) {
             // Credenciales correctas: Almacena el ID del usuario en la sesión
             session(['admin_user' => $user->id]);
-            return view('admin.home')->with('partialsMessage', 'ok')->with('message', 'Has iniciado sesión correctamente.');
+            return redirect()->route('admin.dashboard')->with('partialsMessage', 'ok')->with('message', 'Has iniciado sesión correctamente.');
         } else {
             // Credenciales incorrectas
             return back()->withErrors(['email' => 'Las credenciales son incorrectas.']);
         }
+    }
+
+    public function call_admin_logout()
+    {
+        session()->forget('admin_user'); // Eliminar el ID del usuario de la sesión
+        return redirect()->route('admin.login.session'); // Redirigir a la página de inicio de sesión
     }
 
     public function call_admin_datatables()
@@ -56,7 +64,12 @@ class AdminController extends Controller
 
     public function call_admin_dashboard()
     {
-        return view('admin.dashboard');
+        $userCount = table_user::count();
+        $userNoConfirmedCount = table_email_confirmation::count();
+        $pendingAppointmentsCount = table_cita::where('status', 'Scheduled')->count();
+        $confirmedAppointmentsCount = table_cita::where('status', 'In Progress')->count();
+        $all_products = Product::count();
+        return view('admin.dashboard', compact('userCount', 'userNoConfirmedCount','pendingAppointmentsCount', 'confirmedAppointmentsCount', 'all_products'));
     }
 
     public function call_admin_form_products() // 
@@ -64,24 +77,6 @@ class AdminController extends Controller
         $products = Product::all(); // Obtener todos los productos
         return view('admin.form_products', compact('products'));
     }
-
-    /*
-    public function call_admin_appointment()
-    {
-        $alls_events = Event::all();
-        $events = [];
-
-        foreach ($alls_events as $event) {
-            $events[] = [
-                'title' => $event->event,
-                'start' => $event->start_date,
-                'end' => $event->end_date,
-            ];
-        }
-
-        return view('admin.appointment', compact('events'));
-    }
-        */
 
     public function call_admin_status_medical() // Mostrar informacion de las citas
     {

@@ -51,8 +51,24 @@ td, h1{
    padding: 15px 20px;
 }
 
+.table thead th {
+   background-color: #3835db65; /* Color verde */
+   color: white; /* Color del texto en blanco */
+   padding: 10px 15px; /* Ajuste de padding si es necesario */
+   text-align: center; /* Alineación del texto al centro */
+}
+
  .table tbody tr {
    text-align: center;
+}
+
+.table tbody tr:nth-child(odd) {
+   background-color: #f8f9fa; /* Color claro para las filas impares */
+}
+
+/* Estilo para las filas pares */
+.table tbody tr:nth-child(even) {
+   background-color: #ffffff00; /* Color más oscuro para las filas pares */
 }
 
 .btn-danger{

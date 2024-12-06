@@ -9,6 +9,7 @@ use App\Http\Controllers\FormCitasController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminProductsController;
 use App\Http\Middleware\SessionMiddleware;
+use App\Http\Middleware\SessionAdminMiddleware;
 
 Route::get('/', function () {
     return redirect()->route('home');
@@ -59,9 +60,28 @@ Route::get('/payment/cancel/donation', [PaypalController::class, 'call_cancel_do
 
 // Rutas para la parte del admin - Login 
 Route::get('/admin/login-session', [AdminController::class, 'call_admin_login_session'])->name('admin.login.session');
-Route::post('/admin/login-session', [AdminController::class, 'call_admin_session'])->name('admin.session');
+Route::post('/admin/session', [AdminController::class, 'call_admin_session'])->name('admin.session');
+Route::get('/admin/login-logout', [AdminController::class, 'call_admin_logout'])->name('admin.logout');
 
 // Rutas para la parte del admin - Dashboard - Calendar - Estado de citas
+Route::get('/admin/dashboard', [AdminController::class, 'call_admin_dashboard'])->name('admin.dashboard')->middleware(SessionAdminMiddleware::class);
+Route::get('/admin/users/datatables', [AdminController::class, 'call_admin_datatables'])->name('admin.datatables.users')->middleware(SessionAdminMiddleware::class);
+Route::get('/admin/products', [AdminController::class, 'call_admin_form_products'])->name('admin.form.products')->middleware(SessionAdminMiddleware::class);
+Route::get('/admin/appointments/assign', [AdminController::class, 'call_admin_appointment'])->name('admin.appointment')->middleware(SessionAdminMiddleware::class);
+Route::get('/admin/appointments/status', [AdminController::class, 'call_admin_status_medical'])->name('admin.status.medical')->middleware(SessionAdminMiddleware::class);
+Route::post('/admin/appointments/assign', [AdminController::class, 'call_admin_appointment_submit'])->name('admin.appointment.submit')->middleware(SessionAdminMiddleware::class);
+Route::post('/admin/appointments/status/update', [AdminController::class, 'call_update_status_appointment'])->name('update.status.appointment')->middleware(SessionAdminMiddleware::class);
+
+// Rutas para la parte del admin - Dashboard - Calendar - Estado de citas
+Route::get('/admin-cart-add', [AdminProductsController::class, 'call_admin_cart_add'])->name('admin.cart.add');
+Route::post('/admin-cart-add-product', [AdminProductsController::class, 'call_admin_cart_add_product'])->name('admin.cart.add.product');
+Route::post('/admin-cart-delete-product', [AdminProductsController::class, 'call_admin_cart_delete_product'])->name('admin.cart.delete.product');
+
+
+
+
+
+
 /*
 Route::get('/admin-dashboard', [AdminController::class, 'call_admin_dashboard'])->name('admin.dashboard');
 Route::get('/admin-datatables-users', [AdminController::class, 'call_admin_datatables'])->name('admin.datatables.users');
@@ -71,20 +91,6 @@ Route::get('/admin-estado-cita-medica', [AdminController::class, 'call_admin_sta
 Route::post('/admin-asignar-cita-submit', [AdminController::class, 'call_admin_appointment_submit'])->name('admin.appointment.submit');
 Route::post('/admin-actualizar-estado-cita', [AdminController::class, 'call_update_status_appointment'])->name('update.status.appointment');
 */
-
-Route::get('/admin/dashboard', [AdminController::class, 'call_admin_dashboard'])->name('admin.dashboard');
-Route::get('/admin/users/datatables', [AdminController::class, 'call_admin_datatables'])->name('admin.datatables.users');
-Route::get('/admin/products', [AdminController::class, 'call_admin_form_products'])->name('admin.form.products');
-Route::get('/admin/appointments/assign', [AdminController::class, 'call_admin_appointment'])->name('admin.appointment');
-Route::get('/admin/appointments/status', [AdminController::class, 'call_admin_status_medical'])->name('admin.status.medical');
-Route::post('/admin/appointments/assign', [AdminController::class, 'call_admin_appointment_submit'])->name('admin.appointment.submit');
-Route::post('/admin/appointments/status/update', [AdminController::class, 'call_update_status_appointment'])->name('update.status.appointment');
-
-
-// Rutas para la parte del admin - Dashboard - Calendar - Estado de citas
-Route::get('/admin-cart-add', [AdminProductsController::class, 'call_admin_cart_add'])->name('admin.cart.add');
-Route::post('/admin-cart-add-product', [AdminProductsController::class, 'call_admin_cart_add_product'])->name('admin.cart.add.product');
-
 # git add .
 # git commit -m "Escribir"
 # git push origin main o master

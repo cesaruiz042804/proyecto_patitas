@@ -1,14 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f3f3f3;
-}
-
+/* Estilo del botón que abre el modal */
 button {
     padding: 10px 20px;
     background-color: #403192;
@@ -29,11 +19,12 @@ button:hover {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100%; /* Cambié a 100% para cubrir toda la pantalla */
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 9999; /* Asegúrate de que esté sobre el contenido */
 }
 
 /* Estilo del modal */
@@ -42,28 +33,33 @@ button:hover {
     padding: 20px;
     border-radius: 8px;
     width: 90%;
-    max-width: 400px;
+    max-width: 500px; /* Tamaño más adecuado para el modal */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
+    z-index: 10000; /* Asegúrate de que el modal esté sobre el fondo */
 }
 
+/* Título del modal */
 .modal h2 {
     margin: 0 0 15px;
     font-size: 24px;
     color: #333;
 }
 
+/* Estilo del formulario dentro del modal */
 .modal form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
+/* Etiquetas dentro del formulario */
 .modal label {
     font-size: 14px;
     color: #555;
 }
 
+/* Campos de entrada del formulario */
 .modal input {
     padding: 10px;
     font-size: 14px;
@@ -72,10 +68,12 @@ button:hover {
     outline: none;
 }
 
+/* Efecto cuando los campos de entrada están enfocados */
 .modal input:focus {
     border-color: #403192;
 }
 
+/* Estilo del botón dentro del modal */
 .modal button {
     background-color: #403192;
     color: #fff;
@@ -90,6 +88,7 @@ button:hover {
     background-color: #35297a;
 }
 
+/* Estilo del botón de cierre del modal */
 .modal .close-btn {
     position: absolute;
     top: 10px;

@@ -85,7 +85,26 @@
                                         <div class="col col-stats ms-3 ms-sm-0">
                                             <div class="numbers">
                                                 <p class="card-category"># Usuarios registrados</p>
-                                                <h4 class="card-title">2000</h4>
+                                                <h4 class="card-title">{{ $userCount }}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card card-stats card-round">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-icon">
+                                            <div class="icon-big text-center icon-primary bubble-shadow-small">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col col-stats ms-3 ms-sm-0">
+                                            <div class="numbers">
+                                                <p class="card-category"># Correos no confirmados</p>
+                                                <h4 class="card-title">{{ $userNoConfirmedCount }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -104,7 +123,7 @@
                                         <div class="col col-stats ms-3 ms-sm-0">
                                             <div class="numbers">
                                                 <p class="card-category"># Citas médicas agendadas</p>
-                                                <h4 class="card-title">1303</h4>
+                                                <h4 class="card-title">{{ $confirmedAppointmentsCount }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -123,7 +142,26 @@
                                         <div class="col col-stats ms-3 ms-sm-0">
                                             <div class="numbers">
                                                 <p class="card-category"># Citas médicas pendientes</p>
-                                                <h4 class="card-title">$ 1,345</h4>
+                                                <h4 class="card-title">{{ $pendingAppointmentsCount }}</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card card-stats card-round">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-icon">
+                                            <div class="icon-big text-center icon-success bubble-shadow-small">
+                                                <i class="fas fa-luggage-cart"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col col-stats ms-3 ms-sm-0">
+                                            <div class="numbers">
+                                                <p class="card-category"># Productos agregados carrito</p>
+                                                <h4 class="card-title">{{ $all_products }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -133,6 +171,7 @@
                     </div>
 
                     <div class="col-md-8">
+                        <!--
                         <div class="card card-round">
                             <div class="card-header">
                                 <div class="card-head-row card-tools-still-right">
@@ -155,7 +194,6 @@
                             </div>
                             <div class="card-body p-0">
                                 <div class="table-responsive">
-                                    <!-- Projects table -->
                                     <table class="table align-items-center mb-0">
                                         <thead class="thead-light">
                                             <tr>
@@ -197,6 +235,7 @@
                                 </div>
                             </div>
                         </div>
+                    -->
                     </div>
                 </div>
             </div>

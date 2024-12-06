@@ -193,9 +193,6 @@
                                                             </td>
                                                             <td>{{ $item['nombre'] }}</td><!-- Nombre del dueño -->
                                                             <td>{{ $item['consulta'] }}</td><!-- Motivo de la consulta -->
-                                                            <!--
-                                                            <td>{{ $item['telefono'] }}</td>
-                                                            -->
                                                             <td><!-- Teléfono del dueño -->
                                                                 <a href="https://wa.me/507{{ str_replace('-', '', $item['telefono']) }}?text={{ urlencode('Patitas al Rescate\n\nEstimado/a, necesitamos más información sobre la cita que solicitó para poder asignarle correctamente el día de la cita. Por favor, indíquenos el tipo de servicio requerido y su preferencia de horario. Gracias.') }}}" target="_blank">
                                                                     {{ str_replace('-', '', $item['telefono']) }}

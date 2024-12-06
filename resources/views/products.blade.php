@@ -48,24 +48,9 @@
                                 $quantity = $inCart ? $cart[$product->id]['quantity'] : 0; // Obtén la cantidad si está en el carrito
                             @endphp
 
-                            @if ($inCart)
-                                <div class="text-span">
-                                    <span class="product-status" data-product-id="{{ $product->id }}">En el Carrito
-                                        ({{ $quantity }})
-                                    </span>
-                                </div>
-                            @else
-                            
-                                <div class="text-span">
-                                    <span class="product-status" data-product-id="{{ $product->id }}">¡No te lo
-                                        pierdas!</span>
-                                </div>
-                            
-                            @endif
                             <div class="card-body-item">
                                 <img src="{{ $product->image }}?v={{ $product->updated_at->timestamp }}"
-                                    class="card-img" alt="{{ $product->name }}" loading="lazy"
-                                    style="width: 200px; height: 200px;">
+                                    class="card-img" alt="{{ $product->name }}" loading="lazy">
                                 <h5 class="card-title">{{ $product->name }}</h5>
                                 <p class="card-text">{{ $product->description }}</p>
                                 <p class="card-text">Precio: ${{ number_format($product->price, 2) }}</p>
@@ -74,17 +59,39 @@
                                 <form action="{{ route('cart.add', $product->id) }}" method="POST"
                                     class="add-to-cart-form" data-product-id="{{ $product->id }}">
                                     @csrf
-                                    <input type="hidden" name="quantity" class="inputQuantity"
-                                        value="{{ $quantity }}" min="1" step="1">
+                                    <div class="container-btn">
+                                        @if ($inCart)
+                                            <button type="button" class="openModal box-quantity"
+                                                data-product-id="{{ $product->id }}">Ya en el carrito</button>
+                                        @else
+                                            <button type="button" class="openModal box-quantity"
+                                                data-product-id="{{ $product->id }}">Agregar al carrito</button>
+                                        @endif
 
-                                    @if ($inCart)
-                                        <button class="box-quantity">Actualizar cantidad</button>
-                                    @else
-                                        <button class="box-quantity">Agregar al carrito</button>
-                                    @endif
+                                        <div id="modal-{{ $product->id }}" class="modal">
+                                            <div class="modal-content">
+                                                <div class="content-product-info-img">
+                                                    <img src="{{ $product->image }}?v={{ $product->updated_at->timestamp }}"
+                                                        alt="{{ $product->name }}" loading="lazy">
+                                                </div>
+                                                <div class="content-product-info-text">
+                                                    <span class="close"
+                                                        data-modal-id="{{ $product->id }}">&times;</span>
+                                                    <button type="button" class="quantity-btn decrease">-</button>
+                                                    <input type="number" class="quantity-input inputQuantity"
+                                                        id="quantity-{{ $product->id }}" min="0"
+                                                        name="quantity" value="{{ $quantity }}" />
+                                                    <button type="button" class="quantity-btn increase">+</button>
+                                                </div>
+                                                <div class="content-product-info-text">
+                                                    <button type="submit" class="btn-save">Guardar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -94,109 +101,134 @@
 
     @include('partials.footer')
 
-    <script>
-        document.querySelector('.btn-cart').addEventListener('click', function() {
-            window.location.href = "{{ route('cart.show') }}";
-        });
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.js"></script>
 
     <script>
-        document.querySelectorAll('.add-to-cart-form').forEach(form => {
-            const btnQuantity = form.querySelector('.box-quantity');
-            const quantityInput = form.querySelector('.inputQuantity');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Manejador para abrir el modal
+            document.querySelectorAll('.openModal').forEach(btn => {
+                const productId = btn.getAttribute('data-product-id');
+                btn.addEventListener('click', () => openModal(productId)); // Abre el modal
+            });
 
-            //console.log('form');
-            if (btnQuantity) {
-                let isAlertShown = false;
+            // Manejador para cerrar el modal
+            document.querySelectorAll('.close').forEach(closeBtn => {
+                const productId = closeBtn.getAttribute('data-modal-id');
+                closeBtn.addEventListener('click', () => closeModal(productId)); // Cierra el modal
+            });
 
-                btnQuantity.addEventListener('click', async (event) => {
-                    event.preventDefault(); // Evita el envío inmediato del formulario
-                    console.log('form');
-                    if (isAlertShown) return;
-
-                    isAlertShown = true;
-
-                    const result = await Swal.fire({
-                        title: 'Ingresa la nueva cantidad',
-                        input: 'number',
-                        inputPlaceholder: 'Nueva cantidad',
-                        inputValue: quantityInput.value,
-                        showCancelButton: true,
-                        confirmButtonText: 'Aceptar',
-                        cancelButtonText: 'Cancelar',
-                        inputValidator: (value) => {
-                            if (!value || value <= 0) {
-                                return 'Por favor ingresa una cantidad válida.';
-                            }
-                        }
-                    });
-
-                    if (result.isConfirmed) {
-                        quantityInput.value = result.value; // Actualiza el valor del input
-                        console.log('Nueva cantidad para el producto', form.dataset.productId, ':',
-                            result.value);
-
-                        // **Enviar el formulario manualmente después de actualizar el input**
-                        form.dispatchEvent(new Event('submit')); // Desencadena el envío manual
+            // Cerrar el modal al hacer clic fuera del contenido
+            window.addEventListener('click', (e) => {
+                document.querySelectorAll('.modal').forEach(modal => {
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
                     }
-
-                    isAlertShown = false;
-
                 });
+            });
+
+            // Función para abrir el modal
+            function openModal(productId) {
+                const modal = document.getElementById(`modal-${productId}`);
+                modal.style.display = 'flex'; // Mostrar el modal
             }
 
-            // Modificar el evento de envío del formulario
-            form.addEventListener('submit', async (event) => {
-                event.preventDefault(); // Evita el recargo de la página
+            // Función para cerrar el modal
+            function closeModal(productId) {
+                const modal = document.getElementById(`modal-${productId}`);
+                modal.style.display = 'none'; // Ocultar el modal
+            }
 
-                const formData = new FormData(form);
-                const productId = form.getAttribute('data-product-id');
-                const statusSpan = document.querySelector(
-                    `.product-status[data-product-id="${productId}"]`);
-
-                try {
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')
-                                .getAttribute('content'),
-                        },
-                    });
-
-                    const data = await response.json();
-
-                    if (response.ok) {
-                        showToast(data.success, 'success');
-                        statusSpan.textContent =
-                            `En el Carrito (${data.quantity})`; // Actualiza el texto del span
-                        form.querySelector('.inputQuantity').value = data
-                            .quantity; // Actualiza el input
-                        btnQuantity.textContent = 'Actualizar cantidad';
-
-                    } else {
-                        showToast(data.error || 'Hubo un problema al agregar el producto.', 'error');
+            // Función para cambiar la cantidad
+            function changeQuantity(amount, productId) {
+                const quantityInput = document.getElementById(`quantity-${productId}`);
+                if (quantityInput) {
+                    let currentQuantity = parseInt(quantityInput.value);
+                    if (currentQuantity + amount >= 0) {
+                        quantityInput.value = currentQuantity + amount;
                     }
-                } catch (error) {
-                    console.log('Error: ', error);
-                    showToast('Error de conexión.', 'error');
                 }
+            }
+
+            // Manejadores para los botones de cantidad (+ y -)
+            document.querySelectorAll('.quantity-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = button.closest('.modal').getAttribute('id').replace('modal-',
+                        '');
+                    const action = button.classList.contains('increase') ? 1 : -1;
+                    changeQuantity(action, productId); // Cambia la cantidad
+                });
+            });
+
+            // Lógica para manejar el formulario de agregar al carrito
+            document.querySelectorAll('.add-to-cart-form').forEach(form => {
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault(); // Evita el recargo de la página
+
+                    const formData = new FormData(form);
+                    const productId = form.getAttribute('data-product-id');
+
+                    // Asegúrate de obtener el valor correcto de la cantidad
+                    const quantityInput = document.getElementById(`quantity-${productId}`);
+                    const quantity = quantityInput ? parseInt(quantityInput.value) :
+                        1; // Asegúrate de que la cantidad sea un número
+
+                    // Actualiza el valor de la cantidad en el formulario antes de enviarlo
+                    form.querySelector('.inputQuantity').value = quantity;
+
+                    try {
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'X-CSRF-TOKEN': document.querySelector(
+                                    'meta[name="csrf-token"]').getAttribute(
+                                    'content'),
+                            },
+                        });
+
+                        const contentType = response.headers.get("content-type");
+
+                        if (contentType && contentType.includes("application/json")) {
+                            const data = await response
+                                .json(); // Procesa la respuesta como JSON
+
+                            if (response.ok) {
+                                showToast(data.success, 'success');
+                                // Actualiza la cantidad en el formulario después de que el producto se haya agregado
+                                form.querySelector('.inputQuantity').value = data.quantity;
+                            } else {
+                                showToast(data.error ||
+                                    'Hubo un problema al agregar el producto.', 'error');
+                            }
+                        } else {
+                            const text = await response.text();
+                            console.error('Respuesta no es JSON:',
+                                text); // Muestra en la consola para depuración
+                            showToast('Error inesperado en el servidor.', 'error');
+                        }
+                    } catch (error) {
+                        console.error('Error en la solicitud:', error);
+                        showToast('Error de conexión.', 'error');
+                    }
+                });
+            });
+
+
+            // Función para mostrar notificaciones usando Toastify
+            function showToast(message, type) {
+                Toastify({
+                    text: message,
+                    backgroundColor: type === 'success' ? 'green' : 'red',
+                    duration: 3000,
+                    close: true
+                }).showToast();
+            }
+
+            // Redirigir al carrito al hacer clic en el icono del carrito
+            document.querySelector('.btn-cart').addEventListener('click', function() {
+                window.location.href = "{{ route('cart.show') }}";
             });
         });
-
-        function showToast(message, type = 'success') {
-            Toastify({
-                text: message,
-                duration: 2000, // Duración en milisegundos
-                close: true, // Mostrar botón de cerrar
-                gravity: 'top', // Posición: top o bottom
-                position: 'right', // Posición: left, center o right
-                backgroundColor: type === 'success' ? 'green' : 'red', // Color de fondo según el tipo
-                stopOnFocus: true, // Detiene el temporizador si el usuario se enfoca en la notificación
-            }).showToast();
-        }
     </script>
 
 </body>

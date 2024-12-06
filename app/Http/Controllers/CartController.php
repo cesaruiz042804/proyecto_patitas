@@ -11,23 +11,21 @@ class CartController extends Controller
     public function addToCart(Request $request, $productId)
     {
         $product = Product::find($productId);
-
-        
+ 
         if (!$product) {
-            return redirect()->back()->with('error', 'Producto no encontrado');
+            return response()->json(['success' => 'Producto no encontrado: ID' . $product]);
         }
 
         $quantity = $request->input('quantity', 1); // Valor por defecto 1 si no se envía una cantidad
 
         if ($quantity <= 0 || !is_numeric($quantity)) {
-            return redirect()->back()->with('error', 'Cantidad no válida');
+            return response()->json(['error' => 'Cantidad no válida'], 400); // Código 400 para error
         }
 
         $cart = session()->get('cart', []);
 
         // Si el producto ya está en el carrito, aumenta la cantidad
         if (isset($cart[$productId])) {
-            //$cart[$productId]['quantity']++;
             Log::info($quantity);
             $cart[$productId]['quantity'] = $quantity;
             $quantity = $cart[$productId]['quantity'];
@@ -44,6 +42,8 @@ class CartController extends Controller
         }
 
         session()->put('cart', $cart);
+        Log::info('Respuesta JSON', ['success' => 'Producto agregado al carrito', 'quantity' => $quantity]);
+
         return response()->json(['success' => 'Producto agregado al carrito', 'quantity' => $quantity]);
     }
 
@@ -76,5 +76,11 @@ class CartController extends Controller
     {
         $products = Product::all(); // Obtener todos los productos
         return view('products', compact('products'));
+    }
+
+    public function products_quantity()
+    {
+
+        //return view('products_quantity', compact('products')); 
     }
 }

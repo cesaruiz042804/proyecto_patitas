@@ -57,6 +57,8 @@
     
                     <h3>Total: $<span id="total">{{ number_format($totalPrice, 2) }}</span></h3>
                     <a href="{{ route('checkout_paypal') }}" class="btn-primary">Proceder al Pago</a>
+                    <button id="openModal">Abrir Formulario</button>
+                    @include('payment_paypal')
                 </div>
             @else
                 <div class="empty-cart-message">

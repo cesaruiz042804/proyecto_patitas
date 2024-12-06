@@ -102,7 +102,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table id="add-row" class="display table table-striped table-hover">
+                                        <table id="multi-filter-select" class="display table table-striped table-hover">
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
@@ -129,18 +129,22 @@
                                                         <td>{{ $product->id }}</td>
                                                         <td>{{ $product->name }}</td>
                                                         <td>{{ $product->description }}</td>
-                                                        <td>{{ $product->cedula }}</td>
+                                                        <td>{{ $product->code }}</td>
                                                         <td>{{ $product->price }}</td>
                                                         <td>
                                                             <div class="form-button-action">
+                                                                <!--
                                                                 <button type="button" data-bs-toggle="tooltip"
                                                                     title=""
                                                                     class="btn btn-link btn-primary btn-lg"
                                                                     data-original-title="Edit Task">
                                                                     <i class="fa fa-edit"></i>
                                                                 </button>
+                                                            -->
                                                                 <button type="button" data-bs-toggle="tooltip"
-                                                                    title="" class="btn btn-link btn-danger"
+                                                                    title="" class="btn btn-link btn-danger btn-show-modal"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#myModal" 
                                                                     data-original-title="Remove">
                                                                     <i class="fa fa-times"></i>
                                                                 </button>
@@ -159,6 +163,9 @@
             </div>
         </div>
     </div>
+
+    
+    @include('admin.modals.modals_delete_products')
 
     <!--   Core JS Files   -->
     <script src="{{ asset('asset_admin/js/core/jquery-3.7.1.min.js') }}"></script>
@@ -215,6 +222,20 @@
                 pageLength: 5,
             });
 
+             // Al hacer clic en un botón dentro de la tabla
+             $('#multi-filter-select').on('click', '.btn-show-modal', function() {
+                const $row = $(this).closest('tr');
+
+                // Captura los datos de la fila
+                const id = $row.find('td:eq(0)').text().trim();
+
+                // Asigna los valores al modal
+                $('#myModal #id').val(id);
+
+                // Muestra el modal
+                $('#myModal').modal(
+                    'show'); // Esto ayuda a que se vea el modal cuando haga la selección
+            });
 
         });
     </script>

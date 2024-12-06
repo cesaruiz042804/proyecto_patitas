@@ -100,6 +100,7 @@
                         </ul>
                     </div>
                 </li>
+                <!--
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#submenu">
                         <i class="fas fa-bars"></i>
@@ -151,6 +152,7 @@
                         </ul>
                     </div>
                 </li>
+            -->
             </ul>
         </div>
     </div>
