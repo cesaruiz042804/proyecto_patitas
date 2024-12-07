@@ -42,11 +42,18 @@ class AdminProductsController extends Controller
                 // Generar un nombre único para la imagen
                 $imageName = time() . '.' . $image->getClientOriginalExtension();
 
-                // Guardar la imagen en el directorio 'public/image_products' dentro de storage
-                $image->storeAs('image_products', $imageName, 'public');
+                $destinationPath = public_path('img_server/'); // Ruta de destino en public/images/products
 
+                // Asegúrate de que la carpeta exista
+                if (!file_exists($destinationPath)) {
+                    mkdir($destinationPath, 0777, true); // Crea la carpeta si no existe
+                }
+    
+                // Mover la imagen a la carpeta destino dentro de public
+                $image->move($destinationPath, $imageName);
+    
                 // Obtener la URL pública correcta
-                $imageUrl = Storage::url('image_products/' . $imageName); 
+                $imageUrl = asset('img_server/' . $imageName);
 
                 // Crear el producto en la base de datos
                 $data_products = Product::create([
