@@ -4,7 +4,6 @@
     border: 0;
     font-size: 100%;
     vertical-align: baseline;
-    font-family: 'Trebuchet MS', sans-serif;
 }
  
  body {
@@ -18,7 +17,7 @@
 }
 
 .container {
-    min-height: 100vh; /* Asegura que ocupe toda la altura del viewport */
+    min-height: 95vh; /* Asegura que ocupe toda la altura del viewport */
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -35,12 +34,13 @@
 .form {
     display: flex;
     flex-direction: column;
-    width: 800px;
+    align-items: center;
+    width: 70%;
     height: auto;
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;
-    padding: 20px;
+    padding: 2% 0%;
     font-weight: bold;
     border-radius: 10px; /* Esquinas redondeadas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para efecto flotante */
@@ -57,63 +57,49 @@
     font-size: 18px;
 }
 
-.form input, select {
+.content-animal {
+    width: 100%;
+    height: auto;
+}
+
+.content-animal input, .content-animal select {
     border-radius: 20px;
     margin: 15px 5px;
     width: 28%;
-    padding: 3px 0px 3px 10px;
+    padding: 6px 6px;
     /* arriba derecha abajo izquierda*/
     font-weight: bolder;
     transition: box-shadow 0.4s ease-in-out; /* Transición para suavizar el efecto */
     box-shadow: 0 0 0 rgba(255, 255, 255, 0); /* Inicialmente sin sombra */
 }
 
+.content-textarea {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    padding: 3% 0%;
+}
+
 .textarea-dato {
     display: flex;
     flex-direction: column;
-    width: 95%;;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;;
     margin: auto;
 }
 
 .textarea-dato textarea {
     border-radius: 10px;
     height: 100px;
+    width: 85%;
     padding: 5px;
     resize: none;
     transition: box-shadow 0.4s ease-in-out; /* Transición para suavizar el efecto */
     box-shadow: 0 0 0 rgba(255, 255, 255, 0); /* Inicialmente sin sombra */
 }
-
-.content-consulta{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    width: 100%;
-    margin: 15px;
-}
-
-.form #image{
-    background-color: #e9e9e9;
-    border-radius: 5px;
-}
-
-.content-textarea {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 15px;
-}
-
-.date {
-    width: 100%;
-} 
-
-.date input {
-    text-align: center;
-    width: 40%;
-} 
 
 .content-btn {
     justify-content: center;
@@ -148,21 +134,20 @@ input:focus, textarea:focus, select:focus {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 3% 0%;
     }
 
-    .content-animal input, .content-animal select, .textarea-dato textarea{
-        width: 90%;
-        padding: 10px;
-    }
-
-    .textarea-dato{
-        align-items: center;
+    .content-animal {
         width: 100%;
     }
 
+    .content-animal input, .content-animal select {
+        width: 88%;
+        padding: 9px 6px;
+    }
+
     .form{
-        width: 85%;
+        width: 90%;
         margin: 30px 0px;
-        padding: 15px 15px;
     }
 }

@@ -4,7 +4,6 @@
    border: 0;
    font-size: 100%;
    vertical-align: baseline;
-   font-family: 'Trebuchet MS', sans-serif;
 }
 
 .container {
@@ -50,13 +49,13 @@
    padding: 8px 15px;
 }
 
-.card-body{
+.card-body {
    display: flex;
    flex-direction: column;
    background-color: #ffffff75;
    justify-content: center;
    align-items: center;
-   min-height: 65vh;
+   min-height: 77vh;
    height: auto;
    width: 100%;
    justify-content: space-between;
@@ -64,14 +63,18 @@
 }
 
 .card-body-item img {
-   width: 60%;      /* La imagen ocupa todo el ancho disponible */
-   height: auto;            /* La altura se ajusta automáticamente para mantener la proporción */
-   aspect-ratio: 1 / 1;         /* Mantiene la proporción original de la imagen */
-   object-fit: contain; /* Cubre el área del contenedor sin distorsionar la imagen (opcional) */
+   width: 60%;
+   /* La imagen ocupa todo el ancho disponible */
+   height: auto;
+   /* La altura se ajusta automáticamente para mantener la proporción */
+   aspect-ratio: 1 / 1;
+   /* Mantiene la proporción original de la imagen */
+   object-fit: contain;
+   /* Cubre el área del contenedor sin distorsionar la imagen (opcional) */
 }
 
-.card-body-item{
-   padding: 10px 0;
+.card-body-item {
+   padding: 5px 0;
    display: flex;
    flex-direction: column;
    justify-items: center;
@@ -95,7 +98,7 @@
    cursor: pointer;
    transition: box-shadow 0.3s ease;
    border-radius: 4%;
-   margin: 4px 6px 4px 0;
+   margin: 0px 0;
    width: 70%;
 }
 
@@ -106,19 +109,21 @@
 }
 
 .card-text {
-   flex-grow: 1; /* Hace que la descripción crezca para llenar el espacio disponible */
+   flex-grow: 1;
+   /* Hace que la descripción crezca para llenar el espacio disponible */
    text-align: center;
    padding: 0px 35px;
 }
 
-.card-body-form{
+.card-body-form {
    width: 100%;
 }
+
 .add-to-cart-form {
    width: 100%;
    padding: 9px 0;
    display: flex;
-   flex-direction: column; 
+   flex-direction: column;
    align-items: center;
    justify-content: center;
    justify-items: center;
@@ -138,27 +143,13 @@
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+   -webkit-appearance: none;
+   margin: 0;
 }
 
 /* Para Firefox */
 input[type="number"] {
-  -moz-appearance: textfield;
-}
-
-.quantity-btn {
-   background-color: #35ad35;
-   color: #fff;
-   border: none;
-   font-size: 25px;
-   cursor: pointer;
-   border-radius: 4px;
-   transition: background-color 0.3s ease;
-}
-
-.quantity-btn:hover, .btn-save:hover {
-   background-color: #68ce68;
+   -moz-appearance: textfield;
 }
 
 .quantity-input {
@@ -180,87 +171,135 @@ input[type="number"] {
    border-radius: 5px;
    cursor: pointer;
    width: 100%;
- }
- 
- .openModal:hover {
+}
+
+.openModal:hover {
    background-color: #68ce68;
- }
- 
- /* Estilo del modal */
- .modal {
-   display: none; /* Oculto por defecto */
+}
+
+/* Estilo del modal */
+.modal {
+   display: none;
+   /* Oculto por defecto */
    position: fixed;
    top: 0;
    left: 0;
    width: 100%;
    height: 100%;
-   background-color: rgba(0, 0, 0, 0.5);
+   background-color: rgba(0, 0, 0, 0.89);
    justify-content: center;
    align-items: center;
- }
- 
- .modal-content {
-   background-color: white;
+}
+
+.modal-content {
+   background-color: #ffffff;
+   /* Fondo blanco limpio */
    padding: 20px;
-   border-radius: 10px;
-   width: 80%;
+   /* Bordes redondeados más suaves */
+   width: 75%;
    max-width: 80%;
-   height: 80%;
-   max-height: 80%;
+   min-height: 60%;
+   height: auto;
    text-align: center;
    position: relative;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   gap: 40px;
- }
+   gap: 30px;
+   /* Espaciado entre elementos */
+   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+   /* Sombra elegante */
+   border: 2px solid rgba(0, 0, 0, 0.1);
+   /* Borde fino */
+   animation: fadeIn 0.4s ease;
+   /* Animación para suavidad */
+   font-family: 'Playfair Display', serif;
+   /* Fuente bonita */
+}
 
- .content-product-info-img {
+/* Animación de entrada */
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+      transform: scale(0.9);
+   }
+
+   to {
+      opacity: 1;
+      transform: scale(1);
+   }
+}
+
+
+.content-product-info-img {
    width: 80%;
- }
+}
 
- .content-product-info-text {
-   width: 30%;
- }
-
- .content-product-info-text button {
-   width: 5%;
-   padding: 1.5px 0;
- }
-
- .content-product-info-text input {
+.content-product-info-text button {
    width: 10%;
- }
- 
- .close {
+   height: 5%;
+   padding: 5px 5px;
+}
+
+.content-product-info-text input {
+   width: 10%;
+   padding: 8px 0;
+}
+
+.close {
    position: absolute;
    top: 8px;
-   right: 10px;
+   right: 18px;
    font-size: 50px;
    font-weight: bold;
    color: #555;
    cursor: pointer;
- }
- 
- .close:hover {
+}
+
+.close:hover {
    color: black;
- }
+}
 
- .modal button {
+.modal button {
    width: 40%;
- }
+}
 
- .modal img {
+.modal img {
    width: 200px;
    height: 200px;
-   background-color: #0056b3;
- }
+   background-color: #ffffff;
+}
 
-.btn-save {
+.content-product-info-text {
+   display: flex;
+   justify-items: center;
+   align-items: center;
+   justify-content: center;
+   gap: 15px;
    width: 100%;
+}
+
+.content-product-info-text .quantity-btn {
+   width: 8%;
+   background-color: #403192;
+   color: #fff;
+   border: none;
+   font-size: 25px;
+   cursor: pointer;
+   border-radius: 4px;
+   transition: background-color 0.3s ease;
+}
+
+.quantity-btn:hover,
+.btn-save:hover {
+   background-color: #68ce68;
+}
+
+.content-product-info-text .btn-save {
+   width: 30%;
    padding: 5px 40px;
-   background-color: #35ad35;
+   background-color: #403192;
    color: #fff;
    border: none;
    font-size: 18px;
@@ -269,6 +308,7 @@ input[type="number"] {
    transition: background-color 0.3s ease;
 
 }
+
 @media (max-width: 768px) {
    .container {
       padding: 80px 0px;
@@ -278,8 +318,9 @@ input[type="number"] {
       width: 75%;
    }
 
-   .menu__btn{
-      margin-top: 12px; /* Para bajar el menu al nivel del tituo dela pagina */
+   .menu__btn {
+      margin-top: 12px;
+      /* Para bajar el menu al nivel del tituo dela pagina */
    }
 
    .col {
@@ -287,11 +328,25 @@ input[type="number"] {
       margin: 8px 15px;
    }
 
-   .card-body{
+   .card-body {
       min-height: 45vh;
    }
 
-   .content-product-info-text {
-      width: 80%;
-    }
+   .content-product-info-text button {
+      width: 20%;
+      height: 5%;
+      padding: 5px 5px;
+   }
+
+   .content-product-info-text input {
+      width: 15%;
+   }
+   
+   .content-product-info-text .quantity-btn {
+      width: 20%;
+   }
+
+   .content-product-info-text .btn-save {
+      width: 65%;
+   }
 }

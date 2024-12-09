@@ -24,7 +24,7 @@ body {
     height: 90vh;
     justify-content: center;
     margin: auto;
-    background-color: #0b023d;
+    background-color: #434372d3;
 }
 
 .video {
@@ -113,23 +113,16 @@ body {
     height: auto;
     padding: 40px auto;
     align-items: center;
-    /*
-    background-image: 
-    linear-gradient(to right, #ccc px, transparent 1px),
-    linear-gradient(to bottom, #ccc 1px, transparent 1px);
-    background-size: 20px 20px; /* Tamaño de cada celda 
-    background-position: top left;
-    */
 }
 
 .content-about p {
     font-weight: bold;
-    color: #363636;
+    color: #181818;
 }
 
 .content-about p,
 h3 {
-    color: #363636;
+    color: #181818;
 }
 
 .content-mision,
@@ -141,14 +134,34 @@ h3 {
     justify-content: center;
     align-items: center;
     margin: 5px auto;
-    background-color: rgba(255, 255, 255, 0.795);
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
+    border-radius: 20px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    overflow: hidden; /* Evita que el pseudo-elemento sobresalga de los bordes redondeados */
+}
+
+.content-mision::before,
+.content-vision::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('/recursos_sobre_nosotros/img_mision_vision.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 20px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    opacity: 0.3; /* Ajusta este valor para cambiar la opacidad */
+    z-index: 1; /* Coloca el fondo detrás del contenido */
 }
+
+.content-mision,
+.content-vision {
+    z-index: 2; /* Asegura que el contenido esté encima del fondo */
+    background-color: rgb(255, 255, 255);
+}
+
 
 .content-text {
     width: 60%;
@@ -262,15 +275,19 @@ h3 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     width: 100%;
     align-content: center;
-    /*background-image: url('/recursos_sobre_nosotros/img_contact_us.jpg');*/
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgba(7, 7, 12, 0.5); /* Un color de fondo oscuro para dar contraste */
     background-blend-mode: darken; 
+}
+
+.about-us-form h4 {
+    font-size: 20px;
 }
 
 .form-about {
@@ -364,104 +381,6 @@ h3 {
     /* Sombra al hacer hover */
 }
 
-@media (max-width: 768px) {
-    .menu__btn>span,
-    .menu__btn>span::before,
-    .menu__btn>span::after {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        background-color: #000000;
-        transition-duration: 0.9s;
-    }
-
-    .item {
-        width: 45%;
-    }
-
-    .content-about-principal {
-        width: 100%;
-        height: 100vh;
-        flex-direction: column;
-    }
-
-    .text-principal {
-        width: 80%;
-    }
-    
-    .video {
-        width: 90%;
-        height: 35vh;
-    }
-    
-
-    .content-about {
-        min-height: 100vh;
-        height: auto;
-    }
-
-    .content-services {
-        min-height: 140vh;
-        height: auto;
-    }
-
-    .item {
-        width: 70%;
-        margin: 30px auto;
-    }
-
-    .content-mision,
-    .content-vision {
-        display: flex;
-        width: 90%;
-        height: 50vh;
-        justify-content: center;
-        align-items: center;
-        margin: 20px auto;
-    }
-
-    .content-text {
-        width: 85%;
-        margin: auto 10px;
-    }
-
-    .content-text p {
-        padding: 20px;
-    }
-
-    .about-us-form {
-        height: 100vh;
-        width: 100%;
-    }
-    
-    .form-about {
-        border-radius: 50%;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .form-group {
-        padding: 10px;
-        width: 80%;
-        gap: 20px;
-    }
-
-    .form-group input, .form-group select, .form-group textarea {
-        padding: 7px 10px;
-        width: 90%;
-        height: 6%;
-    }
-
-    .form-group button {
-        width: 80%;
-    }
-}
-
 /* Esto es para el modal */
 .flyer-thumbnail {
     width: 300px;
@@ -509,8 +428,90 @@ h3 {
     padding: 10px 0;
 }
 
+@media (max-width: 768px) {
+    .item {
+        width: 45%;
+    }
 
+    .content-about-principal {
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        padding: 5% 0;
+    }
 
+    .text-principal {
+        width: 80%;
+    }
+    
+    .video {
+        width: 90%;
+        height: 35vh;
+    }
+    
 
+    .content-about {
+        min-height: 100vh;
+        height: auto;
+    }
 
+    .content-services {
+        min-height: 140vh;
+        height: auto;
+    }
 
+    .item {
+        width: 70%;
+        margin: 30px auto;
+    }
+
+    .content-mision,
+    .content-vision {
+        display: flex;
+        width: 90%;
+        height: 50vh;
+        justify-content: center;
+        align-items: center;
+        margin: 20px auto;
+    }
+
+    .content-text {
+        width: 85%;
+        margin: auto 10px;
+    }
+
+    .content-text p {
+        padding: 20px;
+    }
+
+    .about-us-form {
+        height: 90vh;
+        width: 100%;
+    }
+    
+    .form-about {
+        border-radius: 50%;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .form-group {
+        padding: 10px;
+        width: 80%;
+        gap: 20px;
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+        padding: 7px 10px;
+        width: 90%;
+        height: 6%;
+    }
+
+    .form-group button {
+        width: 80%;
+    }
+}

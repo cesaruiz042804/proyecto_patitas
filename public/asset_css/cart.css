@@ -4,7 +4,6 @@
    border: 0;
    font-size: 100%;
    vertical-align: baseline;
-   font-family: 'Trebuchet MS', sans-serif;
 }
 
 body {
@@ -14,14 +13,15 @@ body {
 .container {
    width: 100%;
    display: flex;
-   min-height: 100vh;
-   height: auto;
-   background: linear-gradient(135deg, #f0f0f0, #fafafa); /* Fondo suave */
-}
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+ }
 
 .container-products {
    width: 85%;
-   margin: 20px auto;
+   height: 100vh;
+   padding: 20px 0;
 }
 
 .text-title {
@@ -84,10 +84,30 @@ td, h1{
    background-color: #69696965;
 }
 
-.btn-primary{
-   padding: 5px;
-   text-decoration: none;
+.content-total {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-items: center;
+   align-items: center;
+   justify-content: center;
 }
+
+.btn-primary {
+   background-color: #4CAF50;
+   color: white;
+   padding: 10px 20px;
+   border: none;
+   cursor: pointer;
+   border-radius: 5px;
+   width: 40%;
+   text-decoration: none;
+   margin: 50px 0;
+ }
+ 
+.btn-primary:hover {
+   background-color: #45a049;
+ }
 
 .empty-cart-message {
    text-align: center;

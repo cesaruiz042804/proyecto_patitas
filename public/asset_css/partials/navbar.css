@@ -1,3 +1,11 @@
+/* Link to the CDN version of the font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* Use the font as usual */
+* {
+  font-family: 'Playfair Display', serif;
+}
+
 .logo img {
    height: 80px;
    width: 75px;
@@ -31,8 +39,9 @@
    align-items: center;
    list-style: none;
    height: 90px;
-   align-items: stretch; /* Ajusta los elementos hijos al alto del contenedor */
-  
+   align-items: stretch;
+   /* Ajusta los elementos hijos al alto del contenedor */
+
 }
 
 .menu__item {
@@ -50,7 +59,8 @@
    background-color: #7a7ac0;
    border-bottom: 4px solid #f7f4f4;
    color: #fff;
-   text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.435); /* Sombra sutil en el texto */
+   text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.435);
+   /* Sombra sutil en el texto */
 }
 
 
@@ -60,7 +70,7 @@
 
 .hamburger-menu,
 .menu__box {
-   z-index: 1;
+   z-index: 100;
    /* Set a higher z-index */
 }
 
@@ -210,4 +220,3 @@
       border: none;
    }
 }
-

@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
    };
 
    const observer = new IntersectionObserver(onIntersection, {
-       rootMargin: "50px"
+       rootMargin: "1200px"
    });
    console.log('lazy');
 

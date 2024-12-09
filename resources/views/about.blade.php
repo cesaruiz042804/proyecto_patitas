@@ -15,6 +15,16 @@
 
 <body>
 
+    @if (session()->has('partialsMessage') && session('partialsMessage') == 'ok')
+        @include('partials.messageGood')
+    @else
+        @include('partials.messageErrors')
+    @endif
+
+    @php
+        session()->forget('partialsMessage'); // Elimina la variable 'partialMessage' de la sesión
+    @endphp
+
     @include('partials.navbar')
 
     <main>
@@ -176,34 +186,34 @@
                 </div>
             </div>
 
-            @include('extras.teams')
-
             <div class="about-us-form lazy-background" data-bg="recursos_sobre_nosotros/img_contact_us.jpg">
 
-                <form action="/send-inquiry" method="POST" class="form-about">
+                <form action="{{ route('form.questions') }}" method="POST" class="form-about" id="form-about">
+                    @csrf
                     <div class="form-group">
                         <h4>Contáctanos para saber más sobre nosotros</h4>
-                        <input type="text" id="name" name="name" required
-                            placeholder="Ingresa tu nombre completo">
-                        <input type="email" id="email" name="email" required
-                            placeholder="Ingresa tu correo electrónico">
+                        <input type="text" id="name" name="name"
+                            placeholder="Ingresa tu nombre completo" value="{{ old('name') }}">
+                        <input type="email" id="email" name="email"
+                            placeholder="Ingresa tu correo electrónico" value="{{ old('email') }}">
                         <input type="tel" id="phone" name="phone"
-                            placeholder="Ingresa tu número de teléfono (opcional)">
-                        <select id="inquiry-type" name="inquiry-type" required>
+                            placeholder="Ingresa tu número de teléfono (opcional)" value="{{ old('phone') }}">
+                        <select id="inquiry-type" name="type_message" value="{{ old('type_message') }}">
                             <option value="">Selecciona una opción</option>
                             <optgroup label="Preguntas o dudas" class="">
-                                <option value="mission">Sobre nuestra misión</option>
-                                <option value="mission">Sobre nuestra visión</option>
-                                <option value="team">Conocer al equipo</option>
-                                <option value="volunteer">Oportunidades de voluntariado</option>
-                                <option value="donate">Cómo donar o apoyar</option>
-                                <option value="donate">Cómo puedo comprar en la tienda</option>
-                                <option value="donate">Cómo registrarse</option>
-                                <option value="donate">Cómo agendar citas</option>
-                                <option value="other">Otro</option>
+                                <option value="Sobre nuestra misión">Sobre nuestra misión</option>
+                                <option value="Sobre nuestra visión">Sobre nuestra visión</option>
+                                <option value="Conocer al equipo">Conocer al equipo</option>
+                                <option value="Oportunidades de voluntariado">Oportunidades de voluntariado</option>
+                                <option value="Cómo donar o apoyar">Cómo donar o apoyar</option>
+                                <option value="Cómo puedo comprar en la tienda">Cómo puedo comprar en la tienda
+                                </option>
+                                <option value="Cómo registrarse">Cómo registrarse</option>
+                                <option value="Cómo agendar citas">Cómo agendar citas</option>
+                                <option value="Otro">Otro</option>
                             </optgroup>
                         </select>
-                        <textarea id="message" name="message" rows="4" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                        <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí... (opcional)" style="height: 100px;" value="{{ old('message') }}"></textarea>
                         <button type="submit">Enviar Consulta</button>
                     </div>
                 </form>
@@ -215,6 +225,18 @@
     @include('partials.footer')
 
     <script src="{{ asset('asset_js/about.js') }}"></script>
+    
+    <script>
+        @if (session()->has('errors') && session('errors')->any())
+            window.onload = function() {
+                document.getElementById('form-about').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+        @endif
+    </script>
+
 
 </body>
 

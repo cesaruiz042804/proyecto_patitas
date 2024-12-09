@@ -8,6 +8,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\FormCitasController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminProductsController;
+use App\Http\Controllers\QuestionsController;
 use App\Http\Middleware\SessionMiddleware;
 use App\Http\Middleware\SessionAdminMiddleware;
 
@@ -34,13 +35,8 @@ Route::get('confirm-email/{token}', [LoginController::class, 'call_confirmEmail'
 Route::get('/logout', [PaginacionController::class, 'call_logout'])->name('logout');
 Route::post('/logout-session', [LoginController::class, 'call_logout_session'])->name('logout.session');
 
-// Rutas para a la parte de los productos y el carrito
-Route::get('/login', [PaginacionController::class, 'call_login'])->name('login');
-Route::post('/login-session', [LoginController::class, 'call_login_session'])->name('login.session');
-Route::post('/register', [LoginController::class, 'register'])->name('register');
-Route::get('confirm-email/{token}', [LoginController::class, 'call_confirmEmail'])->name('confirm.email');
-Route::get('/logout', [PaginacionController::class, 'call_logout'])->name('logout');
-Route::post('/logout-session', [LoginController::class, 'call_logout_session'])->name('logout.session');
+// Ruta para a la parte de preguntas
+Route::post('/sobre-nosotros/preguntas', [QuestionsController::class, 'call_questions'])->name('form.questions');
 
 // Rutas para a la parte de los productos y el carrito
 Route::get('/products', [CartController::class, 'viewProducts'])->name('products');
@@ -72,25 +68,13 @@ Route::get('/admin/appointments/status', [AdminController::class, 'call_admin_st
 Route::post('/admin/appointments/assign', [AdminController::class, 'call_admin_appointment_submit'])->name('admin.appointment.submit')->middleware(SessionAdminMiddleware::class);
 Route::post('/admin/appointments/status/update', [AdminController::class, 'call_update_status_appointment'])->name('update.status.appointment')->middleware(SessionAdminMiddleware::class);
 
-// Rutas para la parte del admin - Dashboard - Calendar - Estado de citas
+// Rutas para la parte del admin del carrito de compra
 Route::get('/admin-cart-add', [AdminProductsController::class, 'call_admin_cart_add'])->name('admin.cart.add');
 Route::post('/admin-cart-add-product', [AdminProductsController::class, 'call_admin_cart_add_product'])->name('admin.cart.add.product');
 Route::post('/admin-cart-delete-product', [AdminProductsController::class, 'call_admin_cart_delete_product'])->name('admin.cart.delete.product');
 
 
 
-
-
-
-/*
-Route::get('/admin-dashboard', [AdminController::class, 'call_admin_dashboard'])->name('admin.dashboard');
-Route::get('/admin-datatables-users', [AdminController::class, 'call_admin_datatables'])->name('admin.datatables.users');
-Route::get('/admin-form-products', [AdminController::class, 'call_admin_form_products'])->name('admin.form.products');
-Route::get('/admin-asignar-cita', [AdminController::class, 'call_admin_appointment'])->name('admin.appointment');
-Route::get('/admin-estado-cita-medica', [AdminController::class, 'call_admin_status_medical'])->name('admin.status.medical');
-Route::post('/admin-asignar-cita-submit', [AdminController::class, 'call_admin_appointment_submit'])->name('admin.appointment.submit');
-Route::post('/admin-actualizar-estado-cita', [AdminController::class, 'call_update_status_appointment'])->name('update.status.appointment');
-*/
 # git add .
 # git commit -m "Escribir"
 # git push origin main o master

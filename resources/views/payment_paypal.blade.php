@@ -60,7 +60,6 @@
 </script>
 
 -->
-<button id="openModal" class="openModal">Pagar</button>
 
 <div id="modal" class="modal">
     <div class="modal-content">
@@ -68,7 +67,7 @@
         <button class="close" id="closeModal">&times;</button>
         
         <div class="container">
-            <form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+            <form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" class="form-paypal">
                 <input type="hidden" name="cmd" value="_cart">
                 <input type="hidden" name="upload" value="1">
                 <input type="hidden" name="business" value="sb-i47l6a27301038@business.example.com">
@@ -101,6 +100,7 @@
 
 <script>
     // Obtener elementos del DOM
+    /*
     const openModalButton = document.getElementById('openModal');
     const modal = document.getElementById('modal');
     const closeModalButton = document.getElementById('closeModal');
@@ -127,6 +127,9 @@
             closeModalHandler();
         }
     });
+    */
+
+    document.querySelector('.form-paypal').submit();
 </script>
 
 

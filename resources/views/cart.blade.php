@@ -56,11 +56,12 @@
                         </tbody>
                     </table>
 
-                    <h3>Total: $<span id="total">{{ number_format($totalPrice, 2) }}</span></h3>
-                    <!--
-                    <a href="{{ route('checkout_paypal') }}" class="btn-primary">Proceder al Pago</a>
-                    -->
-                    @include('payment_paypal')
+                    <div class="content-total">
+                        <h3>Total: $<span id="total">{{ number_format($totalPrice, 2) }}</span></h3>
+                        <a href="{{ route('checkout_paypal') }}" class="btn-primary">Proceder al Pago</a>
+                    </div>
+                    
+                    
                 </div>
             @else
                 <div class="empty-cart-message">
