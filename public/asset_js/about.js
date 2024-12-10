@@ -30,3 +30,15 @@ function showFlyer(img) {
 function closeFlyer() {
     document.getElementById('flyerModal').style.display = "none";
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Selecciona el input
+    var inputElementTel = document.querySelector('#phone');
+
+    // Crea una máscara para el input
+    var maskOptionsTel = {
+        mask: '0000-0000'
+    };
+
+    var mask = IMask(inputElementTel, maskOptionsTel);
+});

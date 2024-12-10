@@ -9,6 +9,7 @@
         content='"Agenda fácilmente citas médicas para perros y gatos en nuestra plataforma. Promovemos la concientización sobre el cuidado responsable de los animales y ofrecemos servicios veterinarios de calidad. ¡Cuida a tu mascota con nosotros!"'>
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
     <link rel="stylesheet" href="{{ asset('asset_css/about.css') }}">
+    <script src="https://unpkg.com/imask"></script>
     <title>Sobre Nosotros - Tu Clínica Veterinaria</title>
 
 </head>
@@ -197,7 +198,7 @@
                         <input type="email" id="email" name="email"
                             placeholder="Ingresa tu correo electrónico" value="{{ old('email') }}">
                         <input type="tel" id="phone" name="phone"
-                            placeholder="Ingresa tu número de teléfono (opcional)" value="{{ old('phone') }}">
+                            placeholder="Ingresa tu número de teléfono" value="{{ old('phone') }}">
                         <select id="inquiry-type" name="type_message" value="{{ old('type_message') }}">
                             <option value="">Selecciona una opción</option>
                             <optgroup label="Preguntas o dudas" class="">
