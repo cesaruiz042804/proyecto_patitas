@@ -9,6 +9,7 @@
         "darryldecode/cart": "^4.2",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
+        "laravel/ui": "^4.6",
         "mercadopago/dx-php": "^3.0",
         "shino47/laravel-yappy-checkout": "^1.1",
         "stripe/stripe-php": "^16.2"

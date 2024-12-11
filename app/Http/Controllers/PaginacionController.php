@@ -60,19 +60,9 @@ class PaginacionController extends Controller
         return view('payment_paypal');
     }
 
-    public function call_calendar()
+    public function call_template_vuejs()
     {
-        $alls_events = Event::all();
-        $events = [];
-
-        foreach ($alls_events as $event) {
-            $events[] = [
-                'title' => $event->start_date,
-                'start' => $event->end_date,
-                'end' => $event->event,
-            ];
-        }
-
-        return view('payment_paypal', compact('events'));
+        return view('exampleVueJs');
     }
+
 }

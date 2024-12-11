@@ -11,6 +11,7 @@ use App\Http\Controllers\AdminProductsController;
 use App\Http\Controllers\QuestionsController;
 use App\Http\Middleware\SessionMiddleware;
 use App\Http\Middleware\SessionAdminMiddleware;
+use Illuminate\Pagination\PaginationState;
 
 Route::get('/', function () {
     return redirect()->route('home');
@@ -73,6 +74,8 @@ Route::get('/admin-cart-add', [AdminProductsController::class, 'call_admin_cart_
 Route::post('/admin-cart-add-product', [AdminProductsController::class, 'call_admin_cart_add_product'])->name('admin.cart.add.product');
 Route::post('/admin-cart-delete-product', [AdminProductsController::class, 'call_admin_cart_delete_product'])->name('admin.cart.delete.product');
 
+// Vue js
+Route::get('/vue-js', [PaginacionController::class, 'call_template_vuejs'])->name('template.vuejs');
 
 
 # git add .
