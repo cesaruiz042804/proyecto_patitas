@@ -39,15 +39,15 @@
             @endif
         </ul>
     </div>
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal">
+    <div class="modal-overlay-navbar" id="modalOverlay-navbar">
+        <div class="modal-navbar">
             <form class="form-session" action="{{ route('logout.session') }}" method="POST">
                 @csrf
                 <div class="container-session">
                     <span>Deseas cerrar la sesión?</span>
                 </div>
                 <div class="container-session">
-                    <button type="button" id="closeModal">Continuar</button>
+                    <button type="button" id="closeModal-navbar">Continuar</button>
                     <button type="submit">Cerrar sessión</button>
                 </div>
             </form>

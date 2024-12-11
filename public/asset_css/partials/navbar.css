@@ -226,7 +226,7 @@
 
 
 /* Estilo del fondo del modal (oscurecido) */
-.modal-overlay {
+.modal-overlay-navbar {
    position: fixed; /* Asegura que cubra toda la pantalla */
    top: 0;
    left: 0;
@@ -240,7 +240,7 @@
 }
 
 /* Estilo del modal */
-.modal {
+.modal-navbar {
    position: fixed; /* Para que esté siempre en la misma posición */
    background-color: rgb(255, 255, 255);
    width: 70vh;
@@ -253,7 +253,7 @@
    z-index: 2000;
 }
 
-.modal .close-btn {
+.modal-navbar .close-btn {
    position: absolute;
    top: 10px;
    right: 10px;
@@ -263,12 +263,12 @@
    cursor: pointer;
 }
 
-.modal .close-btn:hover {
+.modal-navbar .close-btn:hover {
    color: #fff;
 }
 
 /* Mostrar el modal cuando esté activo */
-.modal-overlay.active {
+.modal-overlay-navbar.active {
    display: flex;
 }
 
@@ -317,11 +317,11 @@
 }
 
 @media (max-width: 768px) {
-   .modal-overlay.active {
+   .modal-overlay-navbar.active {
        display: flex; /* Muestra el modal en pantallas pequeñas */
    }
 
-   .modal {
+   .modal-navbar {
       width: 80%;
    }
 }

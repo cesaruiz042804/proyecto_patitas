@@ -1,8 +1,8 @@
 const openModalDesktopBtn  = document.getElementById('openModal-desktop');
-const closeModalBtn = document.getElementById('closeModal');
+const closeModalBtn = document.getElementById('closeModal-navbar');
 const openModalMovilBtn = document.getElementById('openModal-movil');
-const closeModalMovilBtn = document.getElementById('openModal');
-const modalOverlay = document.getElementById('modalOverlay');
+const closeModalMovilBtn = document.getElementById('openModal-navbar');
+const modalOverlay = document.getElementById('modalOverlay-navbar');
 
 
 // Abrir modal desde escritorio
