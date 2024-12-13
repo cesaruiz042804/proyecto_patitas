@@ -43,7 +43,7 @@
             <form class="form-session" action="{{ route('logout.session') }}" method="POST">
                 @csrf
                 <div class="container-session">
-                    <span><a href="#">Deseas cerrar la sesión?</a></span>
+                    <span>Deseas cerrar la sesión?</span>
                 </div>
                 <div class="container-session">
                     <button type="button" id="closeModal-navbar">Continuar</button>
