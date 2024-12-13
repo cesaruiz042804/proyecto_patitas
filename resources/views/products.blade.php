@@ -51,7 +51,7 @@
                             <div class="card-body-item">
                                 <img src="{{ $product->image }}?v={{ $product->updated_at->timestamp }}"
                                     class="card-img" alt="{{ $product->name }}" loading="lazy">
-                                <h5 class="card-title">{{ $product->name }}</h5>
+                                <h2 class="card-title">{{ $product->name }}</h2>
                                 <p class="card-text">{{ $product->description }}</p>
                                 <p class="card-text">Precio: ${{ number_format($product->price, 2) }}</p>
                             </div>

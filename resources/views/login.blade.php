@@ -28,13 +28,13 @@
             session()->forget('partialsMessage'); // Elimina la variable 'partialMessage' de la sesión
         @endphp
         
-        <button class="btn-exit"><i class="fas fa-arrow-left"></i></button>
+        <button class="btn-exit" title="Salir"><i class="fas fa-arrow-left" title="Salir" alt="Salir"></i></button>
 
         <div class="container" id="container">
             <div class="container-content">
                 <div class="switch-form">
-                    <button class="signIn">Iniciar Sesión</button>
-                    <button class="signUp">Registrarse</button>
+                    <button class="signIn" title="Formulario de iniciar sesión">Iniciar Sesión</button>
+                    <button class="signUp" title="Formulario de registro">Registrarse</button>
                 </div>
                 <div class="form-container sign-up-container">
                     <form method="POST" action="{{ route('register') }}" class="form1 form-active">
@@ -58,7 +58,7 @@
                             value="{{ old('tel') }}" />
                         <input class="inputPassword" type="password" placeholder="Password" name="password" />
                         <input class="inputConfirmPassword" type="password" placeholder="Confirm password" name="confirmPassword" />
-                        <button class="btn-register" onclick="pageLoading('.container')">Crear cuenta</button>
+                        <button class="btn-register" onclick="pageLoading('.container')" title="Creación de cuentas">Crear cuenta</button>
                     </form>
                 </div>
                 <div class="form-container sign-in-container">
@@ -75,7 +75,7 @@
                             value="{{ old('email2') }}" />
                         <input type="password" placeholder="Password" name="password" />
                         <a href="#" title="Click para cambiar tu contraseña">Olvidaste tu contraseña?</a>
-                        <button class="btn-sign" onclick="pageLoading('.container')">Iniciar sesión</button>
+                        <button class="btn-sign" onclick="pageLoading('.container')" title="Inicio de sesión">Iniciar sesión</button>
                     </form>
                 </div>
             </div>
