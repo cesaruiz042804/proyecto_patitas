@@ -33,7 +33,7 @@
             <div class="content-about-principal">
                 <div class="text-principal">
                     <h1>Bienvenidos al Centro de Rehabilitación Animal "Patitas al Rescate"</h1>
-                    <hr class="divider">
+                    <div class="divider">-</div>
                     <p>Somos una organización comprometida con el rescate, rehabilitación y cuidado de perros y gatos en
                         situación de peligro. En "Amigos al Rescate", nuestro objetivo principal es dar una segunda
                         oportunidad a aquellos animales que han sufrido abandono, maltrato o que se encuentran en

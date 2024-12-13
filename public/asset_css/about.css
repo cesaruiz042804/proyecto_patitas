@@ -98,7 +98,8 @@ body {
 .divider {
     height: 3px;
     background: linear-gradient(to right, #f7f5ff, #48ff00); /* Gradiente de color */
-    margin: 6px 0;
+    margin: 20px 0;
+    color: #684a97;
  }
 
 .content-about {
