@@ -25,14 +25,13 @@
             <li><a class="menu__item" href="{{ route('donation') }}" title="Ir a la página de Donación">Donación</a>
             </li>
             <li><a class="menu__item" href="{{ route('products') }}" title="Ir a la página de Tienda">Tienda</a></li>
-            <li><a class="menu__item" href="{{ route('template.vuejs') }}" title="Ir a la página de Tienda">Vue JS</a>
-            </li>
+          
             @if (session()->has('user'))
                 <li>
                     <a class="menu__item" id="openModal-movil" href="#" title="Click para cerrar sesión">Cerrar
                         sesión</a>
                 </li>
-                @else
+            @else
                 <!-- Botón de iniciar sesión cuando el usuario no está autenticado -->
                 <li><a class="menu__item" href="{{ route('login') }}" title="Click para iniciar sesión">Iniciar
                         sesión</a></li>
@@ -44,7 +43,7 @@
             <form class="form-session" action="{{ route('logout.session') }}" method="POST">
                 @csrf
                 <div class="container-session">
-                    <span>Deseas cerrar la sesión?</span>
+                    <span><a href="#">Deseas cerrar la sesión?</a></span>
                 </div>
                 <div class="container-session">
                     <button type="button" id="closeModal-navbar">Continuar</button>

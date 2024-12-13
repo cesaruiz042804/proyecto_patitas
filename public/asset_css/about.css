@@ -88,20 +88,17 @@ body {
 
 .content-about-principal h1 {
     font-size: 35px;
-    text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.795); /* Sombra sutil en el texto */
 }
 
 .content-about-principal p {
     font-size: 20px;
     color: rgb(255, 255, 255);
-    text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.747); /* Sombra sutil en el texto */
 }
 
 .divider {
-    height: 2px;
+    height: 3px;
     background: linear-gradient(to right, #f7f5ff, #48ff00); /* Gradiente de color */
-    margin: 2px 0;
-    width: 20%;
+    margin: 6px 0;
  }
 
 .content-about {
@@ -354,7 +351,7 @@ h3 {
 }
 
 .form-group h4, .form-group p {
-    color: #ddd;
+    color: #141414;
 }
 
 .container-flayers button {
@@ -435,18 +432,33 @@ h3 {
 
     .content-about-principal {
         width: 100%;
-        height: 100vh;
+        min-height: 100vh;
+        height: auto;
         flex-direction: column;
-        padding: 5% 0;
+        padding: 15% 0;
     }
 
     .text-principal {
         width: 80%;
     }
+
+    .text-principal h1 {
+        font-size: 35px;
+    }
+
+    .text-principal p {
+        font-size: 18px;
+    }
     
+    .content-about-principal button {
+        width: 90%;
+        font-size: 15px;
+        padding: 10px 0;
+    }
+
     .video {
         width: 90%;
-        height: 35vh;
+        height: 30vh;
     }
     
 

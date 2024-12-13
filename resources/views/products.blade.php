@@ -26,9 +26,9 @@
             <div class="header-products">
                 <div class="header-items">
                     <h1 class="title-items">Nuestros Productos</h1>
-                    <button class="btn-cart">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#403192"
-                            class="bi bi-cart4" viewBox="0 0 16 16">
+                    <button class="btn-cart" title="Ir a carrito de compra">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="#403192"
+                            class="bi bi-cart4" viewBox="0 0 16 16" alt="carrito de compra">
                             <path
                                 d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0" />
                         </svg>
@@ -62,10 +62,10 @@
                                     <div class="container-btn">
                                         @if ($inCart)
                                             <button type="button" class="openModal box-quantity"
-                                                data-product-id="{{ $product->id }}">Ya en el carrito</button>
+                                                data-product-id="{{ $product->id }}" title="Actualizar cantidad">Ya en el carrito</button>
                                         @else
                                             <button type="button" class="openModal box-quantity"
-                                                data-product-id="{{ $product->id }}">Agregar al carrito</button>
+                                                data-product-id="{{ $product->id }}" title="Agregar cantidad">Agregar al carrito</button>
                                         @endif
 
                                         <div id="modal-{{ $product->id }}" class="modal">
@@ -78,14 +78,14 @@
                                                 <div class="content-product-info-text">
                                                     <span class="close"
                                                         data-modal-id="{{ $product->id }}">&times;</span>
-                                                    <button type="button" class="quantity-btn decrease">-</button>
+                                                    <button type="button" class="quantity-btn decrease" title="Disminuir cantidad">-</button>
                                                     <input type="number" class="quantity-input inputQuantity"
                                                         id="quantity-{{ $product->id }}" min="0"
                                                         name="quantity" value="{{ $quantity }}" />
-                                                    <button type="button" class="quantity-btn increase">+</button>
+                                                    <button type="button" class="quantity-btn increase" title="Aumentar cantidad">+</button>
                                                 </div>
                                                 <div class="content-product-info-text">
-                                                    <button type="submit" class="btn-save">Guardar</button>
+                                                    <button type="submit" class="btn-save" title="Guardar producto">Guardar</button>
                                                 </div>
                                             </div>
                                         </div>

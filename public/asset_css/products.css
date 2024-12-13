@@ -7,33 +7,46 @@
 }
 
 .container {
+   position: relative; /* Establece el contenedor como referencia para el posicionamiento absoluto */
    width: 100%;
-   align-items: center;
-   padding: 10px 0;
 }
 
 .header-products {
-   display: flex;
    width: 100%;
+   text-align: center; /* Centra el contenido horizontalmente */
+   align-items: center;
    justify-content: center;
+   justify-items: center;
 }
 
 .header-items {
-   display: flex;
-   justify-content: space-between;
-   width: 95%;
-   margin-top: 8px;
+   position: relative;
+   width: 100%;
+   padding: 47px 0 17px 0;
+   align-items: center;
+   justify-content: center;
+   justify-items: center;
+}
+
+.title-items {
+   font-size: 30px;
+   color: #403192;
+   text-align: center;
+   width: 100%; /* El título ocupa todo el ancho disponible */
 }
 
 .btn-cart {
+   position: absolute;
+   top: 42px; /* Ajusta según sea necesario */
+   right: 35px; /* Coloca el carrito en la esquina superior derecha */
    background-color: transparent;
    border: none;
    cursor: pointer;
    font-size: 25px;
 }
 
-.title-items {
-   font-size: 30px;
+.btn-cart:hover {
+   scale: 1.2;
 }
 
 .row {
@@ -55,7 +68,7 @@
    background-color: #ffffff75;
    justify-content: center;
    align-items: center;
-   min-height: 77vh;
+   min-height: 65vh;
    height: auto;
    width: 100%;
    justify-content: space-between;
@@ -80,6 +93,10 @@
    justify-items: center;
    justify-content: center;
    align-items: center;
+}
+
+.card-title {
+   font-size: 21px;
 }
 
 .card-body-form {
@@ -313,11 +330,22 @@ input[type="number"] {
    .container {
       padding: 80px 0px;
    }
+   
+   .header-products {
+      justify-content: center;
+      justify-items: center;
+   }
 
    .header-items {
       width: 75%;
+      justify-content: center;
    }
-
+   
+   .btn-cart {
+      position: relative;
+      right: 0;
+   }  
+       
    .menu__btn {
       margin-top: 12px;
       /* Para bajar el menu al nivel del tituo dela pagina */
@@ -349,4 +377,5 @@ input[type="number"] {
    .content-product-info-text .btn-save {
       width: 65%;
    }
+
 }

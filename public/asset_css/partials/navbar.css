@@ -6,33 +6,6 @@
   font-family: 'Playfair Display', serif;
 }
 
-.logo img {
-   height: 80px;
-   width: 75px;
-   padding: 0 0 0 0;
-   margin: 0 0 0 0;
-}
-
-.logo img:hover {
-   filter: sepia(40%);
-   cursor: pointer;
-}
-
-.logo {
-   display: flex;
-   justify-content: center;
-   /* Centra horizontalmente */
-   align-items: center;
-   /* Centra verticalmente */
-   margin: 0%;
-   padding: 0%;
-   height: 100%;
-}
-
-.logo:hover {
-   border-bottom: 4px solid #f7f4f4;
-}
-
 .menu__box {
    display: flex;
    background-color: #403192;
@@ -40,8 +13,29 @@
    list-style: none;
    height: 90px;
    align-items: stretch;
-   /* Ajusta los elementos hijos al alto del contenedor */
+   justify-content: flex-end; /* Mantiene los elementos del menú a la derecha */
+   padding: 0; /* Asegúrate de que no haya espacio interno */
+   margin: 0; /* Asegúrate de que no haya margen externo */
+}
 
+.logo {
+   display: flex;
+   justify-content: flex-start; /* Alinea el contenido dentro del logo a la izquierda */
+   align-items: center;
+   margin-right: auto; /* Empuja los otros elementos del menú hacia la derecha */
+   padding: 0;
+   height: 100%;
+}
+
+.logo img {
+   height: 80px;
+   width: 75px;
+   padding: 0;
+   margin: 0;
+}
+
+.logo img:hover {
+   filter: hue-rotate(15deg);
 }
 
 .menu__item {
@@ -62,7 +56,6 @@
    text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.435);
    /* Sombra sutil en el texto */
 }
-
 
 #menu__toggle {
    display: none;
@@ -213,7 +206,8 @@
 
    .logo {
       border: none;
-      height: 10%;
+      height: 15%;
+      justify-content: center;
    }
 
    .logo:hover {

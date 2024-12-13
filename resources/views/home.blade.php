@@ -45,26 +45,44 @@
         </div>
 
         <section class="content-products">
-            <h2 class="title-h2">Tu aliado en el cuidado de tu mascota</h2>
-            <p class="paragraph-p1"> Ofrecemos una variedad de servicios para ayudarte a cuidar de tu compañero animal,
-                desde encontrar el
-                nuevo
-                miembro de tu familia hasta agendar citas veterinarias y conocer más sobre programas de rescate.</p>
+            <div class="content-products-title">
+                <div class="content-products-info">
+                    <h2 class="title-h2">Tu aliado en el cuidado de tu mascota</h2>
+                </div>
+                <div class="content-products-info">
+                    <p class="paragraph-p1"> Ofrecemos una variedad de servicios para ayudarte a cuidar de tu compañero animal,
+                        desde encontrar el
+                        nuevo
+                        miembro de tu familia hasta agendar citas veterinarias y conocer más sobre programas de rescate.</p>
+                </div>
+            </div>
             <div class="box-container">
+                <!--
                 <div class="box">
                     <i class="fa-solid fa-dog"></i>
                     <h3>Adoptar</h3>
                     <p>Dale un nuevo hogar a un animal necesitado.</p>
                 </div>
                 <div class="box">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <h3>Agendar</h3>
-                    <p>Agenda tu cita hoy mismo.</p>
-                </div>
-                <div class="box">
                     <i class="fa-solid fa-kit-medical"></i>
                     <h3>Rescate</h3>
                     <p>Ayúdanos a salvar vidas.</p>
+                </div>
+            -->
+                <div class="box">
+                    <i class="fa-solid fa-gift"></i>
+                    <h3>Donación</h3>
+                    <p>Con tu ayuda, podemos seguir rescatando y cuidando más animales.</p>
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-box-open"></i>
+                    <h3>Tienda de Productos</h3>
+                    <p>Compra productos para el bienestar de los animales que ayudamos.</p>
+                </div>
+                <div class="box">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <h3>Agendar</h3>
+                    <p>Agenda tu cita hoy mismo.</p>
                 </div>
             </div>
         </section>

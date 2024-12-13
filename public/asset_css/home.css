@@ -66,13 +66,22 @@ body {
 }
 
 .btn:hover {
-    background: none;
+    background-color: #684a97;
     border: none;
 }
 
 .content-products {
     padding: 70px;
     background: #403192;
+}
+
+.content-products-title {
+    width: 100%;
+    justify-items: center;
+}
+
+.content-products-info {
+    width: 80%;
 }
 
 .paragraph-p1 {
@@ -87,13 +96,19 @@ body {
 }
 
 .box-container .box {
-    height: 11rem;
+    min-height: 13rem;
+    height: auto;
     width: 17rem;
     background: #ffffff;
     text-align: center;
     border-radius: 1rem;
     box-shadow: 0. 3rem 5rem rbga(0, 0, 0, 0.5);
     margin: 2rem;
+    cursor: pointer;
+}
+
+.box-container .box:hover {
+    scale: 1.1;
 }
 
 .box-container .box i {
@@ -119,5 +134,11 @@ body {
 }
 
 @media (max-width: 768px) { /* */
-    
+    .content-products-info {
+        width: 100%;
+    }
+
+    .box-container .box {
+        min-height: 15rem;
+    }
 }
