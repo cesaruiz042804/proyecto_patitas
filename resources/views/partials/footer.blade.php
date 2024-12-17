@@ -5,10 +5,10 @@
     <div class="foot">
         <div class="container-foot">
             <div class="nav-foot">
-                <li><a class="" href="{{ route('home') }}" title="Ir a la página de home">Inicio</a></li>
-                <li><a class="" href="{{ route('about') }}" title="Ir a la página de Sobre nosotros">Sobre nosotros</a></li>
-                <li><a class="" href="{{ route('cita_medica') }}" title="Ir a la página de Cita médica">Cita médica</a></li>
-                <li><a class="" href="{{ route('donation') }}" title="Ir a la página de Donación">Donación</a></li>
+                <div><a class="" href="{{ route('home') }}" title="Ir a la página de home">Inicio</a></div>
+                <div><a class="" href="{{ route('about') }}" title="Ir a la página de Sobre nosotros">Sobre nosotros</a></div>
+                <div><a class="" href="{{ route('cita_medica') }}" title="Ir a la página de Cita médica">Cita médica</a></div>
+                <div><a class="" href="{{ route('donation') }}" title="Ir a la página de Donación">Donación</a></div>
             </div>
         </div>
 
@@ -23,7 +23,7 @@
         </div>
 
         <hr class="divider">
-        
+
         <div>
             <div class="item-foot">
                 <p href="/politica-privacidad" target="_blank">Política de Privacidad</p>
