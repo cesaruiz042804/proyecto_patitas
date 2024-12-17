@@ -8,7 +8,7 @@
         content='"Agenda fácilmente citas médicas para perros y gatos en nuestra plataforma. Promovemos la concientización sobre el cuidado responsable de los animales y ofrecemos servicios veterinarios de calidad. ¡Cuida a tu mascota con nosotros!"'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
-    <link rel="preload" href="{{ asset('recursos_home/img_registro.jpg') }}" as="image">
+    <link rel="preload" href="{{ asset('recursos_login/img_registro.jpeg') }}" as="image">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://unpkg.com/imask"></script>
     <link rel="stylesheet" href="{{ asset('asset_css/login.css') }}">
@@ -27,7 +27,7 @@
         @php
             session()->forget('partialsMessage'); // Elimina la variable 'partialMessage' de la sesión
         @endphp
-        
+
         <button class="btn-exit" title="Salir"><i class="fas fa-arrow-left" title="Salir" alt="Salir"></i></button>
 
         <div class="container" id="container">

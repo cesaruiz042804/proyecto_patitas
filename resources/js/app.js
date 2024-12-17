@@ -1,11 +1,6 @@
-import './bootstrap';
+//import 'bootstrap/dist/css/bootstrap.min.css';
+import { createApp } from 'vue';
+import App from './views/Home.vue';
 
-import { createApp } from 'vue'; // Importa Vue
-import ExampleComponent from './components/ExampleComponent.vue'; // Ajusta la ruta si cambias el nombre o ubicación
-
-const app = createApp({}); // Crea la instancia de Vue
-
-// Registra el componente
-app.component('example-component', ExampleComponent);
-
-app.mount('#app'); // Monta Vue en el div con id "app"
+const app = createApp(App);
+app.mount('#app');

@@ -5,6 +5,7 @@
 @endphp
 
 <header>
+    <div id="cursor"></div>
     <div class="hamburger-menu {{ Route::currentRouteName() }}">
         <input id="menu__toggle" type="checkbox" />
         <label class="menu__btn" for="menu__toggle">
@@ -25,6 +26,8 @@
             <div><a class="menu__item" href="{{ route('donation') }}" title="Ir a la página de Donación">Donación</a>
             </div>
             <div><a class="menu__item" href="{{ route('products') }}" title="Ir a la página de Tienda">Tienda</a></div>
+            <div><a class="menu__item" href="{{ route('template.vuejs') }}" title="Ir a la página de Tienda">Vue JS</a>
+            </div>
 
             @if (session()->has('user'))
                 <div>
@@ -55,3 +58,29 @@
 </header>
 
 <script src="{{ asset('asset_js/partials/navbar.js') }}"></script>
+
+<script>
+    // Seleccionar el cursor
+    const cursor = document.getElementById("cursor");
+
+    // Obtener todos los botones y enlaces
+    const interactiveElements = document.querySelectorAll("button, a");
+
+    // Agregar un evento al mousemove para que el cursor siga el movimiento
+    document.addEventListener("mousemove", (e) => {
+        cursor.style.left = `${e.pageX}px`;
+        cursor.style.top = `${e.pageY}px`;
+    });
+
+    // Detectar cuando el cursor entra en un botón o enlace
+    interactiveElements.forEach((el) => {
+        el.addEventListener("mouseenter", () => {
+            cursor.classList.add("cursor-hover");
+        });
+
+        // Cuando el cursor sale de un botón o enlace
+        el.addEventListener("mouseleave", () => {
+            cursor.classList.remove("cursor-hover");
+        });
+    });
+</script>

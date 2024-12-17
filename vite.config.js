@@ -5,15 +5,14 @@ import vue from '@vitejs/plugin-vue'; // Importa el plugin de Vue
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
-            refresh: true,
+            input: ['resources/css/app.css', 'resources/js/app.js'], // Los archivos de entrada de Laravel
+            refresh: true, // Habilita la recarga automática en el navegador
         }),
         vue(), // Añade el plugin de Vue aquí
     ],
     resolve: {
         alias: {
-            // Alias para usar la versión completa de Vue que soporta la compilación en tiempo de ejecución
-            'vue': 'vue/dist/vue.esm-bundler.js',
+            'vue': 'vue/dist/vue.esm-bundler.js', // Alias para usar la versión de Vue compatible con el bundler
         },
     },
 });

@@ -42,11 +42,11 @@
                     <input type="text" id="petName" name="petName" placeholder="Nombre de la mascota"
                         value="{{ old('petName') }}">
 
-                        <input type="number" min="0" max="300" step="1" id="weight" name="weight"
-                    placeholder="Peso (libras)" value="{{ old('weight') }}">
-                    
-                    <input type="number" min="0" max="30" id="old" name="old"
-                        placeholder="Edad" value="{{ old('old') }}">
+                    <input type="number" min="0" max="300" step="1" id="weight" name="weight"
+                        placeholder="Peso (libras)" value="{{ old('weight') }}">
+
+                    <input type="number" min="0" max="30" id="old" name="old" placeholder="Edad"
+                        value="{{ old('old') }}">
 
                     <select name="species" id="species">
                         <option value="">Selecciona una especie</option>

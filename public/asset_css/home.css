@@ -21,7 +21,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgba(7, 7, 12, 0.646); /* Un color de fondo oscuro para dar contraste */
-    background-blend-mode: darken; 
+    background-blend-mode: darken;
 }
 
 .content-header p {
@@ -105,6 +105,7 @@ body {
     box-shadow: 0. 3rem 5rem rbga(0, 0, 0, 0.5);
     margin: 2rem;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .box-container .box:hover {

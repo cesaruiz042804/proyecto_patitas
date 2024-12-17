@@ -6,6 +6,15 @@
     vertical-align: baseline;
 }
 
+*:focus {
+    outline: none;
+}
+
+button, select, input, textarea {
+    -webkit-tap-highlight-color: transparent; /* Safari y Chrome */
+    -webkit-focus-ring-color: transparent;    /* Safari */
+}
+
  body {
     text-align: center;
  }
@@ -29,6 +38,10 @@
     background-position: center;
     background-color: rgba(7, 7, 12, 0.678); /* Un color de fondo oscuro para dar contraste */
     background-blend-mode: darken;
+}
+
+.app {
+    margin: 8px 0 15px 0;
 }
 
 .form {
@@ -62,39 +75,35 @@
     height: auto;
 }
 
-.content-animal input, .content-animal select {
-    border-radius: 20px;
-    margin: 15px 5px;
-    width: 28%;
-    padding: 6px 6px;
-    /* arriba derecha abajo izquierda*/
-    font-weight: bolder;
-    transition: box-shadow 0.4s ease-in-out; /* Transición para suavizar el efecto */
-    box-shadow: 0 0 0 rgba(255, 255, 255, 0); /* Inicialmente sin sombra */
-}
-
-.content-textarea {
+.form-input {
     display: flex;
-    align-items: center;
-    justify-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
-    padding: 3% 0%;
 }
 
-.textarea-dato {
+.form-control-input {
+    width: 32%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    align-items: center;
-    width: 100%;;
-    margin: auto;
+    margin: 4px 2px;
 }
 
-.textarea-dato textarea {
+.content-animal input, .content-animal select {
+    width: 90%;
+    border-radius: 20px;
+    margin: 15px 5px;
+    padding: 6px 6px;
+    font-weight: bolder;
+    transition: box-shadow 0.4s ease-in-out;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+}
+
+.form-control-input textarea {
     border-radius: 10px;
     height: 100px;
-    width: 85%;
+    width: 90%;
     padding: 5px;
     resize: none;
     transition: box-shadow 0.4s ease-in-out; /* Transición para suavizar el efecto */
@@ -137,13 +146,15 @@ input:focus, textarea:focus, select:focus {
         padding: 3% 0%;
     }
 
-    .content-animal {
+    .form-control-input {
         width: 100%;
+        flex-wrap: nowrap;
+        margin: 1px 2px;
     }
 
     .content-animal input, .content-animal select {
         width: 88%;
-        padding: 9px 6px;
+        padding: 8px 6px;
     }
 
     .form{

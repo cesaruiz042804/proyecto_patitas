@@ -9,14 +9,14 @@
     <meta name="keywords"
         content="adopción de mascotas, rescate de perros y gatos, donación para animales, servicios veterinarios, agenda de citas médicas para mascotas">
     <link rel="preload" href="{{ asset('img_public/logo.png') }}" as="image">
-    <link rel="preload" href="{{ asset('/recursos_home/img_background_login.jpg') }}" as="image">
+    <link rel="preload" href="{{ asset('/recursos_home/img_background_home.jpeg') }}" as="image">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
     <link rel="stylesheet" href="{{ asset('asset_css/home.css') }}">
     <!--
     php -S localhost:8000 -t public
     php -S 192.168.0.11:8000 -t public movil
- -->
+    -->
     <title>Home</title>
 </head>
 
@@ -50,10 +50,12 @@
                     <h2 class="title-h2">Tu aliado en el cuidado de tu mascota</h2>
                 </div>
                 <div class="content-products-info">
-                    <p class="paragraph-p1"> Ofrecemos una variedad de servicios para ayudarte a cuidar de tu compañero animal,
+                    <p class="paragraph-p1"> Ofrecemos una variedad de servicios para ayudarte a cuidar de tu compañero
+                        animal,
                         desde encontrar el
                         nuevo
-                        miembro de tu familia hasta agendar citas veterinarias y conocer más sobre programas de rescate.</p>
+                        miembro de tu familia hasta agendar citas veterinarias y conocer más sobre programas de rescate.
+                    </p>
                 </div>
             </div>
             <div class="box-container">
@@ -69,21 +71,21 @@
                     <p>Ayúdanos a salvar vidas.</p>
                 </div>
             -->
-                <div class="box">
+                <a class="box" href="{{ route('donation') }}">
                     <i class="fa-solid fa-gift"></i>
                     <h3>Donación</h3>
                     <p>Con tu ayuda, podemos seguir rescatando y cuidando más animales.</p>
-                </div>
-                <div class="box">
+                </a>
+                <a class="box" href="{{ route('products') }}">
                     <i class="fa-solid fa-box-open"></i>
                     <h3>Tienda de Productos</h3>
                     <p>Compra productos para el bienestar de los animales que ayudamos.</p>
-                </div>
-                <div class="box">
+                </a>
+                <a class="box" href="{{ route('cita_medica') }}">
                     <i class="fa-solid fa-calendar-days"></i>
                     <h3>Agendar</h3>
                     <p>Agenda tu cita hoy mismo.</p>
-                </div>
+                </a>
             </div>
         </section>
     </main>
