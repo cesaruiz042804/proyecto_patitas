@@ -5,10 +5,11 @@
     <div class="foot">
         <div class="container-foot">
             <div class="nav-foot">
-                <div><a class="" href="{{ route('home') }}" title="Ir a la página de home">Inicio</a></div>
-                <div><a class="" href="{{ route('about') }}" title="Ir a la página de Sobre nosotros">Sobre nosotros</a></div>
-                <div><a class="" href="{{ route('cita_medica') }}" title="Ir a la página de Cita médica">Cita médica</a></div>
-                <div><a class="" href="{{ route('donation') }}" title="Ir a la página de Donación">Donación</a></div>
+                <div><a class="nav-foot-item" href="{{ route('home') }}" title="Ir a la página de home">Inicio</a></div>
+                <div><a class="nav-foot-item" href="{{ route('about') }}" title="Ir a la página de Sobre nosotros">Sobre nosotros</a></div>
+                <div><a class="nav-foot-item" href="{{ route('cita_medica') }}" title="Ir a la página de Cita médica">Cita médica</a></div>
+                <div><a class="nav-foot-item" href="{{ route('donation') }}" title="Ir a la página de Donación">Donación</a></div>
+                <div><a class="nav-foot-item" href="{{ route('products') }}" title="Ir a la página de Donación">Tienda</a></div>
             </div>
         </div>
 

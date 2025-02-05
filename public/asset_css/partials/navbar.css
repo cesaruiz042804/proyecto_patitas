@@ -6,6 +6,10 @@
   font-family: 'Playfair Display', serif;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .menu__box {
    display: flex;
    background-color: #403192;
@@ -341,3 +345,4 @@
     border: 3px solid #FF5733; /* Borde de color naranja */
     background-color: #2b2828; /* Color de fondo cuando está sobre el enlace o botón */
 }
+

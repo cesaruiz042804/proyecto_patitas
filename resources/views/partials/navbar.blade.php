@@ -26,8 +26,6 @@
             <div><a class="menu__item" href="{{ route('donation') }}" title="Ir a la página de Donación">Donación</a>
             </div>
             <div><a class="menu__item" href="{{ route('products') }}" title="Ir a la página de Tienda">Tienda</a></div>
-            <div><a class="menu__item" href="{{ route('template.vuejs') }}" title="Ir a la página de Tienda">Vue JS</a>
-            </div>
 
             @if (session()->has('user'))
                 <div>
