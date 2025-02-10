@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{{ asset('asset_css/about.css') }}">
     <script src="https://unpkg.com/imask"></script>
     <title>Sobre Nosotros - Tu Clínica Veterinaria</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7847423066789696"
+     crossorigin="anonymous"></script>
 
 </head>
 
@@ -226,7 +228,7 @@
     @include('partials.footer')
 
     <script src="{{ asset('asset_js/about.js') }}"></script>
-    
+
     <script>
         @if (session()->has('errors') && session('errors')->any())
             window.onload = function() {

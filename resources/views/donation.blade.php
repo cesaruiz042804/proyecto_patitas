@@ -9,12 +9,14 @@
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
     <link rel="stylesheet" href="{{ asset('asset_css/donation.css') }}">
     <title>Donación</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7847423066789696"
+     crossorigin="anonymous"></script>
 </head>
 
 <body>
 
     @include('partials.navbar')
-    
+
     <main>
         <div class="container">
             <div class="container-target">

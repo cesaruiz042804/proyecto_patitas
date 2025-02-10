@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
     <!-- Fonts and icons -->
     <script src="{{ asset('asset_admin/js/plugin/webfont/webfont.min.js') }}"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7847423066789696"
+     crossorigin="anonymous"></script>
     <script>
         WebFont.load({
             google: {
@@ -46,7 +48,7 @@
     @php
         session()->forget('partialsMessage'); // Elimina la variable 'partialMessage' de la sesión
     @endphp
-    
+
     <div class="wrapper">
         <!-- Sidebar -->
         @include('admin.partials.sidebar')
@@ -197,7 +199,7 @@
                                                                 <a href="https://wa.me/507{{ str_replace('-', '', $item['telefono']) }}?text={{ urlencode('Patitas al Rescate\n\nEstimado/a, necesitamos más información sobre la cita que solicitó para poder asignarle correctamente el día de la cita. Por favor, indíquenos el tipo de servicio requerido y su preferencia de horario. Gracias.') }}}" target="_blank">
                                                                     {{ str_replace('-', '', $item['telefono']) }}
                                                                 </a>
-                                                            </td>                                                            
+                                                            </td>
                                                             <td>{{ $item['mascota'] }}</td><!-- Nombre de la mascota -->
                                                             <td>
                                                                 <div class="form-button-action">

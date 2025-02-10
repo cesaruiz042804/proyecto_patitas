@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
     <link rel="stylesheet" href="{{ asset('asset_css/home.css') }}">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7847423066789696"
+     crossorigin="anonymous"></script>
     <!--
     php -S localhost:8000 -t public
     php -S 192.168.0.11:8000 -t public movil

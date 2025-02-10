@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
     <!-- Fonts and icons -->
     <script src="{{ asset('asset_admin/js/plugin/webfont/webfont.min.js') }}"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7847423066789696"
+     crossorigin="anonymous"></script>
     <script>
         WebFont.load({
             google: {

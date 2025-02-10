@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Carrito de compra</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7847423066789696"
+     crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -60,8 +62,8 @@
                         <h3>Total: $<span id="total">{{ number_format($totalPrice, 2) }}</span></h3>
                         <a href="{{ route('checkout_paypal') }}" class="btn-primary">Proceder al Pago</a>
                     </div>
-                    
-                    
+
+
                 </div>
             @else
                 <div class="empty-cart-message">
@@ -78,7 +80,7 @@
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <script>
-        // Selecciona todos los formularios que tienen la clase 'remove-item-form' 
+        // Selecciona todos los formularios que tienen la clase 'remove-item-form'
         // y añade un evento de escucha para cada uno.
         document.querySelectorAll('.remove-item-form').forEach(form => {
             form.addEventListener('submit', async (event) => {

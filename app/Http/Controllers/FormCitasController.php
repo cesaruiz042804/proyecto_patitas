@@ -6,7 +6,6 @@ use App\Models\table_cita;
 use App\Models\table_dato_mascota;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use \App\Mail\EmailCitaMedica;
@@ -70,8 +69,8 @@ class FormCitasController extends Controller
                     'mascota_id' => $mascota_id,
                     'consultation' => $validatedData['consultation'],
                     'event' => null,  // La columna permite valores nulos)
-                    'start_date' => null, 
-                    'end_date' => null,  
+                    'start_date' => null,
+                    'end_date' => null,
                     'status' => 'Scheduled',  //  Scheduled, In Progress, Completed
                 ]);
 

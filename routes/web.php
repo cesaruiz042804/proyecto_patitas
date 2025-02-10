@@ -55,7 +55,7 @@ Route::get('/payment/success/donation', [PaypalController::class, 'call_success_
 Route::get('/payment/notify/donation', [PaypalController::class, 'call_notify_donation'])->name('paypal.notify.donation');
 Route::get('/payment/cancel/donation', [PaypalController::class, 'call_cancel_donation'])->name('paypal.cancel.donation');
 
-// Rutas para la parte del admin - Login 
+// Rutas para la parte del admin - Login
 Route::get('/admin/login-session', [AdminController::class, 'call_admin_login_session'])->name('admin.login.session');
 Route::post('/admin/session', [AdminController::class, 'call_admin_session'])->name('admin.session');
 Route::get('/admin/login-logout', [AdminController::class, 'call_admin_logout'])->name('admin.logout');
@@ -78,15 +78,17 @@ Route::post('/admin-cart-delete-product', [AdminProductsController::class, 'call
 Route::get('/vue-js', [PaginacionController::class, 'call_template_vuejs'])->name('template.vuejs');
 
 
+# php -S localhost:8000 -t public
+# php -S 192.168.0.11:8000 -t public movil
+
 # git add .
 # git commit -m "Escribir"
 # git push origin main o master
 
-# php artisan migrate:reset
-# php artisan migrate
-
+# composer create-project --prefer-dist laravel/laravel nombre-de-tu-proyecto
 
 # Comandos artisan
+# php artisan migrate:reset
 # php artisan make:seeder UsersTableSeeder
 # php artisan db:seed --class=UsersTableSeeder      Uno solo
 # php artisan db:seed     Todos

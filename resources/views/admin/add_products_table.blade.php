@@ -10,7 +10,8 @@
     <script src="{{ asset('asset_admin/js/plugin/webfont/webfont.min.js') }}"></script>
     <link href="https://cdn.jsdelivr.net/npm/filepond/dist/filepond.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/filepond/dist/filepond.js"></script>
-
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7847423066789696"
+    crossorigin="anonymous"></script>
     <script>
         WebFont.load({
             google: {

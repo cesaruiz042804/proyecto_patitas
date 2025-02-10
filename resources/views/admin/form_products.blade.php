@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="{{ asset('img_public/logo.png') }}">
     <!-- Fonts and icons -->
     <script src="{{ asset('asset_admin/js/plugin/webfont/webfont.min.js') }}"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7847423066789696"
+     crossorigin="anonymous"></script>
     <script>
         WebFont.load({
             google: {
@@ -144,7 +146,7 @@
                                                                 <button type="button" data-bs-toggle="tooltip"
                                                                     title="" class="btn btn-link btn-danger btn-show-modal"
                                                                     data-bs-toggle="modal"
-                                                                    data-bs-target="#myModal" 
+                                                                    data-bs-target="#myModal"
                                                                     data-original-title="Remove">
                                                                     <i class="fa fa-times"></i>
                                                                 </button>
@@ -164,7 +166,7 @@
         </div>
     </div>
 
-    
+
     @include('admin.modals.modals_delete_products')
 
     <!--   Core JS Files   -->
